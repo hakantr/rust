@@ -1,4 +1,4 @@
-    -passes_previously_accepted =
+-passes_previously_accepted =
     this was previously accepted by the compiler but is being phased out; it will become a hard error in a future release!
 
 -passes_see_issue =
