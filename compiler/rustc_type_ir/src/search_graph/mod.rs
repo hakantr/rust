@@ -81,6 +81,7 @@ pub trait Delegate {
     fn inspect_is_noop(inspect: &mut Self::ProofTreeBuilder) -> bool;
 
     const DIVIDE_AVAILABLE_DEPTH_ON_OVERFLOW: usize;
+    fn recursion_limit(cx: Self::Cx) -> usize;
 
     fn initial_provisional_result(
         cx: Self::Cx,
@@ -155,7 +156,7 @@ impl AvailableDepth {
     /// the remaining depth of all nested goals to prevent hangs
     /// in case there is exponential blowup.
     fn allowed_depth_for_nested<D: Delegate>(
-        root_depth: AvailableDepth,
+        cx: D::Cx,
         stack: &IndexVec<StackDepth, StackEntry<D::Cx>>,
     ) -> Option<AvailableDepth> {
         if let Some(last) = stack.raw.last() {
@@ -169,7 +170,7 @@ impl AvailableDepth {
                 AvailableDepth(last.available_depth.0 - 1)
             })
         } else {
-            Some(root_depth)
+            Some(AvailableDepth(D::recursion_limit(cx)))
         }
     }
 
@@ -359,7 +360,6 @@ struct ProvisionalCacheEntry<X: Cx> {
 
 pub struct SearchGraph<D: Delegate<Cx = X>, X: Cx = <D as Delegate>::Cx> {
     mode: SolverMode,
-    root_depth: AvailableDepth,
     /// The stack of goals currently being computed.
     ///
     /// An element is *deeper* in the stack if its index is *lower*.
@@ -374,10 +374,9 @@ pub struct SearchGraph<D: Delegate<Cx = X>, X: Cx = <D as Delegate>::Cx> {
 }
 
 impl<D: Delegate<Cx = X>, X: Cx> SearchGraph<D> {
-    pub fn new(mode: SolverMode, root_depth: usize) -> SearchGraph<D> {
+    pub fn new(mode: SolverMode) -> SearchGraph<D> {
         Self {
             mode,
-            root_depth: AvailableDepth(root_depth),
             stack: Default::default(),
             provisional_cache: Default::default(),
             _marker: PhantomData,
@@ -461,8 +460,7 @@ impl<D: Delegate<Cx = X>, X: Cx> SearchGraph<D> {
         inspect: &mut D::ProofTreeBuilder,
         mut evaluate_goal: impl FnMut(&mut Self, &mut D::ProofTreeBuilder) -> X::Result,
     ) -> X::Result {
-        let Some(available_depth) =
-            AvailableDepth::allowed_depth_for_nested::<D>(self.root_depth, &self.stack)
+        let Some(available_depth) = AvailableDepth::allowed_depth_for_nested::<D>(cx, &self.stack)
         else {
             return self.handle_overflow(cx, input, inspect);
         };

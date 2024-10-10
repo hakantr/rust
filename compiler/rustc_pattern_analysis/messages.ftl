@@ -1,27 +1,27 @@
-pattern_analysis_excluside_range_missing_gap = multiple ranges are one apart
-    .label = this range doesn't match `{$gap}` because `..` is an exclusive range
-    .suggestion = use an inclusive range instead
+pattern_analysis_excluside_range_missing_gap = birden fazla aralık arasında bir boşluk var
+    .label = bu aralık `{$gap}` ile eşleşmez çünkü `..` ifadesi hariç bir aralıktır
+    .suggestion = bunun yerine dahil bir aralık kullanın
 
-pattern_analysis_excluside_range_missing_max = exclusive range missing `{$max}`
-    .label = this range doesn't match `{$max}` because `..` is an exclusive range
-    .suggestion = use an inclusive range instead
+pattern_analysis_excluside_range_missing_max = hariç aralık `{$max}` eksik
+    .label = bu aralık `{$max}` ile eşleşmez çünkü `..` ifadesi hariç bir aralıktır
+    .suggestion = bunun yerine dahil bir aralık kullanın
 
-pattern_analysis_non_exhaustive_omitted_pattern = some variants are not matched explicitly
-    .help = ensure that all variants are matched explicitly by adding the suggested match arms
-    .note = the matched value is of type `{$scrut_ty}` and the `non_exhaustive_omitted_patterns` attribute was found
+pattern_analysis_non_exhaustive_omitted_pattern = bazı varyantlar açıkça eşleşmemiş
+    .help = tüm varyantların açıkça eşleştiğinden emin olmak için önerilen eşleşme kollarını ekleyin
+    .note = eşleşen değer `{$scrut_ty}` türünde ve `non_exhaustive_omitted_patterns` özelliği bulundu
 
-pattern_analysis_non_exhaustive_omitted_pattern_lint_on_arm = the lint level must be set on the whole match
-    .help = it no longer has any effect to set the lint level on an individual match arm
-    .label = remove this attribute
-    .suggestion = set the lint level on the whole match
+pattern_analysis_non_exhaustive_omitted_pattern_lint_on_arm = lint seviyesi tüm eşleşme üzerinde ayarlanmalıdır
+    .help = bir eşleşme kolunda lint seviyesini ayarlamanın artık bir etkisi yoktur
+    .label = bu özelliği kaldırın
+    .suggestion = lint seviyesini tüm eşleşme üzerinde ayarlayın
 
-pattern_analysis_overlapping_range_endpoints = multiple patterns overlap on their endpoints
-    .label = ... with this range
-    .note = you likely meant to write mutually exclusive ranges
+pattern_analysis_overlapping_range_endpoints = birden fazla kalıp uç noktalarında çakışıyor
+    .label = ... bu aralıkla
+    .note = muhtemelen birbirini dışlayan aralıklar yazmak istediniz
 
 pattern_analysis_uncovered = {$count ->
-        [1] pattern `{$witness_1}`
-        [2] patterns `{$witness_1}` and `{$witness_2}`
-        [3] patterns `{$witness_1}`, `{$witness_2}` and `{$witness_3}`
-        *[other] patterns `{$witness_1}`, `{$witness_2}`, `{$witness_3}` and {$remainder} more
-    } not covered
+        [1] kalıp `{$witness_1}`
+        [2] kalıplar `{$witness_1}` ve `{$witness_2}`
+        [3] kalıplar `{$witness_1}`, `{$witness_2}` ve `{$witness_3}`
+        *[other] kalıplar `{$witness_1}`, `{$witness_2}`, `{$witness_3}` ve {$remainder} tane daha
+    } kapsam dışında kaldı

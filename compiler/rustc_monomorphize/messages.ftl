@@ -1,30 +1,30 @@
 monomorphize_couldnt_dump_mono_stats =
-    unexpected error occurred while dumping monomorphization stats: {$error}
+    monomorfizasyon istatistikleri dökülürken beklenmeyen bir hata oluştu: {$error}
 
 monomorphize_encountered_error_while_instantiating =
-    the above error was encountered while instantiating `{$formatted_item}`
+    yukarıdaki hata `{$formatted_item}` örneklenirken karşılaşıldı
 
 monomorphize_large_assignments =
-    moving {$size} bytes
-    .label = value moved from here
-    .note = The current maximum size is {$limit}, but it can be customized with the move_size_limit attribute: `#![move_size_limit = "..."]`
+    {$size} bayt taşınıyor
+    .label = değer buradan taşındı
+    .note = Mevcut maksimum boyut {$limit}, ancak move_size_limit attribute'u ile özelleştirilebilir: `#![move_size_limit = "..."]`
 
 monomorphize_no_optimized_mir =
-    missing optimized MIR for an item in the crate `{$crate_name}`
-    .note = missing optimized MIR for this item (was the crate `{$crate_name}` compiled with `--emit=metadata`?)
+    crate `{$crate_name}` içinde bir öğe için optimize edilmiş MIR eksik
+    .note = Bu öğe için optimize edilmiş MIR eksik (crate `{$crate_name}` `--emit=metadata` ile mi derlendi?)
 
 monomorphize_recursion_limit =
-    reached the recursion limit while instantiating `{$shrunk}`
-    .note = `{$def_path_str}` defined here
+    `{$shrunk}` örneklenirken yineleme sınırına ulaşıldı
+    .note = `{$def_path_str}` burada tanımlandı
 
-monomorphize_start_not_found = using `fn main` requires the standard library
-    .help = use `#![no_main]` to bypass the Rust generated entrypoint and declare a platform specific entrypoint yourself, usually with `#[no_mangle]`
+monomorphize_start_not_found = `fn main` kullanmak standart kütüphane gerektirir
+    .help = Rust tarafından oluşturulan giriş noktasını atlamak ve kendinize platforma özgü bir giriş noktası tanımlamak için `#![no_main]` kullanın, genellikle `#[no_mangle]` ile
 
-monomorphize_symbol_already_defined = symbol `{$symbol}` is already defined
+monomorphize_symbol_already_defined = `{$symbol}` sembolü zaten tanımlı
 
 monomorphize_unknown_cgu_collection_mode =
-    unknown codegen-item collection mode '{$mode}', falling back to 'lazy' mode
+    bilinmeyen kod oluşturma öğesi toplama modu '{$mode}', 'lazy' moduna geçiliyor
 
-monomorphize_unused_generic_params = item has unused generic parameters
+monomorphize_unused_generic_params = öğenin kullanılmayan generic parametreleri var
 
-monomorphize_written_to_path = the full type name has been written to '{$path}'
+monomorphize_written_to_path = tam tür ismi '{$path}' içine yazıldı

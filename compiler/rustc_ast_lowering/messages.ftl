@@ -1,187 +1,187 @@
 ast_lowering_abi_specified_multiple_times =
-    `{$prev_name}` ABI specified multiple times
-    .label = previously specified here
-    .note = these ABIs are equivalent on the current target
+    `{$prev_name}` ABI birden fazla kez belirtilmiş
+    .label = daha önce burada belirtilmiş
+    .note = bu ABI'ler mevcut hedefte eşdeğerdir
 
 ast_lowering_arbitrary_expression_in_pattern =
-    arbitrary expressions aren't allowed in patterns
-    .pattern_from_macro_note = the `expr` fragment specifier forces the metavariable's content to be an expression
+    rastgele ifadeler kalıplarda kullanılamaz
+    .pattern_from_macro_note = `expr` parçacığı belirtici, metanoktanın içeriğinin bir ifade olmasını zorunlu kılar
 
-ast_lowering_argument = argument
+ast_lowering_argument = argüman
 
 ast_lowering_assoc_ty_binding_in_dyn =
-    associated type bounds are not allowed in `dyn` types
-    .suggestion = use `impl Trait` to introduce a type instead
+    ilişkili tür sınırları `dyn` türlerinde kullanılamaz
+    .suggestion = bunun yerine `impl Trait` kullanarak bir tür tanıtın
 
 ast_lowering_assoc_ty_parentheses =
-    parenthesized generic arguments cannot be used in associated type constraints
+    parantezli genel argümanlar ilişkili tür kısıtlamalarında kullanılamaz
 
 ast_lowering_async_bound_not_on_trait =
-    `async` bound modifier only allowed on trait, not `{$descr}`
+    `async` sınırlandırıcı sadece trait'lerde kullanılabilir, `{$descr}` üzerinde değil
 
 ast_lowering_async_bound_only_for_fn_traits =
-    `async` bound modifier only allowed on `Fn`/`FnMut`/`FnOnce` traits
+    `async` sınırlandırıcı sadece `Fn`/`FnMut`/`FnOnce` trait'leri için kullanılabilir
 
 ast_lowering_async_coroutines_not_supported =
-    `async` coroutines are not yet supported
+    `async` korutinler henüz desteklenmiyor
 
 ast_lowering_att_syntax_only_x86 =
-    the `att_syntax` option is only supported on x86
+    `att_syntax` seçeneği sadece x86 üzerinde destekleniyor
 
 ast_lowering_await_only_in_async_fn_and_blocks =
-    `await` is only allowed inside `async` functions and blocks
-    .label = only allowed inside `async` functions and blocks
+    `await` sadece `async` fonksiyonlar ve bloklar içinde kullanılabilir
+    .label = sadece `async` fonksiyonlar ve bloklar içinde kullanılabilir
 
 ast_lowering_bad_return_type_notation_inputs =
-    argument types not allowed with return type notation
-    .suggestion = remove the input types
+    dönüş türü gösteriminde argüman türleri kullanılamaz
+    .suggestion = giriş türlerini kaldırın
 
-ast_lowering_bad_return_type_notation_needs_dots = return type notation arguments must be elided with `..`
-    .suggestion = add `..`
+ast_lowering_bad_return_type_notation_needs_dots = dönüş türü gösteriminde argümanlar `..` ile elenmelidir
+    .suggestion = `..` ekleyin
 
 ast_lowering_bad_return_type_notation_output =
-    return type not allowed with return type notation
-    .suggestion = remove the return type
+    dönüş türü dönüş türü gösterimi ile kullanılamaz
+    .suggestion = dönüş türünü kaldırın
 
-ast_lowering_bad_return_type_notation_position = return type notation not allowed in this position yet
+ast_lowering_bad_return_type_notation_position = dönüş türü gösterimi bu konumda henüz kullanılamaz
 
 ast_lowering_base_expression_double_dot =
-    base expression required after `..`
-    .suggestion = add a base expression here
+    `..` ifadesinden sonra bir temel ifade gereklidir
+    .suggestion = buraya bir temel ifade ekleyin
 
 ast_lowering_clobber_abi_not_supported =
-    `clobber_abi` is not supported on this target
+    `clobber_abi` bu hedef üzerinde desteklenmiyor
 
-ast_lowering_closure_cannot_be_static = closures cannot be static
+ast_lowering_closure_cannot_be_static = kapatma (closure) statik olamaz
 
 ast_lowering_coroutine_too_many_parameters =
-    too many parameters for a coroutine (expected 0 or 1 parameters)
+    bir korutin için çok fazla parametre (beklenen 0 veya 1 parametre)
 
 ast_lowering_does_not_support_modifiers =
-    the `{$class_name}` register class does not support template modifiers
+    `{$class_name}` kayıt sınıfı şablon değiştiricilerini desteklemiyor
 
 ast_lowering_extra_double_dot =
-    `..` can only be used once per {$ctx} pattern
-    .label = can only be used once per {$ctx} pattern
+    `..` her {$ctx} kalıbında yalnızca bir kez kullanılabilir
+    .label = her {$ctx} kalıbında yalnızca bir kez kullanılabilir
 
 ast_lowering_functional_record_update_destructuring_assignment =
-    functional record updates are not allowed in destructuring assignments
-    .suggestion = consider removing the trailing pattern
+    işlevsel kayıt güncellemeleri yapısal çözümleme atamalarında kullanılamaz
+    .suggestion = son kalıbı kaldırmayı düşünün
 
 ast_lowering_generic_param_default_in_binder =
-    defaults for generic parameters are not allowed in `for<...>` binders
+    genel parametreler için varsayılan değerler `for<...>` bağlayıcılarında kullanılamaz
 
 ast_lowering_generic_type_with_parentheses =
-    parenthesized type parameters may only be used with a `Fn` trait
-    .label = only `Fn` traits may use parentheses
+    parantezli tür parametreleri sadece bir `Fn` trait'i ile kullanılabilir
+    .label = yalnızca `Fn` trait'leri parantez kullanabilir
 
-ast_lowering_inclusive_range_with_no_end = inclusive range with no end
+ast_lowering_inclusive_range_with_no_end = bitişi olmayan dahil aralık
 
 ast_lowering_inline_asm_unsupported_target =
-    inline assembly is unsupported on this target
+    satır içi montaj (inline assembly) bu hedef üzerinde desteklenmiyor
 
 ast_lowering_invalid_abi =
-    invalid ABI: found `{$abi}`
-    .label = invalid ABI
-    .note = invoke `{$command}` for a full list of supported calling conventions
+    geçersiz ABI: `{$abi}` bulundu
+    .label = geçersiz ABI
+    .note = desteklenen çağrı protokollerinin tam listesi için `{$command}` komutunu çalıştırın
 
 ast_lowering_invalid_abi_clobber_abi =
-    invalid ABI for `clobber_abi`
-    .note = the following ABIs are supported on this target: {$supported_abis}
+    `clobber_abi` için geçersiz ABI
+    .note = bu hedef üzerinde desteklenen ABI'ler: {$supported_abis}
 
-ast_lowering_invalid_abi_suggestion = did you mean
+ast_lowering_invalid_abi_suggestion = demek istediğiniz bu muydu
 
 ast_lowering_invalid_asm_template_modifier_const =
-    asm template modifiers are not allowed for `const` arguments
+    asm şablon değiştiricileri `const` argümanlar için kullanılamaz
 
 ast_lowering_invalid_asm_template_modifier_label =
-    asm template modifiers are not allowed for `label` arguments
+    asm şablon değiştiricileri `label` argümanlar için kullanılamaz
 
 ast_lowering_invalid_asm_template_modifier_reg_class =
-    invalid asm template modifier for this register class
+    bu kayıt sınıfı için geçersiz asm şablon değiştirici
 
 ast_lowering_invalid_asm_template_modifier_sym =
-    asm template modifiers are not allowed for `sym` arguments
+    asm şablon değiştiricileri `sym` argümanlar için kullanılamaz
 
 ast_lowering_invalid_register =
-    invalid register `{$reg}`: {$error}
+    geçersiz kayıt `{$reg}`: {$error}
 
 ast_lowering_invalid_register_class =
-    invalid register class `{$reg_class}`: {$error}
+    geçersiz kayıt sınıfı `{$reg_class}`: {$error}
 
 ast_lowering_match_arm_with_no_body =
-    `match` arm with no body
-    .suggestion = add a body after the pattern
+    `match` kolunda gövde yok
+    .suggestion = kalıptan sonra bir gövde ekleyin
 
 ast_lowering_misplaced_double_dot =
-    `..` patterns are not allowed here
-    .note = only allowed in tuple, tuple struct, and slice patterns
+    `..` kalıpları burada kullanılamaz
+    .note = yalnızca tuple, tuple struct ve slice kalıplarında kullanılabilir
 
 ast_lowering_misplaced_impl_trait =
-    `impl Trait` is not allowed in {$position}
-    .note = `impl Trait` is only allowed in arguments and return types of functions and methods
+    `impl Trait` {$position} konumunda kullanılamaz
+    .note = `impl Trait` yalnızca fonksiyon ve yöntemlerin argümanlarında ve dönüş türlerinde kullanılabilir
 
 ast_lowering_misplaced_relax_trait_bound =
-    `?Trait` bounds are only permitted at the point where a type parameter is declared
+    `?Trait` sınırları yalnızca bir tür parametresinin tanımlandığı yerde izin verilir
 
 ast_lowering_never_pattern_with_body =
-    a never pattern is always unreachable
-    .label = this will never be executed
-    .suggestion = remove this expression
+    bir `never` kalıbı her zaman ulaşılamaz
+    .label = bu asla çalıştırılmayacak
+    .suggestion = bu ifadeyi kaldırın
 
 ast_lowering_never_pattern_with_guard =
-    a guard on a never pattern will never be run
-    .suggestion = remove this guard
+    `never` kalıbına sahip bir koruyucu asla çalıştırılmayacak
+    .suggestion = bu koruyucuyu kaldırın
 
-ast_lowering_no_precise_captures_on_apit = `use<...>` precise capturing syntax not allowed in argument-position `impl Trait`
+ast_lowering_no_precise_captures_on_apit = `use<...>` kesin yakalama sözdizimi argüman konumunda `impl Trait` içinde kullanılamaz
 
-ast_lowering_no_precise_captures_on_rpitit = `use<...>` precise capturing syntax is currently not allowed in return-position `impl Trait` in traits
-    .note = currently, return-position `impl Trait` in traits and trait implementations capture all lifetimes in scope
+ast_lowering_no_precise_captures_on_rpitit = `use<...>` kesin yakalama sözdizimi şu anda trait'lerdeki dönüş konumunda `impl Trait` içinde kullanılamaz
+    .note = şu anda trait'lerdeki ve trait uygulamalarındaki dönüş konumundaki `impl Trait` kapsam içindeki tüm yaşam sürelerini yakalar
 
-ast_lowering_previously_used_here = previously used here
+ast_lowering_previously_used_here = daha önce burada kullanılmış
 
-ast_lowering_register1 = register `{$reg1_name}`
+ast_lowering_register1 = kayıt `{$reg1_name}`
 
-ast_lowering_register2 = register `{$reg2_name}`
+ast_lowering_register2 = kayıt `{$reg2_name}`
 
 ast_lowering_register_class_only_clobber =
-    register class `{$reg_class_name}` can only be used as a clobber, not as an input or output
+    `{$reg_class_name}` kayıt sınıfı yalnızca bir clobber olarak kullanılabilir, giriş veya çıkış olarak değil
 
 ast_lowering_register_conflict =
-    register `{$reg1_name}` conflicts with register `{$reg2_name}`
-    .help = use `lateout` instead of `out` to avoid conflict
+    `{$reg1_name}` kaydı `{$reg2_name}` kaydı ile çakışıyor
+    .help = çakışmayı önlemek için `out` yerine `lateout` kullanın
 
-ast_lowering_remove_parentheses = remove these parentheses
+ast_lowering_remove_parentheses = bu parantezleri kaldırın
 
 ast_lowering_sub_tuple_binding =
-    `{$ident_name} @` is not allowed in a {$ctx}
-    .label = this is only allowed in slice patterns
-    .help = remove this and bind each tuple field independently
+    `{$ident_name} @` bir {$ctx} içinde kullanılamaz
+    .label = bu yalnızca slice kalıplarında izin verilir
+    .help = bunu kaldırın ve her tuple alanını ayrı ayrı bağlayın
 
-ast_lowering_sub_tuple_binding_suggestion = if you don't need to use the contents of {$ident}, discard the tuple's remaining fields
+ast_lowering_sub_tuple_binding_suggestion = {$ident} içeriğini kullanmanız gerekmiyorsa, tuple'ın kalan alanlarını atın
 
 ast_lowering_support_modifiers =
-    the `{$class_name}` register class supports the following template modifiers: {$modifiers}
+    `{$class_name}` kayıt sınıfı şu şablon değiştiricilerini destekler: {$modifiers}
 
-ast_lowering_template_modifier = template modifier
+ast_lowering_template_modifier = şablon değiştirici
 
-ast_lowering_this_not_async = this is not `async`
+ast_lowering_this_not_async = bu `async` değil
 
 ast_lowering_underscore_array_length_unstable =
-    using `_` for array lengths is unstable
+    `_` kullanarak dizi uzunlukları belirtmek kararsızdır
 
 ast_lowering_underscore_expr_lhs_assign =
-    in expressions, `_` can only be used on the left-hand side of an assignment
-    .label = `_` not allowed here
+    ifadelerde `_` yalnızca bir atamanın sol tarafında kullanılabilir
+    .label = `_` burada kullanılamaz
 
-ast_lowering_unstable_inline_assembly = inline assembly is not stable yet on this architecture
+ast_lowering_unstable_inline_assembly = satır içi montaj bu mimaride henüz kararlı değil
 ast_lowering_unstable_inline_assembly_label_operands =
-    label operands for inline assembly are unstable
-ast_lowering_unstable_may_unwind = the `may_unwind` option is unstable
+    satır içi montaj için etiket operatörleri kararsızdır
+ast_lowering_unstable_may_unwind = `may_unwind` seçeneği kararsızdır
 
-ast_lowering_use_angle_brackets = use angle brackets instead
+ast_lowering_use_angle_brackets = açılı ayraçlar kullanın
 
-ast_lowering_yield = yield syntax is experimental
+ast_lowering_yield = `yield` sözdizimi deneysel
 ast_lowering_yield_in_closure =
-    `yield` can only be used in `#[coroutine]` closures, or `gen` blocks
-    .suggestion = use `#[coroutine]` to make this closure a coroutine
+    `yield` yalnızca `#[coroutine]` kapatmalarında veya `gen` bloklarında kullanılabilir
+    .suggestion = bu kapatmayı bir korutin yapmak için `#[coroutine]` kullanın

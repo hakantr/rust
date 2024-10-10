@@ -1,596 +1,597 @@
-hir_analysis_ambiguous_assoc_item = ambiguous associated {$assoc_kind} `{$assoc_name}` in bounds of `{$qself}`
-    .label = ambiguous associated {$assoc_kind} `{$assoc_name}`
+hir_analysis_ambiguous_assoc_item = `{$qself}` sınırlarında belirsiz ilişkili {$assoc_kind} `{$assoc_name}`
+    .label = belirsiz ilişkili {$assoc_kind} `{$assoc_name}`
 
 hir_analysis_ambiguous_lifetime_bound =
-    ambiguous lifetime bound, explicit lifetime bound required
+    belirsiz ömür sınırı, açık bir ömür sınırı gerekli
 
 hir_analysis_assoc_item_constraints_not_allowed_here =
-    associated item constraints are not allowed here
-    .label = associated item constraint not allowed here
+    burada ilişkili öğe kısıtlamalarına izin verilmez
+    .label = burada ilişkili öğe kısıtlamasına izin verilmez
 
-hir_analysis_assoc_item_is_private = {$kind} `{$name}` is private
-    .label = private {$kind}
-    .defined_here_label = the {$kind} is defined here
+hir_analysis_assoc_item_is_private = {$kind} `{$name}` özel
+    .label = özel {$kind}
+    .defined_here_label = {$kind} burada tanımlandı
 
-hir_analysis_assoc_item_not_found = associated {$assoc_kind} `{$assoc_name}` not found for `{$qself}`
+hir_analysis_assoc_item_not_found = `{$qself}` için ilişkili {$assoc_kind} `{$assoc_name}` bulunamadı
 
-hir_analysis_assoc_item_not_found_found_in_other_trait_label = there is {$identically_named ->
-        [true] an
-        *[false] a similarly named
-    } associated {$assoc_kind} `{$suggested_name}` in the trait `{$trait_name}`
-hir_analysis_assoc_item_not_found_label = associated {$assoc_kind} `{$assoc_name}` not found
-hir_analysis_assoc_item_not_found_other_sugg = `{$qself}` has the following associated {$assoc_kind}
+hir_analysis_assoc_item_not_found_found_in_other_trait_label = {$identically_named ->
+        [true] aynı isimli
+        *[false] benzer isimli bir
+    } ilişkili {$assoc_kind} `{$suggested_name}` `{trait_name}` adlı trait'te var
+hir_analysis_assoc_item_not_found_label = ilişkili {$assoc_kind} `{$assoc_name}` bulunamadı
+hir_analysis_assoc_item_not_found_other_sugg = `{$qself}` aşağıdaki ilişkili {$assoc_kind}'lere sahiptir
 hir_analysis_assoc_item_not_found_similar_in_other_trait_qpath_sugg =
-    consider fully qualifying{$identically_named ->
+    ilişkili {$assoc_kind}'i tam nitelemeyi{$identically_named ->
         [true] {""}
-        *[false] {" "}and renaming
-    } the associated {$assoc_kind}
-hir_analysis_assoc_item_not_found_similar_in_other_trait_sugg = change the associated {$assoc_kind} name to use `{$suggested_name}` from `{$trait_name}`
-hir_analysis_assoc_item_not_found_similar_in_other_trait_with_bound_sugg = ...and changing the associated {$assoc_kind} name
-hir_analysis_assoc_item_not_found_similar_sugg = there is an associated {$assoc_kind} with a similar name
+        *[false] {" "}ve yeniden adlandırmayı
+    } düşünün
+hir_analysis_assoc_item_not_found_similar_in_other_trait_sugg = ilişkili {$assoc_kind} adını `{trait_name}` içindeki `{$suggested_name}` olarak değiştirin
+hir_analysis_assoc_item_not_found_similar_in_other_trait_with_bound_sugg = ...ve ilişkili {$assoc_kind} adını değiştirmeyi
+hir_analysis_assoc_item_not_found_similar_sugg = benzer isimli bir ilişkili {$assoc_kind} var
 
-hir_analysis_assoc_kind_mismatch = expected {$expected}, found {$got}
-    .label = unexpected {$got}
-    .expected_because_label = expected a {$expected} because of this associated {$expected}
-    .note = the associated {$assoc_kind} is defined here
-    .bound_on_assoc_const_label = bounds are not allowed on associated constants
+hir_analysis_assoc_kind_mismatch = beklenen {$expected}, bulundu {$got}
+    .label = beklenmeyen {$got}
+    .expected_because_label = bu ilişkili {$expected} nedeniyle bir {$expected} bekleniyordu
+    .note = ilişkili {$assoc_kind} burada tanımlandı
+    .bound_on_assoc_const_label = ilişkili sabitlerde sınırlamalara izin verilmez
 
-hir_analysis_assoc_kind_mismatch_wrap_in_braces_sugg = consider adding braces here
+hir_analysis_assoc_kind_mismatch_wrap_in_braces_sugg = buraya süslü parantez eklemeyi düşünün
 
-hir_analysis_associated_type_trait_uninferred_generic_params = cannot use the associated {$what} of a trait with uninferred generic parameters
-    .suggestion = use a fully qualified path with inferred lifetimes
+hir_analysis_associated_type_trait_uninferred_generic_params = türü çıkarılamayan jenerik parametrelere sahip bir trait'in ilişkili {$what}'ını kullanamazsınız
+    .suggestion = ömür süreleri çıkarılmış tam nitelikli bir yol kullanın
 
-hir_analysis_associated_type_trait_uninferred_generic_params_multipart_suggestion = use a fully qualified path with explicit lifetimes
+hir_analysis_associated_type_trait_uninferred_generic_params_multipart_suggestion = açık ömür süreleri ile tam nitelikli bir yol kullanın
 
-hir_analysis_auto_deref_reached_recursion_limit = reached the recursion limit while auto-dereferencing `{$ty}`
-    .label = deref recursion limit reached
-    .help = consider increasing the recursion limit by adding a `#![recursion_limit = "{$suggested_limit}"]` attribute to your crate (`{$crate_name}`)
+hir_analysis_auto_deref_reached_recursion_limit = `{$ty}` otomatik dereferansı sırasında özyineleme sınırına ulaşıldı
+    .label = dereferans özyineleme sınırına ulaşıldı
+    .help = kutunuza (`{$crate_name}`) `#![recursion_limit = "{$suggested_limit}"]` özniteliği ekleyerek özyineleme sınırını artırmayı düşünün
 
-hir_analysis_bad_precise_capture = expected {$kind} parameter in `use<...>` precise captures list, found {$found}
+hir_analysis_bad_precise_capture = `use<...>` kesin yakalama listesinde beklenen {$kind} parametresi, bulundu {$found}
 
-hir_analysis_bad_return_type_notation_position = return type notation not allowed in this position yet
+hir_analysis_bad_return_type_notation_position = dönüş türü gösterimine henüz bu konumda izin verilmiyor
 
 hir_analysis_cannot_capture_late_bound_const =
-    cannot capture late-bound const parameter in {$what}
-    .label = parameter defined here
+    {$what} içinde geç bağlı sabit parametre yakalanamaz
+    .label = parametre burada tanımlandı
 
 hir_analysis_cannot_capture_late_bound_lifetime =
-    cannot capture late-bound lifetime in {$what}
-    .label = lifetime defined here
+    {$what} içinde geç bağlı ömür yakalanamaz
+    .label = ömür burada tanımlandı
 
 hir_analysis_cannot_capture_late_bound_ty =
-    cannot capture late-bound type parameter in {$what}
-    .label = parameter defined here
+    {$what} içinde geç bağlı tip parametresi yakalanamaz
+    .label = parametre burada tanımlandı
 
-hir_analysis_closure_implicit_hrtb = implicit types in closure signatures are forbidden when `for<...>` is present
-    .label = `for<...>` is here
+hir_analysis_closure_implicit_hrtb = `for<...>` mevcutken closure imzalarında örtük tiplere izin verilmez
+    .label = `for<...>` burada
 
 hir_analysis_cmse_call_generic =
-    function pointers with the `"C-cmse-nonsecure-call"` ABI cannot contain generics in their type
+    `"C-cmse-nonsecure-call"` ABI'li fonksiyon işaretçileri tiplerinde generics içeremez
 
 hir_analysis_cmse_call_inputs_stack_spill =
-    arguments for `"C-cmse-nonsecure-call"` function too large to pass via registers
+    `"C-cmse-nonsecure-call"` fonksiyonunun argümanları kaydediciler aracılığıyla geçmek için çok büyük
     .label = {$plural ->
-        [false] this argument doesn't
-        *[true] these arguments don't
-    } fit in the available registers
-    .note = functions with the `"C-cmse-nonsecure-call"` ABI must pass all their arguments via the 4 32-bit available argument registers
+        [false] bu argüman
+        *[true] bu argümanlar
+    } mevcut kaydedicilere sığmıyor
+    .note = `"C-cmse-nonsecure-call"` ABI'li fonksiyonlar tüm argümanlarını 4 adet 32-bit mevcut argüman kaydedicisi aracılığıyla geçmelidir
 
 hir_analysis_cmse_call_output_stack_spill =
-    return value of `"C-cmse-nonsecure-call"` function too large to pass via registers
-    .label = this type doesn't fit in the available registers
-    .note1 = functions with the `"C-cmse-nonsecure-call"` ABI must pass their result via the available return registers
-    .note2 = the result must either be a (transparently wrapped) i64, u64 or f64, or be at most 4 bytes in size
+    `"C-cmse-nonsecure-call"` fonksiyonunun dönüş değeri kaydediciler aracılığıyla geçmek için çok büyük
+    .label = bu tip mevcut kaydedicilere sığmıyor
+    .note1 = `"C-cmse-nonsecure-call"` ABI'li fonksiyonlar sonuçlarını mevcut dönüş kaydedicileri aracılığıyla geçmelidir
+    .note2 = sonuç ya (transparan olarak sarılmış) i64, u64 veya f64 olmalı, ya da boyutu en fazla 4 bayt olmalıdır
 
-hir_analysis_coerce_unsized_may = the trait `{$trait_name}` may only be implemented for a coercion between structures
+hir_analysis_coerce_unsized_may = `{$trait_name}` trait'i sadece yapılar arasındaki dönüşüm için uygulanabilir
 
-hir_analysis_coerce_unsized_multi = implementing the trait `CoerceUnsized` requires multiple coercions
-    .note = `CoerceUnsized` may only be implemented for a coercion between structures with one field being coerced
-    .coercions_note = currently, {$number} fields need coercions: {$coercions}
-    .label = requires multiple coercions
+hir_analysis_coerce_unsized_multi = `CoerceUnsized` trait'ini uygulamak birden fazla dönüşüm gerektiriyor
+    .note = `CoerceUnsized` sadece bir alanın dönüştürüldüğü yapılar arasındaki dönüşüm için uygulanabilir
+    .coercions_note = şu anda, {$number} alan dönüşüm gerektiriyor: {$coercions}
+    .label = birden fazla dönüşüm gerektiriyor
 
-hir_analysis_coercion_between_struct_same_note = expected coercion between the same definition; expected `{$source_path}`, found `{$target_path}`
+hir_analysis_coercion_between_struct_same_note = aynı tanım arasında dönüşüm bekleniyordu; beklenen `{$source_path}`, bulundu `{$target_path}`
 
-hir_analysis_coercion_between_struct_single_note = expected a single field to be coerced, none found
+hir_analysis_coercion_between_struct_single_note = dönüştürülecek tek bir alan bekleniyordu, hiçbiri bulunamadı
 
 hir_analysis_const_bound_for_non_const_trait =
-    `{$modifier}` can only be applied to `#[const_trait]` traits
+    `{$modifier}`, `#[const_trait]` ile işaretlenmiş trait'lere uygulanabilir
 
 hir_analysis_const_impl_for_non_const_trait =
-    const `impl` for trait `{$trait_name}` which is not marked with `#[const_trait]`
-    .suggestion = mark `{$trait_name}` as const
-    .note = marking a trait with `#[const_trait]` ensures all default method bodies are `const`
-    .adding = adding a non-const method body in the future would be a breaking change
+    `#[const_trait]` ile işaretlenmemiş `{$trait_name}` trait'i için const `impl`
+    .suggestion = `{$trait_name}`'i const olarak işaretleyin
+    .note = bir trait'i `#[const_trait]` ile işaretlemek, tüm varsayılan metot gövdelerinin `const` olmasını sağlar
+    .adding = gelecekte const olmayan bir metot gövdesi eklemek, kırıcı bir değişiklik olacaktır
 
 hir_analysis_const_param_ty_impl_on_non_adt =
-    the trait `ConstParamTy` may not be implemented for this type
-    .label = type is not a structure or enumeration
+    `ConstParamTy` trait'i bu tip için uygulanamaz
+    .label = tip bir yapı veya enum değil
 
 hir_analysis_const_param_ty_impl_on_unsized =
-    the trait `ConstParamTy` may not be implemented for this type
-    .label = type is not `Sized`
+    `ConstParamTy` trait'i bu tip için uygulanamaz
+    .label = tip `Sized` değil
 
-hir_analysis_const_specialize = cannot specialize on const impl with non-const impl
+hir_analysis_const_specialize = const impl ile non-const impl üzerinde özelleştirme yapılamaz
 
 hir_analysis_copy_impl_on_non_adt =
-    the trait `Copy` cannot be implemented for this type
-    .label = type is not a structure or enumeration
+    `Copy` trait'i bu tip için uygulanamaz
+    .label = tip bir yapı veya enum değil
 
 hir_analysis_copy_impl_on_type_with_dtor =
-    the trait `Copy` cannot be implemented for this type; the type has a destructor
-    .label = `Copy` not allowed on types with destructors
+    `Copy` trait'i bu tip için uygulanamaz; tipin bir yıkıcısı var
+    .label = yıkıcısı olan tiplerde `Copy` kullanılamaz
 
-hir_analysis_cross_crate_traits = cross-crate traits with a default impl, like `{$traits}`, can only be implemented for a struct/enum type, not `{$self_ty}`
-    .label = can't implement cross-crate trait with a default impl for non-struct/enum type
+hir_analysis_cross_crate_traits = varsayılan bir impl'e sahip olan, `{$traits}` gibi crate'ler arası trait'ler, `{$self_ty}` gibi bir tip için değil, sadece bir yapı/enum tipi için uygulanabilir
+    .label = crate'ler arası trait, yapı/enum olmayan bir tip için uygulanamaz
 
-hir_analysis_cross_crate_traits_defined = cross-crate traits with a default impl, like `{$traits}`, can only be implemented for a struct/enum type defined in the current crate
-    .label = can't implement cross-crate trait for type in another crate
+hir_analysis_cross_crate_traits_defined = varsayılan bir impl'e sahip olan, `{$traits}` gibi crate'ler arası trait'ler, sadece mevcut crate'de tanımlanan bir yapı/enum tipi için uygulanabilir
+    .label = başka bir crate'deki tip için crate'ler arası trait uygulanamaz
 
-hir_analysis_dispatch_from_dyn_multi = implementing the `DispatchFromDyn` trait requires multiple coercions
-    .note = the trait `DispatchFromDyn` may only be implemented for a coercion between structures with a single field being coerced
-    .coercions_note = currently, {$number} fields need coercions: {$coercions}
+hir_analysis_dispatch_from_dyn_multi = `DispatchFromDyn` trait'ini uygulamak birden fazla dönüşüm gerektiriyor
+    .note = `DispatchFromDyn` trait'i sadece bir alanın dönüştürüldüğü yapılar arasındaki dönüşüm için uygulanabilir
+    .coercions_note = şu anda, {$number} alan dönüşüm gerektiriyor: {$coercions}
 
-hir_analysis_dispatch_from_dyn_repr = structs implementing `DispatchFromDyn` may not have `#[repr(packed)]` or `#[repr(C)]`
+hir_analysis_dispatch_from_dyn_repr = `DispatchFromDyn` uygulayan yapılar `#[repr(packed)]` veya `#[repr(C)]` olamaz
 
-hir_analysis_dispatch_from_dyn_zst = the trait `DispatchFromDyn` may only be implemented for structs containing the field being coerced, ZST fields with 1 byte alignment, and nothing else
-    .note = extra field `{$name}` of type `{$ty}` is not allowed
+hir_analysis_dispatch_from_dyn_zst = `DispatchFromDyn` trait'i sadece dönüştürülen alanı, 1 bayt hizalamalı ZST alanları içeren ve başka bir şey içermeyen yapılar için uygulanabilir
+    .note = ekstra `{$name}` alanı `{$ty}` tipiyle izin verilmez
 
-hir_analysis_drop_impl_negative = negative `Drop` impls are not supported
+hir_analysis_drop_impl_negative = negatif `Drop` impl'leri desteklenmez
 
 hir_analysis_drop_impl_on_wrong_item =
-    the `Drop` trait may only be implemented for local structs, enums, and unions
-    .label = must be a struct, enum, or union in the current crate
+    `Drop` trait'i sadece yerel yapılar, enum'lar ve birlikler için uygulanabilir
+    .label = mevcut crate'de bir yapı, enum veya birlik olmalı
 
-hir_analysis_drop_impl_reservation = reservation `Drop` impls are not supported
+hir_analysis_drop_impl_reservation = rezervasyon `Drop` impl'leri desteklenmez
 
-hir_analysis_duplicate_precise_capture = cannot capture parameter `{$name}` twice
-    .label = parameter captured again here
+hir_analysis_duplicate_precise_capture = parametre `{$name}` iki kez yakalanamaz
+    .label = parametre burada tekrar yakalanmış
 
-hir_analysis_effects_without_next_solver = using `#![feature(effects)]` without enabling next trait solver globally
-    .note = the next trait solver must be enabled globally for the effects feature to work correctly
-    .help = use `-Znext-solver` to enable
+hir_analysis_effects_without_next_solver = `#![feature(effects)]` kullanılıyor ancak yeni trait çözücü küresel olarak etkin değil
+    .note = efektler özelliğinin düzgün çalışması için yeni trait çözücünün küresel olarak etkinleştirilmesi gerekir
+    .help = etkinleştirmek için `-Znext-solver` kullanın
 
-hir_analysis_empty_specialization = specialization impl does not specialize any associated items
-    .note = impl is a specialization of this impl
+hir_analysis_empty_specialization = özelleştirme impl'i herhangi bir ilişkili öğeyi özelleştirmiyor
+    .note = impl, bu impl'in bir özelleştirmesi
 
-hir_analysis_enum_discriminant_overflowed = enum discriminant overflowed
-    .label = overflowed on value after {$discr}
-    .note = explicitly set `{$item_name} = {$wrapped_discr}` if that is desired outcome
+hir_analysis_enum_discriminant_overflowed = enum ayrıştırıcısı taşma yaptı
+    .label = {$discr} değerinden sonra taşma yaptı
+    .note = eğer istenen sonuç buysa, `{$item_name} = {$wrapped_discr}` olarak açıkça ayarlayın
 
 hir_analysis_escaping_bound_var_in_ty_of_assoc_const_binding =
-    the type of the associated constant `{$assoc_const}` cannot capture late-bound generic parameters
-    .label = its type cannot capture the late-bound {$var_def_kind} `{$var_name}`
-    .var_defined_here_label = the late-bound {$var_def_kind} `{$var_name}` is defined here
+    `{$assoc_const}` ilişkili sabitinin tipi geç bağlı jenerik parametreleri yakalayamaz
+    .label = tipi geç bağlı {$var_def_kind} `{$var_name}`'i yakalayamaz
+    .var_defined_here_label = geç bağlı {$var_def_kind} `{$var_name}` burada tanımlandı
 
 hir_analysis_field_already_declared =
-    field `{$field_name}` is already declared
-    .label = field already declared
-    .previous_decl_label = `{$field_name}` first declared here
+    `{$field_name}` alanı zaten tanımlandı
+    .label = alan zaten tanımlandı
+    .previous_decl_label = `{$field_name}` ilk olarak burada tanımlandı
 
 hir_analysis_field_already_declared_both_nested =
-    field `{$field_name}` is already declared
-    .label = field `{$field_name}` declared in this unnamed field
-    .nested_field_decl_note = field `{$field_name}` declared here
-    .previous_decl_label = `{$field_name}` first declared here in this unnamed field
-    .previous_nested_field_decl_note = field `{$field_name}` first declared here
+    `{$field_name}` alanı zaten tanımlandı
+    .label = bu isimsiz alanda `{$field_name}` alanı tanımlandı
+    .nested_field_decl_note = `{$field_name}` alanı burada tanımlandı
+    .previous_decl_label = `{$field_name}` ilk olarak bu isimsiz alanda burada tanımlandı
+    .previous_nested_field_decl_note = `{$field_name}` ilk olarak burada tanımlandı
 
 hir_analysis_field_already_declared_current_nested =
-    field `{$field_name}` is already declared
-    .label = field `{$field_name}` declared in this unnamed field
-    .nested_field_decl_note = field `{$field_name}` declared here
-    .previous_decl_label = `{$field_name}` first declared here
+    `{$field_name}` alanı zaten tanımlandı
+    .label = bu isimsiz alanda `{$field_name}` alanı tanımlandı
+    .nested_field_decl_note = `{$field_name}` alanı burada tanımlandı
+    .previous_decl_label = `{$field_name}` ilk olarak burada tanımlandı
 
 hir_analysis_field_already_declared_nested_help =
-    fields from the type of this unnamed field are considered fields of the outer type
+    bu isimsiz alanın tipindeki alanlar, dış tipin alanları olarak kabul edilir
 
 hir_analysis_field_already_declared_previous_nested =
-    field `{$field_name}` is already declared
-    .label = field already declared
-    .previous_decl_label = `{$field_name}` first declared here in this unnamed field
-    .previous_nested_field_decl_note = field `{$field_name}` first declared here
+    `{$field_name}` alanı zaten tanımlandı
+    .label = alan zaten tanımlandı
+    .previous_decl_label = `{$field_name}` ilk olarak bu isimsiz alanda burada tanımlandı
+    .previous_nested_field_decl_note = `{$field_name}` ilk olarak burada tanımlandı
 
-hir_analysis_function_not_found_in_trait = function not found in this trait
+hir_analysis_function_not_found_in_trait = bu trait'te fonksiyon bulunamadı
 
-hir_analysis_function_not_have_default_implementation = function doesn't have a default implementation
-    .note = required by this annotation
+hir_analysis_function_not_have_default_implementation = fonksiyonun varsayılan bir uygulaması yok
+    .note = bu açıklama nedeniyle gerekli
 
-hir_analysis_functions_names_duplicated = functions names are duplicated
-    .note = all `#[rustc_must_implement_one_of]` arguments must be unique
+hir_analysis_functions_names_duplicated = fonksiyon isimleri çoğaltılmış
+    .note = tüm `#[rustc_must_implement_one_of]` argümanları benzersiz olmalıdır
 
-hir_analysis_generic_args_on_overridden_impl = could not resolve generic parameters on overridden impl
+hir_analysis_generic_args_on_overridden_impl = geçersiz kılınan impl'de jenerik parametreler çözülemedi
 
-hir_analysis_impl_not_marked_default = `{$ident}` specializes an item from a parent `impl`, but that item is not marked `default`
-    .label = cannot specialize default item `{$ident}`
-    .ok_label = parent `impl` is here
-    .note = to specialize, `{$ident}` in the parent `impl` must be marked `default`
+hir_analysis_impl_not_marked_default = `{$ident}`, bir üst `impl`'den bir öğeyi özelleştiriyor, ancak o öğe `default` olarak işaretlenmemiş
+    .label = `{$ident}` varsayılan öğeyi özelleştiremez
+    .ok_label = üst `impl` burada
+    .note = özelleştirmek için, üst `impl`'deki `{$ident}` `default` olarak işaretlenmelidir
 
-hir_analysis_impl_not_marked_default_err = `{$ident}` specializes an item from a parent `impl`, but that item is not marked `default`
-    .note = parent implementation is in crate `{$cname}`
+hir_analysis_impl_not_marked_default_err = `{$ident}`, bir üst `impl`'den bir öğeyi özelleştiriyor, ancak o öğe `default` olarak işaretlenmemiş
+    .note = üst impl, `{$cname}` crate'indedir
 
-hir_analysis_inherent_dyn = cannot define inherent `impl` for a dyn auto trait
-    .label = impl requires at least one non-auto trait
-    .note = define and implement a new trait or type instead
+hir_analysis_inherent_dyn = bir dyn auto trait için özünde `impl` tanımlanamaz
+    .label = impl en az bir non-auto trait gerektirir
+    .note = bunun yerine yeni bir trait veya tip tanımlayın ve uygulayın
 
-hir_analysis_inherent_nominal = no nominal type found for inherent implementation
-    .label = impl requires a nominal type
-    .note = either implement a trait on it or create a newtype to wrap it instead
-hir_analysis_inherent_primitive_ty = cannot define inherent `impl` for primitive types
-    .help = consider using an extension trait instead
+hir_analysis_inherent_nominal = özünde uygulama için nominal tip bulunamadı
+    .label = impl nominal bir tip gerektirir
+    .note = bunun yerine ya bir trait'i uygulayın ya da sarmalamak için yeni bir tip oluşturun
+hir_analysis_inherent_primitive_ty = ilkel tipler için özünde `impl` tanımlanamaz
+    .help = bunun yerine bir genişletme trait'i kullanmayı düşünün
 
-hir_analysis_inherent_primitive_ty_note = you could also try moving the reference to uses of `{$subty}` (such as `self`) within the implementation
+hir_analysis_inherent_primitive_ty_note = ayrıca `{$subty}` (örneğin `self` gibi) kullanımına yapılan referansları uygulama içinde taşımayı deneyebilirsiniz
 
-hir_analysis_inherent_ty_outside = cannot define inherent `impl` for a type outside of the crate where the type is defined
-    .help = consider moving this inherent impl into the crate defining the type if possible
-    .span_help = alternatively add `#[rustc_has_incoherent_inherent_impls]` to the type and `#[rustc_allow_incoherent_impl]` to the relevant impl items
+hir_analysis_inherent_ty_outside = tipin tanımlandığı crate dışında özünde `impl` tanımlanamaz
+    .help = mümkünse bu özünde impl'i tipin tanımlandığı crate'e taşımayı düşünün
+    .span_help = alternatif olarak `#[rustc_has_incoherent_inherent_impls]`'i tipe ve `#[rustc_allow_incoherent_impl]`'i ilgili impl öğelerine ekleyin
 
-hir_analysis_inherent_ty_outside_new = cannot define inherent `impl` for a type outside of the crate where the type is defined
-    .label = impl for type defined outside of crate
-    .note = define and implement a trait or new type instead
+hir_analysis_inherent_ty_outside_new = tipin tanımlandığı crate dışında özünde `impl` tanımlanamaz
+    .label = tip, crate dışında tanımlanmış
+    .note = bunun yerine bir trait veya yeni tip tanımlayın ve uygulayın
 
-hir_analysis_inherent_ty_outside_primitive = cannot define inherent `impl` for primitive types outside of `core`
-    .help = consider moving this inherent impl into `core` if possible
-    .span_help = alternatively add `#[rustc_allow_incoherent_impl]` to the relevant impl items
+hir_analysis_inherent_ty_outside_primitive = `core` dışında ilkel tipler için özünde `impl` tanımlanamaz
+    .help = mümkünse bu özünde impl'i `core`'a taşımayı düşünün
+    .span_help = alternatif olarak ilgili impl öğelerine `#[rustc_allow_incoherent_impl]` ekleyin
 
-hir_analysis_inherent_ty_outside_relevant = cannot define inherent `impl` for a type outside of the crate where the type is defined
-    .help = consider moving this inherent impl into the crate defining the type if possible
-    .span_help = alternatively add `#[rustc_allow_incoherent_impl]` to the relevant impl items
+hir_analysis_inherent_ty_outside_relevant = tipin tanımlandığı crate dışında özünde `impl` tanımlanamaz
+    .help = mümkünse bu özünde impl'i tipin tanımlandığı crate'e taşımayı düşünün
+    .span_help = alternatif olarak ilgili impl öğelerine `#[rustc_allow_incoherent_impl]` ekleyin
 
-hir_analysis_invalid_receiver_ty = invalid `self` parameter type: `{$receiver_ty}`
-    .note = type of `self` must be `Self` or a type that dereferences to it
+hir_analysis_invalid_receiver_ty = geçersiz `self` parametre tipi: `{$receiver_ty}`
+    .note = `self`'in tipi `Self` veya ona dereferans edilen bir tip olmalıdır
 
 hir_analysis_invalid_receiver_ty_help =
-    consider changing to `self`, `&self`, `&mut self`, `self: Box<Self>`, `self: Rc<Self>`, `self: Arc<Self>`, or `self: Pin<P>` (where P is one of the previous types except `Self`)
+    `self`, `&self`, `&mut self`, `self: Box<Self>`, `self: Rc<Self>`, `self: Arc<Self>` veya `self: Pin<P>` (burada P önceki tiplerden biri, `Self` hariç) olarak değiştirmeyi düşünün
 
 hir_analysis_invalid_union_field =
-    field must implement `Copy` or be wrapped in `ManuallyDrop<...>` to be used in a union
-    .note = union fields must not have drop side-effects, which is currently enforced via either `Copy` or `ManuallyDrop<...>`
+    birlikte kullanılmak üzere alan `Copy` uygulamalı veya `ManuallyDrop<...>` ile sarmalanmış olmalıdır
+    .note = birlik alanlarının yıkım yan etkileri olmamalıdır, bu şu anda `Copy` veya `ManuallyDrop<...>` ile sağlanır
 
 hir_analysis_invalid_union_field_sugg =
-    wrap the field type in `ManuallyDrop<...>`
+    alan tipini `ManuallyDrop<...>` ile sarmalayın
 
-hir_analysis_invalid_unnamed_field_ty = unnamed fields can only have struct or union types
+hir_analysis_invalid_unnamed_field_ty = isimsiz alanlar sadece yapı veya birlik tiplerine sahip olabilir
 
-hir_analysis_late_bound_const_in_apit = `impl Trait` can only mention const parameters from an fn or impl
-    .label = const parameter declared here
+hir_analysis_late_bound_const_in_apit = `impl Trait` sadece bir fn veya impl'den gelen sabit parametreleri içerebilir
+    .label = sabit parametre burada tanımlandı
 
-hir_analysis_late_bound_lifetime_in_apit = `impl Trait` can only mention lifetimes from an fn or impl
-    .label = lifetime declared here
+hir_analysis_late_bound_lifetime_in_apit = `impl Trait` sadece bir fn veya impl'den gelen ömürleri içerebilir
+    .label = ömür burada tanımlandı
 
-hir_analysis_late_bound_type_in_apit = `impl Trait` can only mention type parameters from an fn or impl
-    .label = type parameter declared here
+hir_analysis_late_bound_type_in_apit = `impl Trait` sadece bir fn veya impl'den gelen tip parametrelerini içerebilir
+    .label = tip parametresi burada tanımlandı
 
-hir_analysis_lifetime_must_be_first = lifetime parameter `{$name}` must be listed before non-lifetime parameters
-    .label = move the lifetime before this parameter
+hir_analysis_lifetime_must_be_first = ömür parametresi `{$name}`, ömür olmayan parametrelerden önce listelenmelidir
+    .label = ömrü bu parametreden önce taşıyın
 
-hir_analysis_lifetime_not_captured = `impl Trait` captures lifetime parameter, but it is not mentioned in `use<...>` precise captures list
-    .label = lifetime captured due to being mentioned in the bounds of the `impl Trait`
-    .param_label = this lifetime parameter is captured
+hir_analysis_lifetime_not_captured = `impl Trait` ömür parametresini yakalar, ancak `use<...>` kesin yakalama listesinde belirtilmemiş
+    .label = ömür, `impl Trait`'in sınırlamalarında bahsedildiği için yakalandı
+    .param_label = bu ömür parametresi yakalandı
 
 hir_analysis_lifetimes_or_bounds_mismatch_on_trait =
-    lifetime parameters or bounds on {$item_kind} `{$ident}` do not match the trait declaration
-    .label = lifetimes do not match {$item_kind} in trait
-    .generics_label = lifetimes in impl do not match this {$item_kind} in trait
-    .where_label = this `where` clause might not match the one in the trait
-    .bounds_label = this bound might be missing in the impl
+    {$item_kind} `{$ident}` üzerindeki ömür parametreleri veya sınırlamalar, trait deklarasyonuyla eşleşmiyor
+    .label = ömürler trait'teki {$item_kind} ile eşleşmiyor
+    .generics_label = impl'deki ömürler trait'teki bu {$item_kind} ile eşleşmiyor
+    .where_label = bu `where` cümlesi trait'tekine uymayabilir
+    .bounds_label = bu sınırlama impl'de eksik olabilir
 
 hir_analysis_linkage_type =
-    invalid type for variable with `#[linkage]` attribute
+    `#[linkage]` özniteliğine sahip değişken için geçersiz tip
 
-hir_analysis_main_function_async = `main` function is not allowed to be `async`
-    .label = `main` function is not allowed to be `async`
+hir_analysis_main_function_async = `main` fonksiyonunun `async` olmasına izin verilmez
+    .label = `main` fonksiyonunun `async` olmasına izin verilmez
 
-hir_analysis_main_function_generic_parameters = `main` function is not allowed to have generic parameters
-    .label = `main` cannot have generic parameters
+hir_analysis_main_function_generic_parameters = `main` fonksiyonunun jenerik parametrelere sahip olmasına izin verilmez
+    .label = `main` jenerik parametrelere sahip olamaz
 
-hir_analysis_main_function_return_type_generic = `main` function return type is not allowed to have generic parameters
+hir_analysis_main_function_return_type_generic = `main` fonksiyon dönüş tipi jenerik parametrelere sahip olamaz
 
 hir_analysis_manual_implementation =
-    manual implementations of `{$trait_name}` are experimental
-    .label = manual implementations of `{$trait_name}` are experimental
-    .help = add `#![feature(unboxed_closures)]` to the crate attributes to enable
+    `{$trait_name}`'in manuel uygulamaları deneysel
+    .label = `{$trait_name}`'in manuel uygulamaları deneysel
+    .help = kullanmak için `#![feature(unboxed_closures)]`'ı kutu özniteliklerine ekleyin
 
-hir_analysis_method_should_return_future = method should be `async` or return a future, but it is synchronous
-    .note = this method is `async` so it expects a future to be returned
+hir_analysis_method_should_return_future = metot `async` olmalı veya bir future döndürmeli, ancak senkron
+    .note = bu metot `async`, bu yüzden bir future döndürmesi bekleniyor
 
-hir_analysis_missing_one_of_trait_item = not all trait items implemented, missing one of: `{$missing_items_msg}`
-    .label = missing one of `{$missing_items_msg}` in implementation
-    .note = required because of this annotation
+hir_analysis_missing_one_of_trait_item = tüm trait öğeleri uygulanmamış, eksik olanlardan biri: `{$missing_items_msg}`
+    .label = uygulamada `{$missing_items_msg}`'den biri eksik
+    .note = bu açıklama nedeniyle gerekli
 
-hir_analysis_missing_trait_item = not all trait items implemented, missing: `{$missing_items_msg}`
-    .label = missing `{$missing_items_msg}` in implementation
+hir_analysis_missing_trait_item = tüm trait öğeleri uygulanmamış, eksik: `{$missing_items_msg}`
+    .label = uygulamada `{$missing_items_msg}` eksik
 
-hir_analysis_missing_trait_item_label = `{$item}` from trait
+hir_analysis_missing_trait_item_label = trait'ten `{$item}`
 
-hir_analysis_missing_trait_item_suggestion = implement the missing item: `{$snippet}`
+hir_analysis_missing_trait_item_suggestion = eksik öğeyi uygulayın: `{$snippet}`
 
-hir_analysis_missing_trait_item_unstable = not all trait items implemented, missing: `{$missing_item_name}`
-    .note = default implementation of `{$missing_item_name}` is unstable
-    .some_note = use of unstable library feature '{$feature}': {$reason}
-    .none_note = use of unstable library feature '{$feature}'
+hir_analysis_missing_trait_item_unstable = tüm trait öğeleri uygulanmamış, eksik: `{$missing_item_name}`
+    .note = `{$missing_item_name}`'ın varsayılan uygulaması kararsız
+    .some_note = kararsız kütüphane özelliği kullanılıyor '{$feature}': {$reason}
+    .none_note = kararsız kütüphane özelliği kullanılıyor '{$feature}'
 
-hir_analysis_missing_type_params =
-    the type {$parameterCount ->
-        [one] parameter
-        *[other] parameters
-    } {$parameters} must be explicitly specified
-    .label = type {$parameterCount ->
-        [one] parameter
-        *[other] parameters
-    } {$parameters} must be specified for this
-    .suggestion = set the type {$parameterCount ->
-        [one] parameter
-        *[other] parameters
-    } to the desired {$parameterCount ->
-        [one] type
-        *[other] types
+    hir_analysis_missing_type_params =
+    tip {$parameterCount ->
+        [one] parametresi
+        *[other] parametreleri
+    } {$parameters} açıkça belirtilmelidir
+    .label = bu için tip {$parameterCount ->
+        [one] parametresi
+        *[other] parametreleri
+    } {$parameters} belirtilmelidir
+    .suggestion = tip {$parameterCount ->
+        [one] parametresini
+        *[other] parametrelerini
+    } istenen {$parameterCount ->
+        [one] tipe
+        *[other] tiplere
+    } ayarlayın
+    .no_suggestion_label = {$parameters} için eksik {$parameterCount ->
+        [one] referans
+        *[other] referanslar
     }
-    .no_suggestion_label = missing {$parameterCount ->
-        [one] reference
-        *[other] references
-    } to {$parameters}
-    .note = because of the default `Self` reference, type parameters must be specified on object types
+    .note = varsayılan `Self` referansı nedeniyle, tip parametreleri nesne tiplerinde belirtilmelidir
 
 hir_analysis_multiple_relaxed_default_bounds =
-    type parameter has more than one relaxed default bound, only one is supported
+    tip parametresi birden fazla gevşek varsayılan sınıra sahip, sadece bir tanesi desteklenir
 
-hir_analysis_must_be_name_of_associated_function = must be a name of an associated function
+hir_analysis_must_be_name_of_associated_function = ilişkili bir fonksiyonun ismi olmalıdır
 
-hir_analysis_must_implement_not_function = not a function
+hir_analysis_must_implement_not_function = bir fonksiyon değil
 
-hir_analysis_must_implement_not_function_note = all `#[rustc_must_implement_one_of]` arguments must be associated function names
+hir_analysis_must_implement_not_function_note = tüm `#[rustc_must_implement_one_of]` argümanları ilişkili fonksiyon isimleri olmalıdır
 
-hir_analysis_must_implement_not_function_span_note = required by this annotation
+hir_analysis_must_implement_not_function_span_note = bu açıklama tarafından gereklidir
 
-hir_analysis_must_implement_one_of_attribute = the `#[rustc_must_implement_one_of]` attribute must be used with at least 2 args
+hir_analysis_must_implement_one_of_attribute = `#[rustc_must_implement_one_of]` özniteliği en az 2 argümanla kullanılmalıdır
+
 
 hir_analysis_not_supported_delegation = {$descr}
-    .label = callee defined here
+    .label = çağrılan burada tanımlandı
 
-hir_analysis_only_current_traits_adt = `{$name}` is not defined in the current crate
+hir_analysis_only_current_traits_adt = `{$name}` mevcut crate'de tanımlanmamış
 
-hir_analysis_only_current_traits_arbitrary = only traits defined in the current crate can be implemented for arbitrary types
+hir_analysis_only_current_traits_arbitrary = sadece mevcut crate'de tanımlanan trait'ler rastgele tipler için uygulanabilir
 
-hir_analysis_only_current_traits_foreign = this is not defined in the current crate because this is a foreign trait
+hir_analysis_only_current_traits_foreign = bu, yabancı bir trait olduğu için mevcut crate'de tanımlanmamış
 
-hir_analysis_only_current_traits_label = impl doesn't use only types from inside the current crate
+hir_analysis_only_current_traits_label = impl sadece mevcut crate'deki tipleri kullanmıyor
 
-hir_analysis_only_current_traits_name = this is not defined in the current crate because {$name} are always foreign
+hir_analysis_only_current_traits_name = bu, {$name} her zaman yabancı olduğundan mevcut crate'de tanımlanmamış
 
-hir_analysis_only_current_traits_note = define and implement a trait or new type instead
+hir_analysis_only_current_traits_note = bunun yerine bir trait veya yeni tip tanımlayın ve uygulayın
 
-hir_analysis_only_current_traits_opaque = type alias impl trait is treated as if it were foreign, because its hidden type could be from a foreign crate
+hir_analysis_only_current_traits_opaque = tip alias impl trait, gizli tipi yabancı bir crate'den olabileceği için yabancıymış gibi ele alınır
 
-hir_analysis_only_current_traits_outside = only traits defined in the current crate can be implemented for types defined outside of the crate
+hir_analysis_only_current_traits_outside = sadece mevcut crate'de tanımlanan trait'ler crate dışında tanımlanan tipler için uygulanabilir
 
-hir_analysis_only_current_traits_pointer = `{$pointer}` is not defined in the current crate because raw pointers are always foreign
+hir_analysis_only_current_traits_pointer = `{$pointer}`, ham işaretçilerin her zaman yabancı olması nedeniyle mevcut crate'de tanımlanmamış
 
-hir_analysis_only_current_traits_pointer_sugg = consider introducing a new wrapper type
+hir_analysis_only_current_traits_pointer_sugg = yeni bir sarmalayıcı tip tanıtmayı düşünün
 
-hir_analysis_only_current_traits_primitive = only traits defined in the current crate can be implemented for primitive types
+hir_analysis_only_current_traits_primitive = sadece mevcut crate'de tanımlanan trait'ler ilkel tipler için uygulanabilir
 
-hir_analysis_only_current_traits_ty = `{$ty}` is not defined in the current crate
+hir_analysis_only_current_traits_ty = `{$ty}` mevcut crate'de tanımlanmamış
 
-hir_analysis_opaque_captures_higher_ranked_lifetime = `impl Trait` cannot capture {$bad_place}
-    .label = `impl Trait` implicitly captures all lifetimes in scope
-    .note = lifetime declared here
+hir_analysis_opaque_captures_higher_ranked_lifetime = `impl Trait` {$bad_place}'i yakalayamaz
+    .label = `impl Trait` kapsamındaki tüm ömürleri örtük olarak yakalar
+    .note = ömür burada tanımlandı
 
 hir_analysis_param_in_ty_of_assoc_const_binding =
-    the type of the associated constant `{$assoc_const}` must not depend on {$param_category ->
+    `{$assoc_const}` ilişkili sabitinin tipi {$param_category ->
         [self] `Self`
         [synthetic] `impl Trait`
-        *[normal] generic parameters
-    }
-    .label = its type must not depend on {$param_category ->
+        *[normal] jenerik parametrelerine
+    } bağlı olmamalıdır
+    .label = tipi {$param_category ->
         [self] `Self`
         [synthetic] `impl Trait`
-        *[normal] the {$param_def_kind} `{$param_name}`
-    }
+        *[normal] {$param_def_kind} `{$param_name}`
+    }'e bağlı olmamalıdır
     .param_defined_here_label = {$param_category ->
-        [synthetic] the `impl Trait` is specified here
-        *[normal] the {$param_def_kind} `{$param_name}` is defined here
+        [synthetic] `impl Trait` burada belirtilmiş
+        *[normal] {$param_def_kind} `{$param_name}` burada tanımlandı
     }
 
-hir_analysis_param_not_captured = `impl Trait` must mention all {$kind} parameters in scope in `use<...>`
-    .label = {$kind} parameter is implicitly captured by this `impl Trait`
-    .note = currently, all {$kind} parameters are required to be mentioned in the precise captures list
+hir_analysis_param_not_captured = `impl Trait` tüm {$kind} parametreleri `use<...>` içinde belirtmelidir
+    .label = {$kind} parametresi bu `impl Trait` tarafından örtük olarak yakalanıyor
+    .note = şu anda, tüm {$kind} parametrelerinin kesin yakalama listesinde belirtilmesi gerekmektedir
 
-hir_analysis_paren_sugar_attribute = the `#[rustc_paren_sugar]` attribute is a temporary means of controlling which traits can use parenthetical notation
-    .help = add `#![feature(unboxed_closures)]` to the crate attributes to use it
+hir_analysis_paren_sugar_attribute = `#[rustc_paren_sugar]` özniteliği, parantez notasyonunu hangi trait'lerin kullanabileceğini kontrol etmek için geçici bir araçtır
+    .help = kullanmak için `#![feature(unboxed_closures)]`'ı kutu özniteliklerine ekleyin
 
 hir_analysis_parenthesized_fn_trait_expansion =
-    parenthesized trait syntax expands to `{$expanded_type}`
+    parantezli trait sözdizimi `{$expanded_type}`'e genişler
 
-hir_analysis_pattern_type_non_const_range = range patterns must have constant range start and end
-hir_analysis_pattern_type_wild_pat = wildcard patterns are not permitted for pattern types
-    .label = this type is the same as the inner type without a pattern
-hir_analysis_placeholder_not_allowed_item_signatures = the placeholder `_` is not allowed within types on item signatures for {$kind}
-    .label = not allowed in type signatures
+hir_analysis_pattern_type_non_const_range = aralık desenleri, sabit aralık başlangıcı ve sonuna sahip olmalıdır
+hir_analysis_pattern_type_wild_pat = joker desenlere desen tiplerinde izin verilmez
+    .label = bu tip, iç türüyle aynı, desen olmadan
+hir_analysis_placeholder_not_allowed_item_signatures = `{$kind}` için öğe imzalarında `_` yer tutucusuna izin verilmez
+    .label = tip imzalarında izin verilmez
 
-hir_analysis_precise_capture_self_alias = `Self` can't be captured in `use<...>` precise captures list, since it is an alias
-    .label = `Self` is not a generic argument, but an alias to the type of the {$what}
+hir_analysis_precise_capture_self_alias = `Self`, bir takma ad olduğu için `use<...>` kesin yakalama listesinde yakalanamaz
+    .label = `Self`, {$what}'in tipine bir takma addır, ancak jenerik bir argüman değildir
 
-hir_analysis_recursive_generic_parameter = {$param_def_kind} `{$param_name}` is only used recursively
-    .label = {$param_def_kind} must be used non-recursively in the definition
-    .note = all type parameters must be used in a non-recursive way in order to constrain their variance
+hir_analysis_recursive_generic_parameter = {$param_def_kind} `{$param_name}` sadece özyinelemeli olarak kullanılıyor
+    .label = {$param_def_kind}, tanımda özyinelemeli olmayan şekilde kullanılmalıdır
+    .note = tüm tip parametreleri, varyanslarını sınırlamak için özyinelemeli olmayan şekilde kullanılmalıdır
 
-hir_analysis_redundant_lifetime_args = unnecessary lifetime parameter `{$victim}`
-    .note = you can use the `{$candidate}` lifetime directly, in place of `{$victim}`
+hir_analysis_redundant_lifetime_args = gereksiz ömür parametresi `{$victim}`
+    .note = `{$victim}` yerine doğrudan `{$candidate}` ömrünü kullanabilirsiniz
 
-hir_analysis_requires_note = the `{$trait_name}` impl for `{$ty}` requires that `{$error_predicate}`
+hir_analysis_requires_note = `{$ty}` için `{$trait_name}` impl'i, `{$error_predicate}` gerektirir
 
 hir_analysis_return_type_notation_equality_bound =
-    return type notation is not allowed to use type equality
+    dönüş tipi gösterimi, tip eşitliği kullanamaz
 
 hir_analysis_return_type_notation_illegal_param_const =
-    return type notation is not allowed for functions that have const parameters
-    .label = const parameter declared here
+    dönüş tipi gösterimi, sabit parametrelere sahip fonksiyonlar için izin verilmez
+    .label = sabit parametre burada tanımlandı
 hir_analysis_return_type_notation_illegal_param_type =
-    return type notation is not allowed for functions that have type parameters
-    .label = type parameter declared here
+    dönüş tipi gösterimi, tip parametrelere sahip fonksiyonlar için izin verilmez
+    .label = tip parametresi burada tanımlandı
 
 hir_analysis_return_type_notation_on_non_rpitit =
-    return type notation used on function that is not `async` and does not return `impl Trait`
-    .note = function returns `{$ty}`, which is not compatible with associated type return bounds
-    .label = this function must be `async` or return `impl Trait`
+    dönüş tipi gösterimi, `async` olmayan ve `impl Trait` döndürmeyen fonksiyonda kullanılmış
+    .note = fonksiyon `{$ty}` döndürüyor, bu da ilişkili tip dönüş sınırlarıyla uyumlu değil
+    .label = bu fonksiyon `async` olmalı veya `impl Trait` döndürmeli
 
-hir_analysis_rpitit_refined = impl trait in impl method signature does not match trait method signature
-    .suggestion = replace the return type so that it matches the trait
-    .label = return type from trait method defined here
-    .unmatched_bound_label = this bound is stronger than that defined on the trait
-    .note = add `#[allow(refining_impl_trait)]` if it is intended for this to be part of the public API of this crate
-    .feedback_note = we are soliciting feedback, see issue #121718 <https://github.com/rust-lang/rust/issues/121718> for more information
+hir_analysis_rpitit_refined = impl metot imzasındaki impl trait, trait metot imzasıyla eşleşmiyor
+    .suggestion = dönüş tipini trait ile eşleşecek şekilde değiştirin
+    .label = trait metotundan dönüş tipi burada tanımlandı
+    .unmatched_bound_label = bu sınır, trait'te tanımlanandan daha güçlü
+    .note = eğer bunun bu crate'in genel API'sinin bir parçası olması amaçlanıyorsa, `#[allow(refining_impl_trait)]` ekleyin
+    .feedback_note = geri bildirim talep ediyoruz, daha fazla bilgi için #121718 <https://github.com/rust-lang/rust/issues/121718> sorununa bakın
 
 hir_analysis_self_in_impl_self =
-    `Self` is not valid in the self type of an impl block
-    .note = replace `Self` with a different type
+    `Self`, bir impl bloğunun self tipinde geçerli değil
+    .note = `Self`'i farklı bir tip ile değiştirin
 
-hir_analysis_self_ty_not_captured = `impl Trait` must mention the `Self` type of the trait in `use<...>`
-    .label = `Self` type parameter is implicitly captured by this `impl Trait`
-    .note = currently, all type parameters are required to be mentioned in the precise captures list
+hir_analysis_self_ty_not_captured = `impl Trait`, trait'in `Self` tipini `use<...>` içinde belirtmelidir
+    .label = `Self` tip parametresi bu `impl Trait` tarafından örtük olarak yakalanıyor
+    .note = şu anda, tüm tip parametrelerinin kesin yakalama listesinde belirtilmesi gerekmektedir
 
-hir_analysis_simd_ffi_highly_experimental = use of SIMD type{$snip} in FFI is highly experimental and may result in invalid code
-    .help = add `#![feature(simd_ffi)]` to the crate attributes to enable
+hir_analysis_simd_ffi_highly_experimental = FFI'de SIMD tip{$snip} kullanımı oldukça deneysel ve geçersiz koda neden olabilir
+    .help = etkinleştirmek için `#![feature(simd_ffi)]`'ı kutu özniteliklerine ekleyin
 
-hir_analysis_specialization_trait = implementing `rustc_specialization_trait` traits is unstable
-    .help = add `#![feature(min_specialization)]` to the crate attributes to enable
+hir_analysis_specialization_trait = `rustc_specialization_trait` trait'lerini uygulamak kararsız
+    .help = etkinleştirmek için `#![feature(min_specialization)]`'ı kutu özniteliklerine ekleyin
 
-hir_analysis_start_function_parameters = `#[start]` function is not allowed to have type parameters
-    .label = `#[start]` function cannot have type parameters
+hir_analysis_start_function_parameters = `#[start]` fonksiyonunun tip parametrelerine sahip olmasına izin verilmez
+    .label = `#[start]` fonksiyonu tip parametrelerine sahip olamaz
 
-hir_analysis_start_function_where = `#[start]` function is not allowed to have a `where` clause
-    .label = `#[start]` function cannot have a `where` clause
+hir_analysis_start_function_where = `#[start]` fonksiyonunun `where` cümlesine sahip olmasına izin verilmez
+    .label = `#[start]` fonksiyonu `where` cümlesine sahip olamaz
 
-hir_analysis_start_not_async = `#[start]` function is not allowed to be `async`
-    .label = `#[start]` is not allowed to be `async`
+hir_analysis_start_not_async = `#[start]` fonksiyonunun `async` olmasına izin verilmez
+    .label = `#[start]`'ın `async` olmasına izin verilmez
 
-hir_analysis_start_not_target_feature = `#[start]` function is not allowed to have `#[target_feature]`
-    .label = `#[start]` function is not allowed to have `#[target_feature]`
+hir_analysis_start_not_target_feature = `#[start]` fonksiyonunun `#[target_feature]` özniteliğine sahip olmasına izin verilmez
+    .label = `#[start]` fonksiyonunun `#[target_feature]` özniteliğine sahip olmasına izin verilmez
 
-hir_analysis_start_not_track_caller = `#[start]` function is not allowed to be `#[track_caller]`
-    .label = `#[start]` function is not allowed to be `#[track_caller]`
+hir_analysis_start_not_track_caller = `#[start]` fonksiyonunun `#[track_caller]` olmasına izin verilmez
+    .label = `#[start]` fonksiyonunun `#[track_caller]` olmasına izin verilmez
 
-hir_analysis_static_specialize = cannot specialize on `'static` lifetime
+hir_analysis_static_specialize = `'static` ömrü üzerinde özelleştirme yapılamaz
 
-hir_analysis_tait_forward_compat = item constrains opaque type that is not in its signature
-    .note = this item must mention the opaque type in its signature in order to be able to register hidden types
+hir_analysis_tait_forward_compat = öğe, imzasında olmayan opak bir tipi kısıtlıyor
+    .note = bu öğe, gizli tipleri kaydedebilmek için opak tipi imzasında belirtmelidir
 
-hir_analysis_tait_forward_compat2 = item does not constrain `{$opaque_type}`, but has it in its signature
-    .note = consider moving the opaque type's declaration and defining uses into a separate module
-    .opaque = this opaque type is in the signature
+hir_analysis_tait_forward_compat2 = öğe `{$opaque_type}`'i kısıtlamıyor, ancak imzasında var
+    .note = opak tipin deklarasyonunu ve tanımlayıcı kullanımlarını ayrı bir modüle taşımayı düşünün
+    .opaque = bu opak tip imzada var
 
-hir_analysis_target_feature_on_main = `main` function is not allowed to have `#[target_feature]`
+hir_analysis_target_feature_on_main = `main` fonksiyonunun `#[target_feature]` özniteliğine sahip olmasına izin verilmez
 
-hir_analysis_too_large_static = extern static is too large for the target architecture
+hir_analysis_too_large_static = dış statik, hedef mimari için çok büyük
 
-hir_analysis_track_caller_on_main = `main` function is not allowed to be `#[track_caller]`
-    .suggestion = remove this annotation
+hir_analysis_track_caller_on_main = `main` fonksiyonunun `#[track_caller]` olmasına izin verilmez
+    .suggestion = bu açıklamayı kaldırın
 
-hir_analysis_trait_cannot_impl_for_ty = the trait `{$trait_name}` cannot be implemented for this type
-    .label = this field does not implement `{$trait_name}`
+hir_analysis_trait_cannot_impl_for_ty = `{$trait_name}` trait'i bu tip için uygulanamaz
+    .label = bu alan `{$trait_name}`'i uygulamaz
 
 hir_analysis_trait_object_declared_with_no_traits =
-    at least one trait is required for an object type
-    .alias_span = this alias does not contain a trait
+    bir nesne tipi için en az bir trait gereklidir
+    .alias_span = bu takma ad bir trait içermiyor
 
-hir_analysis_traits_with_defualt_impl = traits with a default impl, like `{$traits}`, cannot be implemented for {$problematic_kind} `{$self_ty}`
-    .note = a trait object implements `{$traits}` if and only if `{$traits}` is one of the trait object's trait bounds
+hir_analysis_traits_with_defualt_impl = varsayılan bir impl'e sahip olan `{$traits}` gibi trait'ler, {$problematic_kind} `{$self_ty}` için uygulanamaz
+    .note = bir trait objesi, `{$traits}`'i ancak ve ancak trait objesinin trait sınırlarından biri olarak uygular
 
-hir_analysis_transparent_enum_variant = transparent enum needs exactly one variant, but has {$number}
-    .label = needs exactly one variant, but has {$number}
-    .many_label = too many variants in `{$path}`
-    .multi_label = variant here
+hir_analysis_transparent_enum_variant = şeffaf enum tam olarak bir varyanta ihtiyaç duyar, ancak {$number} var
+    .label = tam olarak bir varyant gerekiyor, ancak {$number} var
+    .many_label = `{$path}` içinde çok fazla varyant var
+    .multi_label = varyant burada
 
-hir_analysis_transparent_non_zero_sized = transparent {$desc} needs at most one field with non-trivial size or alignment, but has {$field_count}
-    .label = needs at most one field with non-trivial size or alignment, but has {$field_count}
-    .labels = this field has non-zero size or requires alignment
+hir_analysis_transparent_non_zero_sized = şeffaf {$desc}, en fazla bir tane sıfır olmayan boyuta veya hizalamaya sahip alana ihtiyaç duyar, ancak {$field_count} var
+    .label = en fazla bir tane sıfır olmayan boyuta veya hizalamaya sahip alana ihtiyaç duyar, ancak {$field_count} var
+    .labels = bu alan sıfır olmayan boyuta sahip veya hizalama gerektiriyor
 
-hir_analysis_transparent_non_zero_sized_enum = the variant of a transparent {$desc} needs at most one field with non-trivial size or alignment, but has {$field_count}
-    .label = needs at most one field with non-trivial size or alignment, but has {$field_count}
-    .labels = this field has non-zero size or requires alignment
+hir_analysis_transparent_non_zero_sized_enum = şeffaf {$desc}'in varyantı, en fazla bir tane sıfır olmayan boyuta veya hizalamaya sahip alana ihtiyaç duyar, ancak {$field_count} var
+    .label = en fazla bir tane sıfır olmayan boyuta veya hizalamaya sahip alana ihtiyaç duyar, ancak {$field_count} var
+    .labels = bu alan sıfır olmayan boyuta sahip veya hizalama gerektiriyor
 
-hir_analysis_ty_of_assoc_const_binding_note = `{$assoc_const}` has type `{$ty}`
+hir_analysis_ty_of_assoc_const_binding_note = `{$assoc_const}` tipi `{$ty}`
 
-hir_analysis_ty_param_first_local = type parameter `{$param}` must be covered by another type when it appears before the first local type (`{$local_type}`)
-    .label = type parameter `{$param}` must be covered by another type when it appears before the first local type (`{$local_type}`)
-    .note = implementing a foreign trait is only possible if at least one of the types for which it is implemented is local, and no uncovered type parameters appear before that first local type
-    .case_note = in this case, 'before' refers to the following order: `impl<..> ForeignTrait<T1, ..., Tn> for T0`, where `T0` is the first and `Tn` is the last
+hir_analysis_ty_param_first_local = tip parametresi `{$param}`, ilk yerel tipten önce (`{$local_type}`) başka bir tip tarafından kapsanmalıdır
+    .label = tip parametresi `{$param}`, ilk yerel tipten önce (`{$local_type}`) başka bir tip tarafından kapsanmalıdır
+    .note = yabancı bir trait'i uygulamak ancak uygulandığı tiplerden en az biri yerel ise ve kapsanmamış tip parametreleri ilk yerel tipten önce görünmüyorsa mümkündür
+    .case_note = bu durumda, 'önce' şu sıraya atıfta bulunur: `impl<..> ForeignTrait<T1, ..., Tn> for T0`, burada `T0` ilk ve `Tn` sonuncudur
 
-hir_analysis_ty_param_some = type parameter `{$param}` must be used as the type parameter for some local type (e.g., `MyStruct<{$param}>`)
-    .label = type parameter `{$param}` must be used as the type parameter for some local type
-    .note = implementing a foreign trait is only possible if at least one of the types for which it is implemented is local
-    .only_note = only traits defined in the current crate can be implemented for a type parameter
+hir_analysis_ty_param_some = tip parametresi `{$param}`, bazı yerel tipler için tip parametresi olarak kullanılmalıdır (örneğin, `MyStruct<{$param}>`)
+    .label = tip parametresi `{$param}`, bazı yerel tipler için tip parametresi olarak kullanılmalıdır
+    .note = yabancı bir trait'i uygulamak ancak uygulandığı tiplerden en az biri yerel ise mümkündür
+    .only_note = sadece mevcut crate'de tanımlanan trait'ler bir tip parametresi için uygulanabilir
 
 hir_analysis_type_of = {$ty}
 
 hir_analysis_typeof_reserved_keyword_used =
-    `typeof` is a reserved keyword but unimplemented
-    .suggestion = consider replacing `typeof(...)` with an actual type
-    .label = reserved keyword
+    `typeof` ayrılmış bir anahtar kelimedir ancak uygulanmamıştır
+    .suggestion = `typeof(...)` yerine gerçek bir tip kullanmayı düşünün
+    .label = ayrılmış anahtar kelime
 
-hir_analysis_unconstrained_generic_parameter = the {$param_def_kind} `{$param_name}` is not constrained by the impl trait, self type, or predicates
-    .label = unconstrained {$param_def_kind}
-    .const_param_note = expressions using a const parameter must map each value to a distinct output value
-    .const_param_note2 = proving the result of expressions other than the parameter are unique is not supported
+hir_analysis_unconstrained_generic_parameter = `{$param_name}` adlı {$param_def_kind}, impl trait, self tipi veya önermeler tarafından kısıtlanmamış
+    .label = kısıtlanmamış {$param_def_kind}
+    .const_param_note = sabit bir parametre kullanan ifadeler, her değeri benzersiz bir çıktı değerine eşlemelidir
+    .const_param_note2 = parametreden başka ifadelerin sonuçlarının benzersiz olduğunu kanıtlamak desteklenmiyor
 
-hir_analysis_unconstrained_opaque_type = unconstrained opaque type
-    .note = `{$name}` must be used in combination with a concrete type within the same {$what}
+hir_analysis_unconstrained_opaque_type = kısıtlanmamış opak tip
+    .note = `{$name}`, aynı {$what} içinde somut bir tip ile birlikte kullanılmalıdır
 
-hir_analysis_unnamed_fields_repr_field_defined = unnamed field defined here
+hir_analysis_unnamed_fields_repr_field_defined = isimsiz alan burada tanımlandı
 
 hir_analysis_unnamed_fields_repr_field_missing_repr_c =
-    named type of unnamed field must have `#[repr(C)]` representation
-    .label = unnamed field defined here
-    .field_ty_label = `{$field_ty}` defined here
-    .suggestion = add `#[repr(C)]` to this {$field_adt_kind}
+    isimsiz alanın adlandırılmış tipi `#[repr(C)]` temsiline sahip olmalıdır
+    .label = isimsiz alan burada tanımlandı
+    .field_ty_label = `{$field_ty}` burada tanımlandı
+    .suggestion = bu {$field_adt_kind}'e `#[repr(C)]` ekleyin
 
 hir_analysis_unnamed_fields_repr_missing_repr_c =
-    {$adt_kind} with unnamed fields must have `#[repr(C)]` representation
-    .label = {$adt_kind} `{$adt_name}` defined here
-    .suggestion = add `#[repr(C)]` to this {$adt_kind}
+    isimsiz alanlara sahip {$adt_kind}, `#[repr(C)]` temsiline sahip olmalıdır
+    .label = {$adt_kind} `{$adt_name}` burada tanımlandı
+    .suggestion = bu {$adt_kind}'e `#[repr(C)]` ekleyin
 
 hir_analysis_unrecognized_atomic_operation =
-    unrecognized atomic operation function: `{$op}`
-    .label = unrecognized atomic operation
+    tanınmayan atomik işlem fonksiyonu: `{$op}`
+    .label = tanınmayan atomik işlem
 
 hir_analysis_unrecognized_intrinsic_function =
-    unrecognized intrinsic function: `{$name}`
-    .label = unrecognized intrinsic
-    .help = if you're adding an intrinsic, be sure to update `check_intrinsic_type`
+    tanınmayan intrinsic fonksiyonu: `{$name}`
+    .label = tanınmayan intrinsic
+    .help = bir intrinsic ekliyorsanız, `check_intrinsic_type`'ı güncellediğinizden emin olun
 
 hir_analysis_unused_associated_type_bounds =
-    unnecessary associated type bound for dyn-incompatible associated type
-    .note = this associated type has a `where Self: Sized` bound, and while the associated type can be specified, it cannot be used because trait objects are never `Sized`
-    .suggestion = remove this bound
+    dyn-uyumsuz ilişkili tip için gereksiz ilişkili tip sınırı
+    .note = bu ilişkili tipin `where Self: Sized` sınırı vardır ve ilişkili tip belirtilebilse de, kullanılamaz çünkü trait objeleri asla `Sized` değildir
+    .suggestion = bu sınırı kaldırın
 
 hir_analysis_unused_generic_parameter =
-    {$param_def_kind} `{$param_name}` is never used
-    .label = unused {$param_def_kind}
-    .const_param_help = if you intended `{$param_name}` to be a const parameter, use `const {$param_name}: /* Type */` instead
-    .usage_spans = `{$param_name}` is named here, but is likely unused in the containing type
+    {$param_def_kind} `{$param_name}` hiç kullanılmamış
+    .label = kullanılmamış {$param_def_kind}
+    .const_param_help = eğer `{$param_name}`'i sabit bir parametre olarak kullanmak istiyorsanız, `const {$param_name}: /* Tip */` kullanın
+    .usage_spans = `{$param_name}` burada adlandırılmış, ancak içeren tipte muhtemelen kullanılmamış
 
 hir_analysis_unused_generic_parameter_adt_help =
-    consider removing `{$param_name}`, referring to it in a field, or using a marker such as `{$phantom_data}`
+    `{$param_name}`'i kaldırmayı, bir alanda ona başvurmayı veya `{$phantom_data}` gibi bir işaretçi kullanmayı düşünün
 hir_analysis_unused_generic_parameter_adt_no_phantom_data_help =
-    consider removing `{$param_name}` or referring to it in a field
+    `{$param_name}`'i kaldırmayı veya bir alanda ona başvurmayı düşünün
 hir_analysis_unused_generic_parameter_ty_alias_help =
-    consider removing `{$param_name}` or referring to it in the body of the type alias
+    `{$param_name}`'i kaldırmayı veya tip aliasının gövdesinde ona başvurmayı düşünün
 
 hir_analysis_value_of_associated_struct_already_specified =
-    the value of the associated type `{$item_name}` in trait `{$def_path}` is already specified
-    .label = re-bound here
-    .previous_bound_label = `{$item_name}` bound here first
+    `{$def_path}` trait'indeki `{$item_name}` ilişkili tipinin değeri zaten belirtilmiş
+    .label = burada yeniden bağlı
+    .previous_bound_label = `{$item_name}` ilk olarak burada bağlı
 
-hir_analysis_variadic_function_compatible_convention = C-variadic function must have a compatible calling convention, like {$conventions}
-    .label = C-variadic function must have a compatible calling convention
+hir_analysis_variadic_function_compatible_convention = C-değişken fonksiyon, {$conventions} gibi uyumlu bir çağırma sözleşmesine sahip olmalıdır
+    .label = C-değişken fonksiyon, uyumlu bir çağırma sözleşmesine sahip olmalıdır
 
 hir_analysis_variances_of = {$variances}
 
-hir_analysis_where_clause_on_main = `main` function is not allowed to have a `where` clause
-    .label = `main` cannot have a `where` clause
+hir_analysis_where_clause_on_main = `main` fonksiyonunun `where` cümlesine sahip olmasına izin verilmez
+    .label = `main` `where` cümlesine sahip olamaz
 
 hir_analysis_wrong_number_of_generic_arguments_to_intrinsic =
-    intrinsic has wrong number of {$descr} parameters: found {$found}, expected {$expected}
-    .label = expected {$expected} {$descr} {$expected ->
-        [one] parameter
-        *[other] parameters
+    intrinsic, yanlış sayıda {$descr} parametreye sahip: bulundu {$found}, beklenen {$expected}
+    .label = beklenen {$expected} {$descr} {$expected ->
+        [one] parametre
+        *[other] parametreler
     }

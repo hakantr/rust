@@ -1,479 +1,479 @@
-resolve_accessible_unsure = not sure whether the path is accessible or not
-    .note = the type may have associated items, but we are currently not checking them
+resolve_accessible_unsure = yolun erişilebilir olup olmadığından emin değil
+    .note = tipin ilişkili öğeleri olabilir, ancak şu anda onları kontrol etmiyoruz
 
 resolve_add_as_non_derive =
-    add as non-Derive macro
+    türetme olmayan bir makro olarak ekleyin
     `#[{$macro_path}]`
 
 resolve_added_macro_use =
-    have you added the `#[macro_use]` on the module/import?
+    modüle veya içe aktarmaya `#[macro_use]` eklediniz mi?
 
 resolve_ancestor_only =
-    visibilities can only be restricted to ancestor modules
+    görünürlükler yalnızca üst modüllerle sınırlandırılabilir
 
 resolve_anonymous_lifetime_non_gat_report_error =
-    in the trait associated type is declared without lifetime parameters, so using a borrowed type for them requires that lifetime to come from the implemented type
-    .label = this lifetime must come from the implemented type
+    trait ilişkili tipi ömür parametreleri olmadan bildirildi, bu yüzden onlar için ödünç alınmış bir tür kullanmak, bu ömrün uygulanmış türden gelmesini gerektirir
+    .label = bu ömür, uygulanan türden gelmelidir
 
-resolve_arguments_macro_use_not_allowed = arguments to `macro_use` are not allowed here
+resolve_arguments_macro_use_not_allowed = `macro_use` için argümanlara burada izin verilmiyor
 
 resolve_associated_const_with_similar_name_exists =
-    there is an associated constant with a similar name
+    benzer bir isme sahip bir ilişkili sabit var
 
 resolve_associated_fn_with_similar_name_exists =
-    there is an associated function with a similar name
+    benzer bir isme sahip bir ilişkili fonksiyon var
 
 resolve_associated_type_with_similar_name_exists =
-    there is an associated type with a similar name
+    benzer bir isme sahip bir ilişkili tür var
 
 resolve_attempt_to_define_builtin_macro_twice =
-    attempted to define built-in macro more than once
-    .note = previously defined here
+    yerleşik makroyu birden fazla kez tanımlama girişimi
+    .note = daha önce burada tanımlandı
 
 resolve_attempt_to_use_non_constant_value_in_constant =
-    attempt to use a non-constant value in a constant
+    sabitte sabit olmayan bir değer kullanma girişimi
 
 resolve_attempt_to_use_non_constant_value_in_constant_label_with_suggestion =
-    non-constant value
+    sabit olmayan değer
 
 resolve_attempt_to_use_non_constant_value_in_constant_with_suggestion =
-    consider using `{$suggestion}` instead of `{$current}`
+    `{$current}` yerine `{$suggestion}` kullanmayı düşünün
 
 resolve_attempt_to_use_non_constant_value_in_constant_without_suggestion =
-    this would need to be a `{$suggestion}`
+    bu bir `{$suggestion}` olmalı
 
 resolve_attributes_starting_with_rustc_are_reserved =
-    attributes starting with `rustc` are reserved for use by the `rustc` compiler
+    `rustc` ile başlayan öznitelikler `rustc` derleyicisi tarafından kullanılmak üzere ayrılmıştır
 
-resolve_bad_macro_import = bad macro import
+resolve_bad_macro_import = hatalı makro içe aktarma
 
 resolve_binding_in_never_pattern =
-    never patterns cannot contain variable bindings
-    .suggestion = use a wildcard `_` instead
+    never desenleri değişken bağlamalarını içeremez
+    .suggestion = bunun yerine bir joker karakter `_` kullanın
 
 resolve_binding_shadows_something_unacceptable =
-    {$shadowing_binding}s cannot shadow {$shadowed_binding}s
-    .label = cannot be named the same as {$article} {$shadowed_binding}
-    .label_shadowed_binding = the {$shadowed_binding} `{$name}` is {$participle} here
+    {$shadowing_binding}ler {$shadowed_binding}leri gölgeleyemez
+    .label = {$article} {$shadowed_binding} ile aynı isimde olamaz
+    .label_shadowed_binding = `{$name}` adlı {$shadowed_binding} burada {$participle}
 
 resolve_binding_shadows_something_unacceptable_suggestion =
-    try specify the pattern arguments
+    desen argümanlarını belirtmeyi deneyin
 
 resolve_cannot_be_reexported_crate_public =
-    `{$ident}` is only public within the crate, and cannot be re-exported outside
+    `{$ident}` yalnızca crate içinde herkese açık ve dışarı yeniden ihraç edilemez
 
 resolve_cannot_be_reexported_private =
-    `{$ident}` is private, and cannot be re-exported
+    `{$ident}` özel ve yeniden ihraç edilemez
 
 resolve_cannot_capture_dynamic_environment_in_fn_item =
-    can't capture dynamic environment in a fn item
-    .help = use the `|| {"{"} ... {"}"}` closure form instead
+    fn öğesinde dinamik ortam yakalanamaz
+    .help = bunun yerine `|| {"{"} ... {"}"}` closure formunu kullanın
 
 resolve_cannot_determine_import_resolution =
-    cannot determine resolution for the import
-    .note = import resolution is stuck, try simplifying other imports
+    içe aktarma için çözümleme belirlenemiyor
+    .note = içe aktarma çözümlemesi sıkışmış durumda, diğer içe aktarmaları basitleştirmeyi deneyin
 
 resolve_cannot_determine_macro_resolution =
-    cannot determine resolution for the {$kind} `{$path}`
-    .note = import resolution is stuck, try simplifying macro imports
+    {$kind} `{$path}` için çözümleme belirlenemiyor
+    .note = içe aktarma çözümlemesi sıkışmış durumda, makro içe aktarmalarını basitleştirmeyi deneyin
 
 resolve_cannot_find_builtin_macro_with_name =
-    cannot find a built-in macro with name `{$ident}`
+    `{$ident}` adında bir yerleşik makro bulunamıyor
 
 resolve_cannot_find_ident_in_this_scope =
-    cannot find {$expected} `{$ident}` in this scope
+    bu kapsamda {$expected} `{$ident}` bulunamıyor
 
 resolve_cannot_glob_import_possible_crates =
-    cannot glob-import all possible crates
+    tüm olası crate'ler glob-import ile içe aktarılamaz
 
 resolve_cannot_use_through_an_import =
-    cannot use {$article} {$descr} through an import
-    .note = the {$descr} imported here
+    bir içe aktarma aracılığıyla {$article} {$descr} kullanılamaz
+    .note = içe aktarılan {$descr} burada
 
 resolve_change_import_binding =
-    you can use `as` to change the binding name of the import
+    içe aktarmanın bağlama adını değiştirmek için `as` kullanabilirsiniz
 
 resolve_consider_adding_a_derive =
-    consider adding a derive
+    bir derive eklemeyi düşünün
 
 resolve_consider_adding_macro_export =
-    consider adding a `#[macro_export]` to the macro in the imported module
+    içe aktarılan modüldeki makroya `#[macro_export]` eklemeyi düşünün
 
 resolve_consider_declaring_with_pub =
-    consider declaring type or module `{$ident}` with `pub`
+    `{$ident}` türünü veya modülünü `pub` ile bildirmeyi düşünün
 
 resolve_consider_making_the_field_public =
     { $number_of_fields ->
-        [one] consider making the field publicly accessible
-        *[other] consider making the fields publicly accessible
+        [one] alanı herkese açık hale getirmeyi düşünün
+        *[other] alanları herkese açık hale getirmeyi düşünün
     }
 
 resolve_consider_marking_as_pub =
-    consider marking `{$ident}` as `pub` in the imported module
+    içe aktarılan modülde `{$ident}` öğesini `pub` olarak işaretlemeyi düşünün
 
 resolve_consider_move_macro_position =
-    consider moving the definition of `{$ident}` before this call
-
+    `{$ident}` tanımını bu çağrıdan önceye taşımayı düşünün
 
 resolve_const_not_member_of_trait =
-    const `{$const_}` is not a member of trait `{$trait_}`
-    .label = not a member of trait `{$trait_}`
+    const `{$const_}`, `{$trait_}` trait'inin bir üyesi değil
+    .label = `{$trait_}` trait'inin bir üyesi değil
 
 resolve_const_param_in_enum_discriminant =
-    const parameters may not be used in enum discriminant values
+    enum ayrımcı değerlerinde const parametreler kullanılamaz
 
 resolve_const_param_in_non_trivial_anon_const =
-    const parameters may only be used as standalone arguments, i.e. `{$name}`
+    const parametreler yalnızca bağımsız argümanlar olarak kullanılabilir, yani `{$name}`
 
 resolve_const_param_in_ty_of_const_param =
-    const parameters may not be used in the type of const parameters
+    const parametrelerin türünde const parametreler kullanılamaz
 
 resolve_constructor_private_if_any_field_private =
-    a constructor is private if any of the fields is private
+    herhangi bir alan özel ise, bir yapıcı (constructor) özeldir
 
 resolve_elided_anonymous_lifetime_report_error =
-    `&` without an explicit lifetime name cannot be used here
-    .label = explicit lifetime name needed here
+    burada açık bir ömür adı olmadan `&` kullanılamaz
+    .label = burada açık bir ömür adı gerekli
 
 resolve_elided_anonymous_lifetime_report_error_suggestion =
-    consider introducing a higher-ranked lifetime here
+    burada daha yüksek dereceli bir ömür tanıtmayı düşünün
 
 resolve_expected_module_found =
-    expected module, found {$res} `{$path_str}`
-    .label = not a module
+    beklenen modül, bulundu: {$res} `{$path_str}`
+    .label = bir modül değil
 
 resolve_explicit_anonymous_lifetime_report_error =
-    `'_` cannot be used here
-    .label = `'_` is a reserved lifetime name
+    `'_` burada kullanılamaz
+    .label = `'_` ayrılmış bir ömür adı
 
 resolve_explicit_unsafe_traits =
-    unsafe traits like `{$ident}` should be implemented explicitly
+    `{$ident}` gibi güvensiz (unsafe) trait'ler açıkça uygulanmalıdır
 
 resolve_extern_crate_loading_macro_not_at_crate_root =
-    an `extern crate` loading macros must be at the crate root
+    makro yükleyen bir `extern crate` crate kökünde olmalıdır
 
 resolve_extern_crate_self_requires_renaming =
-    `extern crate self;` requires renaming
-    .suggestion = rename the `self` crate to be able to import it
+    `extern crate self;` yeniden adlandırma gerektirir
+    .suggestion = `self` crate'ini içe aktarmak için yeniden adlandırın
 
 resolve_forward_declared_generic_param =
-    generic parameters with a default cannot use forward declared identifiers
-    .label = defaulted generic parameters cannot be forward declared
+    varsayılan değere sahip jenerik parametreler, önceden bildirilen tanımlayıcıları kullanamaz
+    .label = varsayılan jenerik parametreler önceden bildirilemez
 
 resolve_found_an_item_configured_out =
-    found an item that was configured out
+    yapılandırılmış olmayan bir öğe bulundu
 
 resolve_generic_arguments_in_macro_path =
-    generic arguments in macro path
+    makro yolunda jenerik argümanlar
 
 resolve_generic_params_from_outer_item =
-    can't use {$is_self ->
+    dış öğeden gelen {$is_self ->
         [true] `Self`
-        *[false] generic parameters
-    } from outer item
-    .label = use of {$is_self ->
+        *[false] jenerik parametreler
+    } kullanılamaz
+    .label = dış öğeden gelen {$is_self ->
         [true] `Self`
-        *[false] generic parameter
-    } from outer item
-    .refer_to_type_directly = refer to the type directly here instead
-    .suggestion = try introducing a local generic parameter here
+        *[false] jenerik parametre
+    } kullanımı
+    .refer_to_type_directly = bunun yerine türü doğrudan burada belirtin
+    .suggestion = burada yerel bir jenerik parametre tanıtmayı deneyin
 
-resolve_generic_params_from_outer_item_const = a `const` is a separate item from the item that contains it
+resolve_generic_params_from_outer_item_const = bir `const`, onu içeren öğeden ayrı bir öğedir
 
-resolve_generic_params_from_outer_item_const_param = const parameter from outer item
+resolve_generic_params_from_outer_item_const_param = dış öğeden gelen const parametre
 
-resolve_generic_params_from_outer_item_self_ty_alias = `Self` type implicitly declared here, by this `impl`
+resolve_generic_params_from_outer_item_self_ty_alias = `Self` türü burada, bu `impl` ile örtük olarak bildirildi
 
-resolve_generic_params_from_outer_item_self_ty_param = can't use `Self` here
+resolve_generic_params_from_outer_item_self_ty_param = burada `Self` kullanılamaz
 
-resolve_generic_params_from_outer_item_static = a `static` is a separate item from the item that contains it
+resolve_generic_params_from_outer_item_static = bir `static`, onu içeren öğeden ayrı bir öğedir
 
-resolve_generic_params_from_outer_item_ty_param = type parameter from outer item
+resolve_generic_params_from_outer_item_ty_param = dış öğeden gelen tür parametresi
 
 resolve_ident_bound_more_than_once_in_parameter_list =
-    identifier `{$identifier}` is bound more than once in this parameter list
-    .label = used as parameter more than once
+    `{$identifier}` tanımlayıcısı bu parametre listesinde birden fazla kez bağlanmış
+    .label = parametre olarak birden fazla kez kullanılmış
 
 resolve_ident_bound_more_than_once_in_same_pattern =
-    identifier `{$identifier}` is bound more than once in the same pattern
-    .label = used in a pattern more than once
+    `{$identifier}` tanımlayıcısı aynı desende birden fazla kez bağlanmış
+    .label = bir desende birden fazla kez kullanılmış
 
 resolve_ident_imported_here_but_it_is_desc =
-    `{$imported_ident}` is imported here, but it is {$imported_ident_desc}
+    `{$imported_ident}` burada içe aktarılmış, ancak {$imported_ident_desc}
 
 resolve_ident_in_scope_but_it_is_desc =
-    `{$imported_ident}` is in scope, but it is {$imported_ident_desc}
+    `{$imported_ident}` kapsamda, ancak {$imported_ident_desc}
 
-resolve_implicit_elided_lifetimes_not_allowed_here = implicit elided lifetime not allowed here
+resolve_implicit_elided_lifetimes_not_allowed_here = burada örtük atlanmış ömürlere izin verilmiyor
 
-resolve_imported_crate = `$crate` may not be imported
+resolve_imported_crate = `$crate` içe aktarılamaz
 
-resolve_imported_macro_not_found = imported macro not found
+resolve_imported_macro_not_found = içe aktarılan makro bulunamadı
 
 resolve_imports_cannot_refer_to =
-    imports cannot refer to {$what}
+    içe aktarmalar {$what}'a başvuramaz
 
 resolve_indeterminate =
-    cannot determine resolution for the visibility
+    görünürlük için çözümleme belirlenemiyor
 
 resolve_invalid_asm_sym =
-    invalid `sym` operand
-    .label = is a local variable
-    .help = `sym` operands must refer to either a function or a static
+    geçersiz `sym` işlemi
+    .label = yerel bir değişken
+    .help = `sym` işlemleri bir fonksiyona veya statik bir öğeye atıfta bulunmalıdır
 
 resolve_is_not_directly_importable =
-    `{$target}` is not directly importable
-    .label = cannot be imported directly
+    `{$target}` doğrudan içe aktarılamaz
+    .label = doğrudan içe aktarılamaz
 
 resolve_is_private =
-    {$ident_descr} `{$ident}` is private
-    .label = private {$ident_descr}
+    {$ident_descr} `{$ident}` özel
+    .label = özel {$ident_descr}
 
 resolve_item_was_behind_feature =
-    the item is gated behind the `{$feature}` feature
+    öğe `{$feature}` özelliğinin arkasında engellenmiştir
 
-resolve_item_was_cfg_out = the item is gated here
+resolve_item_was_cfg_out = öğe burada engellendi
 
 resolve_items_in_traits_are_not_importable =
-    items in traits are not importable
+    trait'lerdeki öğeler içe aktarılamaz
 
 resolve_label_with_similar_name_reachable =
-    a label with a similar name is reachable
+    benzer isimli bir etiket erişilebilir
 
 resolve_lending_iterator_report_error =
-    associated type `Iterator::Item` is declared without lifetime parameters, so using a borrowed type for them requires that lifetime to come from the implemented type
-    .note = you can't create an `Iterator` that borrows each `Item` from itself, but you can instead create a new type that borrows your existing type and implement `Iterator` for that new type
+    ilişkili tip `Iterator::Item` ömür parametreleri olmadan bildirildi, bu yüzden onlar için ödünç alınmış bir tür kullanmak, bu ömrün uygulanmış türden gelmesini gerektirir
+    .note = kendisinden her bir `Item`'ı ödünç alan bir `Iterator` oluşturamazsınız, ancak bunun yerine mevcut tipinizi ödünç alan yeni bir tip oluşturabilir ve `Iterator`'ı bu yeni tip için uygulayabilirsiniz
 
 resolve_lifetime_param_in_enum_discriminant =
-    lifetime parameters may not be used in enum discriminant values
+    enum ayrımcı değerlerinde ömür parametreleri kullanılamaz
 
 resolve_lifetime_param_in_non_trivial_anon_const =
-    lifetime parameters may not be used in const expressions
+    const ifadelerinde ömür parametreleri kullanılamaz
 
 resolve_lifetime_param_in_ty_of_const_param =
-    lifetime parameters may not be used in the type of const parameters
+    const parametrelerin türünde ömür parametreleri kullanılamaz
 
 resolve_lowercase_self =
-    attempt to use a non-constant value in a constant
-    .suggestion = try using `Self`
+    sabitte sabit olmayan bir değer kullanma girişimi
+    .suggestion = `Self` kullanmayı deneyin
 
 resolve_macro_defined_later =
-    a macro with the same name exists, but it appears later at here
+    aynı isme sahip bir makro var, ancak daha sonra burada görünüyor
 
 resolve_macro_expanded_extern_crate_cannot_shadow_extern_arguments =
-    macro-expanded `extern crate` items cannot shadow names passed with `--extern`
+    makro ile genişletilmiş `extern crate` öğeleri `--extern` ile geçirilen isimleri gölgeleyemez
 
 resolve_macro_expected_found =
-    expected {$expected}, found {$found} `{$macro_path}`
-    .label = not {$article} {$expected}
+    beklenen {$expected}, bulundu: {$found} `{$macro_path}`
+    .label = {$article} {$expected} değil
 
 resolve_macro_extern_deprecated =
-    `#[macro_escape]` is a deprecated synonym for `#[macro_use]`
-    .help = try an outer attribute: `#[macro_use]`
+    `#[macro_escape]` `#[macro_use]` için eski bir eşanlamlıdır
+    .help = dış bir öznitelik deneyin: `#[macro_use]`
 
-resolve_macro_use_extern_crate_self = `#[macro_use]` is not supported on `extern crate self`
+resolve_macro_use_extern_crate_self = `#[macro_use]` `extern crate self` üzerinde desteklenmez
 
 resolve_macro_use_name_already_in_use =
-    `{$name}` is already in scope
-    .note = macro-expanded `#[macro_use]`s may not shadow existing macros (see RFC 1560)
+    `{$name}` zaten kapsamda
+    .note = makro ile genişletilmiş `#[macro_use]`lar mevcut makroları gölgeleyemez (bkz. RFC 1560)
 
 resolve_method_not_member_of_trait =
-    method `{$method}` is not a member of trait `{$trait_}`
-    .label = not a member of trait `{$trait_}`
+    yöntem `{$method}`, `{$trait_}` trait'inin bir üyesi değil
+    .label = `{$trait_}` trait'inin bir üyesi değil
 
-resolve_missing_macro_rules_name = maybe you have forgotten to define a name for this `macro_rules!`
+resolve_missing_macro_rules_name = belki bu `macro_rules!` için bir isim tanımlamayı unuttunuz
 
 resolve_module_only =
-    visibility must resolve to a module
+    görünürlük bir modüle çözülmelidir
 
 resolve_name_defined_multiple_time =
-    the name `{$name}` is defined multiple times
-    .note = `{$name}` must be defined only once in the {$descr} namespace of this {$container}
+    `{$name}` ismi birden fazla kez tanımlandı
+    .note = `{$name}`, bu {$container}'ın {$descr} ad alanında yalnızca bir kez tanımlanmalıdır
 
 resolve_name_defined_multiple_time_old_binding_definition =
-    previous definition of the {$old_kind} `{$name}` here
+    {$old_kind} `{$name}`in önceki tanımı burada
 
 resolve_name_defined_multiple_time_old_binding_import =
-    previous import of the {$old_kind} `{$name}` here
+    {$old_kind} `{$name}`in önceki içe aktarımı burada
 
 resolve_name_defined_multiple_time_redefined =
-    `{$name}` redefined here
+    `{$name}` burada yeniden tanımlandı
 
 resolve_name_defined_multiple_time_reimported =
-    `{$name}` reimported here
+    `{$name}` burada yeniden içe aktarıldı
 
 resolve_name_is_already_used_as_generic_parameter =
-    the name `{$name}` is already used for a generic parameter in this item's generic parameters
-    .label = already used
-    .first_use_of_name = first use of `{$name}`
+    `{$name}` ismi, bu öğenin jenerik parametrelerinde zaten kullanılmış
+    .label = zaten kullanılmış
+    .first_use_of_name = `{$name}`in ilk kullanımı
 
 resolve_name_reserved_in_attribute_namespace =
-    name `{$ident}` is reserved in attribute namespace
+    `{$ident}` ismi öznitelik ad alanında ayrılmıştır
 
 resolve_note_and_refers_to_the_item_defined_here =
     {$first ->
         [true] {$dots ->
-            [true] the {$binding_descr} `{$binding_name}` is defined here...
-            *[false] the {$binding_descr} `{$binding_name}` is defined here
+            [true] {$binding_descr} `{$binding_name}` burada tanımlandı...
+            *[false] {$binding_descr} `{$binding_name}` burada tanımlandı
         }
         *[false] {$dots ->
-            [true] ...and refers to the {$binding_descr} `{$binding_name}` which is defined here...
-            *[false] ...and refers to the {$binding_descr} `{$binding_name}` which is defined here
+            [true] ...ve burada tanımlanan {$binding_descr} `{$binding_name}` öğesine atıfta bulunur...
+            *[false] ...ve burada tanımlanan {$binding_descr} `{$binding_name}` öğesine atıfta bulunur
         }
     }
 
 resolve_outer_ident_is_not_publicly_reexported =
-    {$outer_ident_descr} `{$outer_ident}` is not publicly re-exported
+    {$outer_ident_descr} `{$outer_ident}` herkese açık olarak yeniden ihraç edilmemiş
 
 resolve_param_in_enum_discriminant =
-    generic parameters may not be used in enum discriminant values
-    .label = cannot perform const operation using `{$name}`
+    jenerik parametreler enum ayrımcı değerlerinde kullanılamaz
+    .label = `{$name}` kullanılarak const işlem yapılamaz
 
 resolve_param_in_non_trivial_anon_const =
-    generic parameters may not be used in const operations
-    .label = cannot perform const operation using `{$name}`
+    jenerik parametreler const işlemlerinde kullanılamaz
+    .label = `{$name}` kullanılarak const işlem yapılamaz
 
 resolve_param_in_non_trivial_anon_const_help =
-    add `#![feature(generic_const_exprs)]` to allow generic const expressions
+    jenerik const ifadelerine izin vermek için `#![feature(generic_const_exprs)]` ekleyin
 
 resolve_param_in_ty_of_const_param =
-    the type of const parameters must not depend on other generic parameters
-    .label = the type must not depend on the parameter `{$name}`
+    const parametrelerin türü diğer jenerik parametrelere bağlı olmamalıdır
+    .label = tür `{$name}` parametresine bağlı olmamalıdır
 
-resolve_pattern_doesnt_bind_name = pattern doesn't bind `{$name}`
+resolve_pattern_doesnt_bind_name = desen `{$name}` öğesini bağlamıyor
 
-resolve_proc_macro_same_crate = can't use a procedural macro from the same crate that defines it
-    .help = you can define integration tests in a directory named `tests`
+resolve_proc_macro_same_crate = tanımlandığı crate'den bir prosedürel makro kullanılamaz
+    .help = `tests` adlı bir dizinde entegrasyon testleri tanımlayabilirsiniz
 
 resolve_reexport_of_crate_public =
-    re-export of crate public `{$ident}`
+    crate herkese açık `{$ident}` öğesinin yeniden ihraç edilmesi
 
 resolve_reexport_of_private =
-    re-export of private `{$ident}`
+    özel `{$ident}` öğesinin yeniden ihraç edilmesi
 
 resolve_relative_2018 =
-    relative paths are not supported in visibilities in 2018 edition or later
-    .suggestion = try
+    2018 sürümünde veya sonrasında görünürlüklerde göreli yollara izin verilmez
+    .suggestion = deneyin
 
 resolve_remove_surrounding_derive =
-    remove from the surrounding `derive()`
+    çevreleyen `derive()` içinden kaldırın
 
-resolve_remove_unnecessary_import = remove unnecessary import
+resolve_remove_unnecessary_import = gereksiz içe aktarmayı kaldırın
 
 resolve_self_import_can_only_appear_once_in_the_list =
-    `self` import can only appear once in an import list
-    .label = can only appear once in an import list
+    `self` içe aktarması bir içe aktarma listesinde yalnızca bir kez görünebilir
+    .label = bir içe aktarma listesinde yalnızca bir kez görünebilir
 
 resolve_self_import_only_in_import_list_with_non_empty_prefix =
-    `self` import can only appear in an import list with a non-empty prefix
-    .label = can only appear in an import list with a non-empty prefix
+    `self` içe aktarması yalnızca boş olmayan bir ön eke sahip bir içe aktarma listesinde görünebilir
+    .label = yalnızca boş olmayan bir ön eke sahip bir içe aktarma listesinde görünebilir
 
 resolve_self_imports_only_allowed_within =
-    `self` imports are only allowed within a {"{"} {"}"} list
+    `self` içe aktarmalarına yalnızca `{"{"} {"}"}` listesi içinde izin verilir
 
 resolve_self_imports_only_allowed_within_multipart_suggestion =
-    alternatively, use the multi-path `use` syntax to import `self`
+    alternatif olarak, `self` içe aktarmak için çoklu yol `use` sözdizimini kullanın
 
 resolve_self_imports_only_allowed_within_suggestion =
-    consider importing the module directly
+    modülü doğrudan içe aktarmayı düşünün
 
 resolve_self_in_generic_param_default =
-    generic parameters cannot use `Self` in their defaults
-    .label = `Self` in generic parameter default
+    jenerik parametreler varsayılanlarında `Self` kullanamaz
+    .label = jenerik parametre varsayılanında `Self`
 
 resolve_similarly_named_defined_here =
-    similarly named {$candidate_descr} `{$candidate}` defined here
+    benzer isimli {$candidate_descr} `{$candidate}` burada tanımlandı
 
 resolve_single_item_defined_here =
-    {$candidate_descr} `{$candidate}` defined here
+    {$candidate_descr} `{$candidate}` burada tanımlandı
 
-resolve_static_lifetime_is_reserved = invalid lifetime parameter name: `{$lifetime}`
-    .label = 'static is a reserved lifetime name
+resolve_static_lifetime_is_reserved = geçersiz ömür parametre adı: `{$lifetime}`
+    .label = 'static ayrılmış bir ömür adıdır
 
 resolve_suggestion_import_ident_directly =
-    import `{$ident}` directly
+    `{$ident}` öğesini doğrudan içe aktarın
 
 resolve_suggestion_import_ident_through_reexport =
-    import `{$ident}` through the re-export
+    `{$ident}` öğesini yeniden ihraç üzerinden içe aktarın
 
 resolve_tool_module_imported =
-    cannot use a tool module through an import
-    .note = the tool module imported here
+    bir araç modülü bir içe aktarma aracılığıyla kullanılamaz
+    .note = araç modülü burada içe aktarıldı
 
 resolve_tool_only_accepts_identifiers =
-    `{$tool}` only accepts identifiers
-    .label = not an identifier
+    `{$tool}` yalnızca tanımlayıcıları kabul eder
+    .label = bir tanımlayıcı değil
 
 resolve_tool_was_already_registered =
-    tool `{$tool}` was already registered
-    .label = already registered here
+    `{$tool}` aracı zaten kaydedildi
+    .label = burada zaten kaydedildi
 
 resolve_trait_impl_duplicate =
-    duplicate definitions with name `{$name}`:
-    .label = duplicate definition
-    .old_span_label = previous definition here
-    .trait_item_span = item in trait
+    `{$name}` adlı yinelenen tanımlar:
+    .label = yinelenen tanım
+    .old_span_label = önceki tanım burada
+    .trait_item_span = trait içindeki öğe
 
 resolve_trait_impl_mismatch =
-    item `{$name}` is an associated {$kind}, which doesn't match its trait `{$trait_path}`
-    .label = does not match trait
-    .trait_impl_mismatch_label_item = item in trait
+    öğe `{$name}`, `{$trait_path}` trait'ine uymayan bir ilişkili {$kind}
+    .label = trait ile eşleşmiyor
+    .trait_impl_mismatch_label_item = trait içindeki öğe
+
 resolve_try_using_similarly_named_label =
-    try using similarly named label
+    benzer isimli etiketi kullanmayı deneyin
 
 resolve_type_not_member_of_trait =
-    type `{$type_}` is not a member of trait `{$trait_}`
-    .label = not a member of trait `{$trait_}`
+    tür `{$type_}`, `{$trait_}` trait'inin bir üyesi değil
+    .label = `{$trait_}` trait'inin bir üyesi değil
 
 resolve_type_param_in_enum_discriminant =
-    type parameters may not be used in enum discriminant values
+    tür parametreleri enum ayrımcı değerlerinde kullanılamaz
 
 resolve_type_param_in_non_trivial_anon_const =
-    type parameters may not be used in const expressions
+    tür parametreleri const ifadelerinde kullanılamaz
 
 resolve_type_param_in_ty_of_const_param =
-    type parameters may not be used in the type of const parameters
+    tür parametreleri const parametrelerin türünde kullanılamaz
 
 resolve_undeclared_label =
-    use of undeclared label `{$name}`
-    .label = undeclared label `{$name}`
+    bildirilmemiş `{$name}` etiketi kullanımı
+    .label = bildirilmemiş `{$name}` etiketi
 
-resolve_underscore_lifetime_is_reserved = `'_` cannot be used here
-    .label = `'_` is a reserved lifetime name
+resolve_underscore_lifetime_is_reserved = `'_` burada kullanılamaz
+    .label = `'_` ayrılmış bir ömür adı
 
 resolve_unexpected_res_change_ty_to_const_param_sugg =
-    you might have meant to write a const parameter here
+    burada bir const parametre yazmak istemiş olabilirsiniz
 
 resolve_unexpected_res_use_at_op_in_slice_pat_with_range_sugg =
-    if you meant to collect the rest of the slice in `{$ident}`, use the at operator
+    `{$ident}` içinde dilimin geri kalanını toplamak istiyorsanız, at operatörünü kullanın
 
 resolve_unnamed_crate_root_import =
-    crate root imports need to be explicitly named: `use crate as name;`
+    crate kök içe aktarmaları açıkça adlandırılmalıdır: `use crate as name;`
 
 resolve_unreachable_label =
-    use of unreachable label `{$name}`
-    .label = unreachable label `{$name}`
-    .label_definition_span = unreachable label defined here
-    .note = labels are unreachable through functions, closures, async blocks and modules
+    erişilemez `{$name}` etiketi kullanımı
+    .label = erişilemez `{$name}` etiketi
+    .label_definition_span = erişilemez etiket burada tanımlandı
+    .note = etiketlere fonksiyonlar, closure'lar, async bloklar ve modüller aracılığıyla ulaşılamaz
 
 resolve_unreachable_label_similar_name_reachable =
-    a label with a similar name is reachable
+    benzer isimli bir etiket erişilebilir
 
 resolve_unreachable_label_similar_name_unreachable =
-    a label with a similar name exists but is also unreachable
+    benzer isimli bir etiket var ama o da erişilemez
 
 resolve_unreachable_label_suggestion_use_similarly_named =
-    try using similarly named label
+    benzer isimli etiketi kullanmayı deneyin
 
 resolve_unreachable_label_with_similar_name_exists =
-    a label with a similar name exists but is unreachable
+    benzer isimli bir etiket var ama erişilemez
 
 resolve_variable_bound_with_different_mode =
-    variable `{$variable_name}` is bound inconsistently across alternatives separated by `|`
-    .label = bound in different ways
-    .first_binding_span = first binding
+    `{$variable_name}` değişkeni `|` ile ayrılmış alternatiflerde tutarsız bir şekilde bağlanmış
+    .label = farklı şekillerde bağlanmış
+    .first_binding_span = ilk bağlama
 
 resolve_variable_is_not_bound_in_all_patterns =
-    variable `{$name}` is not bound in all patterns
+    `{$name}` değişkeni tüm desenlerde bağlanmamış
 
-resolve_variable_not_in_all_patterns = variable not in all patterns
+resolve_variable_not_in_all_patterns = değişken tüm desenlerde yok

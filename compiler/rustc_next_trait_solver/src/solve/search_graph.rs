@@ -40,6 +40,9 @@ where
     }
 
     const DIVIDE_AVAILABLE_DEPTH_ON_OVERFLOW: usize = 4;
+    fn recursion_limit(cx: I) -> usize {
+        cx.recursion_limit()
+    }
 
     fn initial_provisional_result(
         cx: I,

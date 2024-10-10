@@ -1,50 +1,51 @@
 interface_cant_emit_mir =
-    could not emit MIR: {$error}
+    MIR oluşturulamadı: {$error}
 
 interface_emoji_identifier =
-    identifiers cannot contain emoji: `{$ident}`
+    tanımlayıcılar emoji içeremez: `{$ident}`
 
 interface_error_writing_dependencies =
-    error writing dependencies to `{$path}`: {$error}
+    `{$path}` konumuna bağımlılıklar yazılırken hata: {$error}
 
 interface_failed_writing_file =
-    failed to write file {$path}: {$error}"
+    {$path} dosyasına yazılamadı: {$error}"
 
 interface_ferris_identifier =
-    Ferris cannot be used as an identifier
-    .suggestion = try using their name instead
+    Ferris bir tanımlayıcı olarak kullanılamaz
+    .suggestion = bunun yerine adını kullanmayı deneyin
 
 interface_generated_file_conflicts_with_directory =
-    the generated executable for the input file "{$input_path}" conflicts with the existing directory "{$dir_path}"
+    "{$input_path}" girdi dosyası için oluşturulan çalıştırılabilir dosya, mevcut "{$dir_path}" diziniyle çakışıyor
 
-interface_ignoring_extra_filename = ignoring -C extra-filename flag due to -o flag
+interface_ignoring_extra_filename = -o bayrağı nedeniyle -C extra-filename bayrağı göz ardı ediliyor
 
-interface_ignoring_out_dir = ignoring --out-dir flag due to -o flag
+interface_ignoring_out_dir = -o bayrağı nedeniyle --out-dir bayrağı göz ardı ediliyor
 
 interface_input_file_would_be_overwritten =
-    the input file "{$path}" would be overwritten by the generated executable
+    "{$path}" girdi dosyası, oluşturulan çalıştırılabilir dosya tarafından üzerine yazılacaktır
 
 interface_mixed_bin_crate =
-    cannot mix `bin` crate type with others
+    `bin` crate türü diğerleriyle karıştırılamaz
 
 interface_mixed_proc_macro_crate =
-    cannot mix `proc-macro` crate type with others
+    `proc-macro` crate türü diğerleriyle karıştırılamaz
 
 interface_multiple_output_types_adaption =
-    due to multiple output types requested, the explicitly specified output file name will be adapted for each output type
+    birden fazla çıktı türü istendiğinden, açıkça belirtilen çıktı dosyası adı her bir çıktı türüne uyarlanacaktır
 
-interface_multiple_output_types_to_stdout = can't use option `-o` or `--emit` to write multiple output types to stdout
+interface_multiple_output_types_to_stdout = birden fazla çıktı türünü stdout'a yazmak için `-o` veya `--emit` seçeneği kullanılamaz
+
 interface_out_dir_error =
-    failed to find or create the directory specified by `--out-dir`
+    `--out-dir` ile belirtilen dizin bulunamadı veya oluşturulamadı
 
 interface_proc_macro_crate_panic_abort =
-    building proc macro crate with `panic=abort` may crash the compiler should the proc-macro panic
+    `panic=abort` ile proc macro crate derlemek, proc-macro panic yaparsa derleyiciyi çökertebilir
 
 interface_rustc_error_fatal =
-    fatal error triggered by #[rustc_error]
+    #[rustc_error] tarafından tetiklenen ölümcül hata
 
 interface_rustc_error_unexpected_annotation =
-    unexpected annotation used with `#[rustc_error(...)]`!
+    `#[rustc_error(...)]` ile beklenmeyen açıklama kullanıldı!
 
 interface_temps_dir_error =
-    failed to find or create the directory specified by `--temps-dir`
+    `--temps-dir` ile belirtilen dizin bulunamadı veya oluşturulamadı

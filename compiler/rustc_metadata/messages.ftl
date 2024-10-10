@@ -1,300 +1,300 @@
 metadata_as_needed_compatibility =
-    linking modifier `as-needed` is only compatible with `dylib` and `framework` linking kinds
+    bağlama düzenleyicisi `as-needed` yalnızca `dylib` ve `framework` bağlama türleri ile uyumludur
 
 metadata_bad_panic_strategy =
-    the linked panic runtime `{$runtime}` is not compiled with this crate's panic strategy `{$strategy}`
+    bağlı olan panic çalıştırma zamanı `{$runtime}`, bu crate'in panic stratejisi `{$strategy}` ile derlenmemiş
 
 metadata_binary_output_to_tty =
-    option `-o` or `--emit` is used to write binary output type `metadata` to stdout, but stdout is a tty
+    `-o` veya `--emit` seçeneği, `metadata` ikili çıktı türünü stdout'a yazmak için kullanılıyor, ancak stdout bir tty
 
 metadata_bundle_needs_static =
-    linking modifier `bundle` is only compatible with `static` linking kind
+    bağlama düzenleyicisi `bundle` yalnızca `static` bağlama türü ile uyumludur
 
 metadata_cannot_find_crate =
-    can't find crate for `{$crate_name}`{$add_info}
+    `{$crate_name}` crate'i bulunamıyor{$add_info}
 
 metadata_cant_find_crate =
-    can't find crate
+    crate bulunamıyor
 
 metadata_compiler_missing_profiler =
-    the compiler may have been built without the profiler runtime
+    derleyici, profil çalıştırma zamanıyla derlenmemiş olabilir
 
 metadata_conflicting_alloc_error_handler =
-    the `#[alloc_error_handler]` in {$other_crate_name} conflicts with allocation error handler in: {$crate_name}
+    {$other_crate_name} içindeki `#[alloc_error_handler]`, {$crate_name} içindeki tahsis hatası işleyicisiyle çakışıyor
 
 metadata_conflicting_global_alloc =
-    the `#[global_allocator]` in {$other_crate_name} conflicts with global allocator in: {$crate_name}
+    {$other_crate_name} içindeki `#[global_allocator]`, {$crate_name} içindeki global tahsis edici ile çakışıyor
 
 metadata_consider_adding_std =
-    consider adding the standard library to the sysroot with `x build library --target {$locator_triple}`
+    standart kütüphaneyi sysroot'a eklemeyi düşünün: `x build library --target {$locator_triple}`
 
 metadata_consider_building_std =
-    consider building the standard library from source with `cargo build -Zbuild-std`
+    standart kütüphaneyi kaynaktan derlemeyi düşünün: `cargo build -Zbuild-std`
 
 metadata_consider_downloading_target =
-    consider downloading the target with `rustup target add {$locator_triple}`
+    hedefi indirmeyi düşünün: `rustup target add {$locator_triple}`
 
 metadata_crate_dep_multiple =
-    cannot satisfy dependencies so `{$crate_name}` only shows up once
-    .help = having upstream crates all available in one format will likely make this go away
+    bağımlılıkları karşılayamıyor, bu yüzden `{$crate_name}` yalnızca bir kez görünüyor
+    .help = tüm üst crate'lerin tek bir formatta mevcut olması bu sorunu ortadan kaldırabilir
 
 metadata_crate_dep_not_static =
-    `{$crate_name}` was unavailable as a static crate, preventing fully static linking
+    `{$crate_name}`, statik crate olarak mevcut değil, tam statik bağlamayı engelliyor
 
 metadata_crate_dep_rustc_driver =
-    `feature(rustc_private)` is needed to link to the compiler's `rustc_driver` library
+    derleyicinin `rustc_driver` kütüphanesine bağlanmak için `feature(rustc_private)` gereklidir
 
 metadata_crate_location_unknown_type =
-    extern location for {$crate_name} is of an unknown type: {$path}
+    {$crate_name} için bilinmeyen bir dış konum türü: {$path}
 
 metadata_crate_not_panic_runtime =
-    the crate `{$crate_name}` is not a panic runtime
+    `{$crate_name}` crate'i bir panic çalıştırma zamanı değil
 
 metadata_dl_error =
     {$path}{$err}
 
 metadata_empty_link_name =
-    link name must not be empty
-    .label = empty link name
+    bağlantı adı boş olmamalıdır
+    .label = boş bağlantı adı
 
 metadata_empty_renaming_target =
-    an empty renaming target was specified for library `{$lib_name}`
+    `{$lib_name}` kütüphanesi için boş bir yeniden adlandırma hedefi belirtildi
 
 metadata_extern_location_not_exist =
-    extern location for {$crate_name} does not exist: {$location}
+    {$crate_name} için dış konum mevcut değil: {$location}
 
 metadata_extern_location_not_file =
-    extern location for {$crate_name} is not a file: {$location}
+    {$crate_name} için dış konum bir dosya değil: {$location}
 
 metadata_fail_create_file_encoder =
-    failed to create file encoder: {$err}
+    dosya kodlayıcı oluşturulamadı: {$err}
 
 metadata_fail_write_file =
-    failed to write to `{$path}`: {$err}
+    `{$path}` yazılamadı: {$err}
 
 metadata_failed_copy_to_stdout =
-    failed to copy {$filename} to stdout: {$err}
+    {$filename} stdout'a kopyalanamadı: {$err}
 
 metadata_failed_create_encoded_metadata =
-    failed to create encoded metadata from file: {$err}
+    dosyadan kodlanmış metadata oluşturulamadı: {$err}
 
 metadata_failed_create_file =
-    failed to create the file {$filename}: {$err}
+    {$filename} dosyası oluşturulamadı: {$err}
 
 metadata_failed_create_tempdir =
-    couldn't create a temp dir: {$err}
+    geçici dizin oluşturulamadı: {$err}
 
 metadata_failed_write_error =
-    failed to write {$filename}: {$err}
+    {$filename} yazılamadı: {$err}
 
 metadata_found_crate_versions =
-    the following crate versions were found:{$found_crates}
+    şu crate sürümleri bulundu:{$found_crates}
 
 metadata_found_staticlib =
-    found staticlib `{$crate_name}` instead of rlib or dylib{$add_info}
-    .help = please recompile that crate using --crate-type lib
+    rlib veya dylib yerine statiklib `{$crate_name}` bulundu{$add_info}
+    .help = lütfen bu crate'i --crate-type lib kullanarak yeniden derleyin
 
 metadata_global_alloc_required =
-    no global memory allocator found but one is required; link to std or add `#[global_allocator]` to a static item that implements the GlobalAlloc trait
+    global bellek tahsis edici bulunamadı, ancak biri gerekli; std'a bağlanın veya GlobalAlloc trait'ini uygulayan statik bir öğeye `#[global_allocator]` ekleyin
 
 metadata_import_name_type_form =
-    import name type must be of the form `import_name_type = "string"`
+    ithalat adı türü `import_name_type = "string"` biçiminde olmalıdır
 
 metadata_import_name_type_raw =
-    import name type can only be used with link kind `raw-dylib`
+    ithalat adı türü yalnızca `raw-dylib` bağlama türü ile kullanılabilir
 
 metadata_import_name_type_x86 =
-    import name type is only supported on x86
+    ithalat adı türü yalnızca x86 üzerinde desteklenir
 
 metadata_incompatible_panic_in_drop_strategy =
-    the crate `{$crate_name}` is compiled with the panic-in-drop strategy `{$found_strategy}` which is incompatible with this crate's strategy of `{$desired_strategy}`
+    `{$crate_name}` crate'i, bu crate'in `{$desired_strategy}` stratejisiyle uyumsuz olan `{$found_strategy}` panic-in-drop stratejisi ile derlenmiş
 
 metadata_incompatible_rustc =
-    found crate `{$crate_name}` compiled by an incompatible version of rustc{$add_info}
-    .help = please recompile that crate using this compiler ({$rustc_version}) (consider running `cargo clean` first)
+    uyumsuz bir rustc sürümüyle derlenmiş `{$crate_name}` crate'i bulundu{$add_info}
+    .help = bu derleyiciyi kullanarak crate'i yeniden derleyin ({$rustc_version}) (öncelikle `cargo clean` çalıştırmayı düşünün)
 
 metadata_incompatible_wasm_link =
-    `wasm_import_module` is incompatible with other arguments in `#[link]` attributes
+    `wasm_import_module`, `#[link]` attribute'larındaki diğer argümanlarla uyumlu değil
 
 metadata_install_missing_components =
-    maybe you need to install the missing components with: `rustup component add rust-src rustc-dev llvm-tools-preview`
+    eksik bileşenleri kurmanız gerekebilir: `rustup component add rust-src rustc-dev llvm-tools-preview`
 
 metadata_invalid_link_modifier =
-    invalid linking modifier syntax, expected '+' or '-' prefix before one of: bundle, verbatim, whole-archive, as-needed
+    geçersiz bağlama düzenleyici sözdizimi, '+' veya '-' ön eki bekleniyor: bundle, verbatim, whole-archive, as-needed
 
 metadata_invalid_meta_files =
-    found invalid metadata files for crate `{$crate_name}`{$add_info}
+    `{$crate_name}` crate'i için geçersiz metadata dosyaları bulundu{$add_info}
 
 metadata_lib_filename_form =
-    file name should be lib*.rlib or {$dll_prefix}*{$dll_suffix}
+    dosya adı lib*.rlib veya {$dll_prefix}*{$dll_suffix} biçiminde olmalıdır
 
 metadata_lib_framework_apple =
-    library kind `framework` is only supported on Apple targets
+    `framework` kütüphane türü yalnızca Apple hedeflerinde desteklenir
 
 metadata_lib_required =
-    crate `{$crate_name}` required to be available in {$kind} format, but was not found in this form
+    `{$crate_name}` crate'i {$kind} formatında mevcut olmalıdır, ancak bu biçimde bulunamadı
 
 metadata_link_arg_unstable =
-    link kind `link-arg` is unstable
+    `link-arg` bağlama türü kararsızdır
 
 metadata_link_cfg_form =
-    link cfg must be of the form `cfg(/* predicate */)`
+    bağlantı cfg'si `cfg(/* predicate */)` biçiminde olmalıdır
 
 metadata_link_cfg_single_predicate =
-    link cfg must have a single predicate argument
+    bağlantı cfg'si tek bir predikat argümanı içermelidir
 
 metadata_link_cfg_unstable =
-    link cfg is unstable
+    bağlantı cfg'si kararsızdır
 
 metadata_link_framework_apple =
-    link kind `framework` is only supported on Apple targets
+    `framework` bağlama türü yalnızca Apple hedeflerinde desteklenir
 
 metadata_link_kind_form =
-    link kind must be of the form `kind = "string"`
+    bağlama türü `kind = "string"` biçiminde olmalıdır
 
 metadata_link_modifiers_form =
-    link modifiers must be of the form `modifiers = "string"`
+    bağlama düzenleyicileri `modifiers = "string"` biçiminde olmalıdır
 
 metadata_link_name_form =
-    link name must be of the form `name = "string"`
+    bağlantı adı `name = "string"` biçiminde olmalıdır
 
 metadata_link_ordinal_raw_dylib =
-    `#[link_ordinal]` is only supported if link kind is `raw-dylib`
+    `#[link_ordinal]` yalnızca bağlama türü `raw-dylib` ise desteklenir
 
 metadata_link_requires_name =
-    `#[link]` attribute requires a `name = "string"` argument
-    .label = missing `name` argument
+    `#[link]` attribute'ı `name = "string"` argümanını gerektirir
+    .label = eksik `name` argümanı
 
 metadata_missing_native_library =
-    could not find native static library `{$libname}`, perhaps an -L flag is missing?
+    yerel statik kütüphane `{$libname}` bulunamadı, belki bir -L bayrağı eksiktir?
 
 metadata_multiple_candidates =
-    multiple candidates for `{$flavor}` dependency `{$crate_name}` found
+    `{$flavor}` bağımlılığı `{$crate_name}` için birden fazla aday bulundu
 
 metadata_multiple_cfgs =
-    multiple `cfg` arguments in a single `#[link]` attribute
+    tek bir `#[link]` attribute'ında birden fazla `cfg` argümanı
 
 metadata_multiple_import_name_type =
-    multiple `import_name_type` arguments in a single `#[link]` attribute
+    tek bir `#[link]` attribute'ında birden fazla `import_name_type` argümanı
 
 metadata_multiple_kinds_in_link =
-    multiple `kind` arguments in a single `#[link]` attribute
+    tek bir `#[link]` attribute'ında birden fazla `kind` argümanı
 
 metadata_multiple_link_modifiers =
-    multiple `modifiers` arguments in a single `#[link]` attribute
+    tek bir `#[link]` attribute'ında birden fazla `modifiers` argümanı
 
 metadata_multiple_modifiers =
-    multiple `{$modifier}` modifiers in a single `modifiers` argument
+    tek bir `modifiers` argümanında birden fazla `{$modifier}` düzenleyicisi
 
 metadata_multiple_names_in_link =
-    multiple `name` arguments in a single `#[link]` attribute
+    tek bir `#[link]` attribute'ında birden fazla `name` argümanı
 
 metadata_multiple_renamings =
-    multiple renamings were specified for library `{$lib_name}`
+    `{$lib_name}` kütüphanesi için birden fazla yeniden adlandırma belirtildi
 
 metadata_multiple_wasm_import =
-    multiple `wasm_import_module` arguments in a single `#[link]` attribute
+    tek bir `#[link]` attribute'ında birden fazla `wasm_import_module` argümanı
 
 metadata_newer_crate_version =
-    found possibly newer version of crate `{$crate_name}`{$add_info}
-    .note = perhaps that crate needs to be recompiled?
+    `{$crate_name}` crate'inin muhtemelen daha yeni bir sürümü bulundu{$add_info}
+    .note = belki bu crate yeniden derlenmelidir?
 
 metadata_no_crate_with_triple =
-    couldn't find crate `{$crate_name}` with expected target triple {$locator_triple}{$add_info}
+    beklenen hedef üçlü ile `{$crate_name}` crate'i bulunamadı: {$locator_triple}{$add_info}
 
 metadata_no_link_mod_override =
-    overriding linking modifiers from command line is not supported
+    komut satırından bağlama düzenleyicilerini geçersiz kılmak desteklenmiyor
 
 metadata_no_multiple_alloc_error_handler =
-    cannot define multiple allocation error handlers
-    .label = cannot define a new allocation error handler
+    birden fazla tahsis hatası işleyicisi tanımlanamaz
+    .label = yeni bir tahsis hatası işleyicisi tanımlanamaz
 
 metadata_no_multiple_global_alloc =
-    cannot define multiple global allocators
-    .label = cannot define a new global allocator
+    birden fazla global tahsis edici tanımlanamaz
+    .label = yeni bir global tahsis edici tanımlanamaz
 
 metadata_no_panic_strategy =
-    the crate `{$crate_name}` does not have the panic strategy `{$strategy}`
+    `{$crate_name}` crate'i, panic stratejisi `{$strategy}` içermiyor
 
 metadata_no_transitive_needs_dep =
-    the crate `{$crate_name}` cannot depend on a crate that needs {$needs_crate_name}, but it depends on `{$deps_crate_name}`
+    `{$crate_name}` crate'i, `{$deps_crate_name}` crate'ine bağımlı, ancak `{$needs_crate_name}` gereksinimi olan bir crate'e bağımlı olamaz
 
 metadata_non_ascii_name =
-    cannot load a crate with a non-ascii name `{$crate_name}`
+    ASCII olmayan isim `{$crate_name}` ile bir crate yüklenemez
 
 metadata_not_profiler_runtime =
-    the crate `{$crate_name}` is not a profiler runtime
+    `{$crate_name}` crate'i bir profil çalıştırma zamanı değil
 
-metadata_only_provide_library_name = only provide the library name `{$suggested_name}`, not the full filename
+metadata_only_provide_library_name = yalnızca kütüphane adı `{$suggested_name}`, tam dosya adı değil
 
 metadata_prev_alloc_error_handler =
-    previous allocation error handler defined here
+    önceki tahsis hatası işleyicisi burada tanımlandı
 
 metadata_prev_global_alloc =
-    previous global allocator defined here
+    önceki global tahsis edici burada tanımlandı
 
 metadata_profiler_builtins_needs_core =
-    `profiler_builtins` crate (required by compiler options) is not compatible with crate attribute `#![no_core]`
+    `profiler_builtins` crate'i (derleyici seçenekleri tarafından gerekli) `#![no_core]` crate attribute'u ile uyumlu değildir
 
 metadata_raw_dylib_no_nul =
-    link name must not contain NUL characters if link kind is `raw-dylib`
+    bağlantı adı, bağlantı türü `raw-dylib` ise NUL karakterleri içermemelidir
 
 metadata_raw_dylib_only_windows =
-    link kind `raw-dylib` is only supported on Windows targets
+    `raw-dylib` bağlantı türü yalnızca Windows hedeflerinde desteklenir
 
 metadata_renaming_no_link =
-    renaming of the library `{$lib_name}` was specified, however this crate contains no `#[link(...)]` attributes referencing this library
+    `{$lib_name}` kütüphanesinin yeniden adlandırılması belirtildi, ancak bu crate, bu kütüphaneye atıfta bulunan `#[link(...)]` attribute'ları içermiyor
 
 metadata_required_panic_strategy =
-    the crate `{$crate_name}` requires panic strategy `{$found_strategy}` which is incompatible with this crate's strategy of `{$desired_strategy}`
+    `{$crate_name}` crate'i, bu crate'in `{$desired_strategy}` stratejisiyle uyumsuz olan panic stratejisi `{$found_strategy}` gerektiriyor
 
 metadata_rlib_required =
-    crate `{$crate_name}` required to be available in rlib format, but was not found in this form
+    `{$crate_name}` crate'i rlib formatında mevcut olmalıdır, ancak bu biçimde bulunamadı
 
 metadata_rustc_lib_required =
-    crate `{$crate_name}` required to be available in {$kind} format, but was not found in this form
-    .note = only .rmeta files are distributed for `rustc_private` crates other than `rustc_driver`
-    .help = try adding `extern crate rustc_driver;` at the top level of this crate
+    `{$crate_name}` crate'i {$kind} formatında mevcut olmalıdır, ancak bu biçimde bulunamadı
+    .note = `rustc_driver` dışındaki `rustc_private` crate'leri için yalnızca .rmeta dosyaları dağıtılır
+    .help = bu crate'in üst düzeyine `extern crate rustc_driver;` eklemeyi deneyin
 
 metadata_stable_crate_id_collision =
-    found crates (`{$crate_name0}` and `{$crate_name1}`) with colliding StableCrateId values
+    aynı StableCrateId değerlerine sahip crate'ler bulundu (`{$crate_name0}` ve `{$crate_name1}`)
 
 metadata_std_required =
-    `std` is required by `{$current_crate}` because it does not declare `#![no_std]`
+    `{$current_crate}`, `#![no_std]` bildirmediği için `std` gerektirir
 
 metadata_symbol_conflicts_current =
-    the current crate is indistinguishable from one of its dependencies: it has the same crate-name `{$crate_name}` and was compiled with the same `-C metadata` arguments, so this will result in symbol conflicts between the two
+    mevcut crate, bağımlılıklarından biri ile ayırt edilemez: aynı crate adına sahiptir `{$crate_name}` ve aynı `-C metadata` argümanları ile derlenmiştir, bu yüzden iki crate arasında sembol çatışmaları olacaktır
 
 metadata_target_no_std_support =
-    the `{$locator_triple}` target may not support the standard library
+    `{$locator_triple}` hedefi standart kütüphaneyi desteklemeyebilir
 
 metadata_target_not_installed =
-    the `{$locator_triple}` target may not be installed
+    `{$locator_triple}` hedefi kurulu olmayabilir
 
 metadata_two_panic_runtimes =
-    cannot link together two panic runtimes: {$prev_name} and {$cur_name}
+    iki panic çalıştırma zamanını birlikte bağlayamazsınız: {$prev_name} ve {$cur_name}
 
 metadata_unexpected_link_arg =
-    unexpected `#[link]` argument, expected one of: name, kind, modifiers, cfg, wasm_import_module, import_name_type
+    beklenmeyen `#[link]` argümanı, beklenen: name, kind, modifiers, cfg, wasm_import_module, import_name_type
 
 metadata_unknown_import_name_type =
-    unknown import name type `{$import_name_type}`, expected one of: decorated, noprefix, undecorated
+    bilinmeyen ithalat adı türü `{$import_name_type}`, beklenen: decorated, noprefix, undecorated
 
 metadata_unknown_link_kind =
-    unknown link kind `{$kind}`, expected one of: static, dylib, framework, raw-dylib, link-arg
-    .label = unknown link kind
+    bilinmeyen bağlama türü `{$kind}`, beklenen: static, dylib, framework, raw-dylib, link-arg
+    .label = bilinmeyen bağlama türü
 
 metadata_unknown_link_modifier =
-    unknown linking modifier `{$modifier}`, expected one of: bundle, verbatim, whole-archive, as-needed
+    bilinmeyen bağlama düzenleyicisi `{$modifier}`, beklenen: bundle, verbatim, whole-archive, as-needed
 
 metadata_unsupported_abi =
-    ABI not supported by `#[link(kind = "raw-dylib")]` on this architecture
+    `#[link(kind = "raw-dylib")]` tarafından desteklenmeyen ABI bu mimaride
 
 metadata_unsupported_abi_i686 =
-    ABI not supported by `#[link(kind = "raw-dylib")]` on i686
+    `#[link(kind = "raw-dylib")]` tarafından desteklenmeyen ABI i686 üzerinde
 
 metadata_wasm_import_form =
-    wasm import module must be of the form `wasm_import_module = "string"`
+    wasm import modülü `wasm_import_module = "string"` biçiminde olmalıdır
 
 metadata_whole_archive_needs_static =
-    linking modifier `whole-archive` is only compatible with `static` linking kind
+    `whole-archive` bağlama düzenleyicisi yalnızca `static` bağlama türü ile uyumludur

@@ -1,3 +1,4 @@
+çevir
 hir_typeck_add_missing_parentheses_in_range = you must surround the range in parentheses to call its `{$func_name}` function
 
 hir_typeck_add_return_type_add = try adding a return type

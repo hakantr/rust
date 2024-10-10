@@ -402,7 +402,7 @@ impl<'tcx> NonConstOp<'tcx> for EscapingCellBorrow {
         DiagImportance::Secondary
     }
     fn build_error(&self, ccx: &ConstCx<'_, 'tcx>, span: Span) -> Diag<'tcx> {
-        ccx.dcx().create_err(errors::InteriorMutableRefEscaping {
+        ccx.dcx().create_err(errors::InteriorMutableDataRefer {
             span,
             opt_help: matches!(ccx.const_kind(), hir::ConstContext::Static(_)),
             kind: ccx.const_kind(),
@@ -430,12 +430,12 @@ impl<'tcx> NonConstOp<'tcx> for EscapingMutBorrow {
 
     fn build_error(&self, ccx: &ConstCx<'_, 'tcx>, span: Span) -> Diag<'tcx> {
         match self.0 {
-            hir::BorrowKind::Raw => ccx.tcx.dcx().create_err(errors::MutableRawEscaping {
+            hir::BorrowKind::Raw => ccx.tcx.dcx().create_err(errors::UnallowedMutableRaw {
                 span,
                 kind: ccx.const_kind(),
                 teach: ccx.tcx.sess.teach(E0764),
             }),
-            hir::BorrowKind::Ref => ccx.dcx().create_err(errors::MutableRefEscaping {
+            hir::BorrowKind::Ref => ccx.dcx().create_err(errors::UnallowedMutableRefs {
                 span,
                 kind: ccx.const_kind(),
                 teach: ccx.tcx.sess.teach(E0764),

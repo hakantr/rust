@@ -1,29 +1,29 @@
 mir_dataflow_duplicate_values_for =
-    duplicate values for `{$name}`
+    `{$name}` için yinelenen değerler
 
 mir_dataflow_path_must_end_in_filename =
-    path must end in a filename
+    yol bir dosya adı ile bitmelidir
 
 mir_dataflow_peek_argument_not_a_local =
-    rustc_peek: argument was not a local
+    rustc_peek: argüman bir yerel değişken değil
 
 mir_dataflow_peek_argument_untracked =
-    rustc_peek: argument untracked
+    rustc_peek: argüman izlenmiyor
 
 mir_dataflow_peek_bit_not_set =
-    rustc_peek: bit not set
+    rustc_peek: bit ayarlanmamış
 
 mir_dataflow_peek_must_be_not_temporary =
-    dataflow::sanity_check cannot feed a non-temp to rustc_peek
+    dataflow::sanity_check geçici olmayan bir değeri rustc_peek'e besleyemez
 
 mir_dataflow_peek_must_be_place_or_ref_place =
-    rustc_peek: argument expression must be either `place` or `&place`
+    rustc_peek: argüman ifadesi ya `place` ya da `&place` olmalıdır
 
 mir_dataflow_requires_an_argument =
-    `{$name}` requires an argument
+    `{$name}` bir argüman gerektiriyor
 
 mir_dataflow_stop_after_dataflow_ended_compilation =
-    stop_after_dataflow ended compilation
+    stop_after_dataflow derlemeyi sonlandırdı
 
 mir_dataflow_unknown_formatter =
-    unknown formatter
+    bilinmeyen biçimlendirici

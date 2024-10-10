@@ -1,183 +1,183 @@
 expand_arg_not_attributes =
-    second argument must be `attributes`
+    ikinci argüman `attributes` olmalıdır
 
 expand_attr_no_arguments =
-    attribute must have either one or two arguments
+    attribute bir veya iki argümana sahip olmalıdır
 
 expand_attribute_meta_item =
-    attribute must be a meta item, not a literal
+    attribute bir meta öğe olmalı, literal olmamalı
 
 expand_attribute_single_word =
-    attribute must only be a single word
+    attribute yalnızca tek bir kelime olmalıdır
 
 expand_attributes_on_expressions_experimental =
-    attributes on expressions are experimental
-    .help_outer_doc = `///` is used for outer documentation comments; for a plain comment, use `//`
-    .help_inner_doc = `//!` is used for inner documentation comments; for a plain comment, use `//` by removing the `!` or inserting a space in between them: `// !`
+    ifadelerdeki attribute'lar deneyseldir
+    .help_outer_doc = `///` dış dökümantasyon yorumları için kullanılır; sıradan bir yorum için `//` kullanın
+    .help_inner_doc = `//!` iç dökümantasyon yorumları için kullanılır; sıradan bir yorum için, `!` işaretini kaldırarak veya aralarına boşluk koyarak `// !` olarak kullanın
 
 expand_attributes_wrong_form =
-    attribute must be of form: `attributes(foo, bar)`
+    attribute şu formda olmalıdır: `attributes(foo, bar)`
 
 expand_cannot_be_name_of_macro =
-    `{$trait_ident}` cannot be a name of {$macro_type} macro
+    `{$trait_ident}`, {$macro_type} makrosunun ismi olamaz
 
 expand_collapse_debuginfo_illegal =
-    illegal value for attribute #[collapse_debuginfo(no|external|yes)]
+    attribute için geçersiz değer #[collapse_debuginfo(no|external|yes)]
 
 expand_count_repetition_misplaced =
-    `count` can not be placed inside the inner-most repetition
+    `count` en iç tekrarda yer alamaz
 
 expand_crate_name_in_cfg_attr =
-    `crate_name` within an `#![cfg_attr]` attribute is forbidden
+    `crate_name` ifadesi `#![cfg_attr]` attribute'unda yasaktır
 
 expand_crate_type_in_cfg_attr =
-    `crate_type` within an `#![cfg_attr]` attribute is forbidden
+    `crate_type` ifadesi `#![cfg_attr]` attribute'unda yasaktır
 
 expand_custom_attribute_panicked =
-    custom attribute panicked
-    .help = message: {$message}
+    özel attribute hata verdi
+    .help = mesaj: {$message}
 
-expand_duplicate_matcher_binding = duplicate matcher binding
-    .label = duplicate binding
-    .label2 = previous binding
+expand_duplicate_matcher_binding = tekrarlanan eşleşme bağlayıcısı
+    .label = tekrarlanan bağlayıcı
+    .label2 = önceki bağlayıcı
 
 expand_empty_delegation_mac =
-    empty {$kind} delegation is not supported
+    boş {$kind} delegasyonu desteklenmez
 
 expand_expected_paren_or_brace =
-    expected `(` or `{"{"}`, found `{$token}`
+    beklenen `(` veya `{"{"}`, bulundu `{$token}`
 
 expand_explain_doc_comment_inner =
-    inner doc comments expand to `#![doc = "..."]`, which is what this macro attempted to match
+    iç doküman yorumları `#![doc = "..."]` olarak genişler, bu makro bunu eşleştirmeye çalıştı
 
 expand_explain_doc_comment_outer =
-    outer doc comments expand to `#[doc = "..."]`, which is what this macro attempted to match
+    dış doküman yorumları `#[doc = "..."]` olarak genişler, bu makro bunu eşleştirmeye çalıştı
 
 expand_expr_repeat_no_syntax_vars =
-    attempted to repeat an expression containing no syntax variables matched as repeating at this depth
+    bu derinlikte tekrarlanan sözdizimi değişkeni içermeyen bir ifade tekrarlanmak istendi
 
 expand_feature_not_allowed =
-    the feature `{$name}` is not in the list of allowed features
+    `{$name}` özelliği izin verilen özellikler listesinde değil
 
 expand_feature_removed =
-    feature has been removed
-    .label = feature has been removed
+    özellik kaldırıldı
+    .label = özellik kaldırıldı
     .reason = {$reason}
 
 expand_glob_delegation_outside_impls =
-    glob delegation is only supported in impls
+    glob delegasyonu yalnızca impl'lerde desteklenir
 
 expand_glob_delegation_traitless_qpath =
-    qualified path without a trait in glob delegation
+    glob delegasyonunda trait içermeyen nitelikli yol
 
 expand_helper_attribute_name_invalid =
-    `{$name}` cannot be a name of derive helper attribute
+    `{$name}`, türetme yardımcı attribute'unun ismi olamaz
 
 expand_incomplete_parse =
-    macro expansion ignores token `{$token}` and any following
-    .label = caused by the macro expansion here
-    .note = the usage of `{$macro_path}!` is likely invalid in {$kind_name} context
-    .suggestion_add_semi = you might be missing a semicolon here
+    makro genişlemesi `{$token}` simgesini ve onu takip edenleri göz ardı ediyor
+    .label = makro genişlemesi burada tetiklendi
+    .note = `{$macro_path}!` kullanımının muhtemelen {$kind_name} bağlamında geçersiz olduğu
+    .suggestion_add_semi = burada noktalı virgül eksik olabilir
 
-expand_invalid_cfg_expected_syntax = expected syntax is
+expand_invalid_cfg_expected_syntax = beklenen sözdizimi
 
-expand_invalid_cfg_multiple_predicates = multiple `cfg` predicates are specified
-expand_invalid_cfg_no_parens = `cfg` is not followed by parentheses
-expand_invalid_cfg_no_predicate = `cfg` predicate is not specified
-expand_invalid_cfg_predicate_literal = `cfg` predicate key cannot be a literal
+expand_invalid_cfg_multiple_predicates = birden fazla `cfg` predikatı belirtildi
+expand_invalid_cfg_no_parens = `cfg` parantez ile takip edilmiyor
+expand_invalid_cfg_no_predicate = `cfg` predikatı belirtilmedi
+expand_invalid_cfg_predicate_literal = `cfg` predikat anahtarı bir literal olamaz
 
 expand_invalid_fragment_specifier =
-    invalid fragment specifier `{$fragment}`
+    geçersiz fragment belirteci `{$fragment}`
     .help = {$help}
 
 expand_macro_body_stability =
-    macros cannot have body stability attributes
-    .label = invalid body stability attribute
-    .label2 = body stability attribute affects this macro
+    makrolar, gövde kararlılık attribute'larına sahip olamaz
+    .label = geçersiz gövde kararlılık attribute'u
+    .label2 = gövde kararlılık attribute'u bu makroyu etkiler
 
 expand_macro_const_stability =
-    macros cannot have const stability attributes
-    .label = invalid const stability attribute
-    .label2 = const stability attribute affects this macro
+    makrolar, const kararlılık attribute'larına sahip olamaz
+    .label = geçersiz const kararlılık attribute'u
+    .label2 = const kararlılık attribute'u bu makroyu etkiler
 
-expand_macro_expands_to_match_arm = macros cannot expand to match arms
+expand_macro_expands_to_match_arm = makrolar eşleşme kollarına genişleyemez
 
 expand_malformed_feature_attribute =
-    malformed `feature` attribute input
-    .expected = expected just one word
+    hatalı `feature` attribute girişi
+    .expected = sadece bir kelime bekleniyor
 
 expand_meta_var_dif_seq_matchers = {$msg}
 
 expand_meta_var_expr_unrecognized_var =
-    variable `{$key}` is not recognized in meta-variable expression
+    meta-değişken ifadesinde tanınmayan değişken `{$key}`
 
-expand_missing_fragment_specifier = missing fragment specifier
-    .note = fragment specifiers must be specified in the 2024 edition
-    .suggestion_add_fragspec = try adding a specifier here
+expand_missing_fragment_specifier = eksik fragment belirteci
+    .note = fragment belirteçleri 2024 sürümünde belirtilmelidir
+    .suggestion_add_fragspec = buraya bir belirteç eklemeyi deneyin
     .valid = {$valid}
 
 expand_module_circular =
-    circular modules: {$modules}
+    döngüsel modüller: {$modules}
 
 expand_module_file_not_found =
-    file not found for module `{$name}`
-    .help = to create the module `{$name}`, create file "{$default_path}" or "{$secondary_path}"
-    .note = if there is a `mod {$name}` elsewhere in the crate already, import it with `use crate::...` instead
+    `{$name}` modülü için dosya bulunamadı
+    .help = `{$name}` modülünü oluşturmak için "{$default_path}" veya "{$secondary_path}" dosyasını oluşturun
+    .note = crate içinde başka bir yerde `mod {$name}` varsa, bunun yerine `use crate::...` ile içe aktarın
 
 expand_module_in_block =
-    cannot declare a non-inline module inside a block unless it has a path attribute
-    .note = maybe `use` the module `{$name}` instead of redeclaring it
+    yol attribute'u olmadan bir blok içinde çevrimdışı olmayan bir modül bildirilemez
+    .note = `{$name}` modülünü yeniden bildirmek yerine belki `use` ile kullanmayı düşünün
 
 expand_module_multiple_candidates =
-    file for module `{$name}` found at both "{$default_path}" and "{$secondary_path}"
-    .help = delete or rename one of them to remove the ambiguity
+    `{$name}` modülü için hem "{$default_path}" hem de "{$secondary_path}" konumunda dosya bulundu
+    .help = belirsizliği gidermek için bunlardan birini silin veya yeniden adlandırın
 
 expand_must_repeat_once =
-    this must repeat at least once
+    bu en az bir kez tekrarlanmalıdır
 
 expand_non_inline_modules_in_proc_macro_input_are_unstable =
-    non-inline modules in proc macro input are unstable
+    işlem makrosu girişindeki çevrimdışı olmayan modüller kararsızdır
 
 expand_not_a_meta_item =
-    not a meta item
+    meta öğesi değil
 
 expand_only_one_word =
-    must only be one word
+    yalnızca bir kelime olmalıdır
 
-expand_proc_macro_back_compat = using an old version of `{$crate_name}`
-    .note = older versions of the `{$crate_name}` crate no longer compile; please update to `{$crate_name}` v{$fixed_version}, or switch to one of the `{$crate_name}` alternatives
+expand_proc_macro_back_compat = `{$crate_name}` eski sürümü kullanılıyor
+    .note = `{$crate_name}` crate'inin eski sürümleri artık derlenmiyor; lütfen `{$crate_name}` v{$fixed_version} sürümüne güncelleyin veya `{$crate_name}` alternatiflerinden birine geçin
 
 expand_proc_macro_derive_panicked =
-    proc-macro derive panicked
-    .help = message: {$message}
+    işlem makrosu türetme hata verdi
+    .help = mesaj: {$message}
 
 expand_proc_macro_derive_tokens =
-    proc-macro derive produced unparsable tokens
+    işlem makrosu türetme, ayrıştırılamayan simgeler üretti
 
 expand_proc_macro_panicked =
-    proc macro panicked
-    .help = message: {$message}
+    işlem makrosu hata verdi
+    .help = mesaj: {$message}
 
 expand_recursion_limit_reached =
-    recursion limit reached while expanding `{$descr}`
-    .help = consider increasing the recursion limit by adding a `#![recursion_limit = "{$suggested_limit}"]` attribute to your crate (`{$crate_name}`)
+    `{$descr}` genişletilirken yineleme sınırına ulaşıldı
+    .help = crate'inize (`{$crate_name}`) `#![recursion_limit = "{$suggested_limit}"]` attribute'unu ekleyerek yineleme sınırını artırmayı düşünün
 
 expand_remove_expr_not_supported =
-    removing an expression is not supported in this position
+    bu konumda bir ifadeyi kaldırmak desteklenmez
 
 expand_remove_node_not_supported =
-    removing {$descr} is not supported in this position
+    bu konumda {$descr} kaldırmak desteklenmez
 
 expand_resolve_relative_path =
-    cannot resolve relative path in non-file source `{$path}`
+    dosya olmayan kaynakta göreli yol çözümlenemiyor: `{$path}`
 
 expand_trace_macro = trace_macro
 
 expand_unsupported_key_value =
-    key-value macro attributes are not supported
+    anahtar-değer makro attribute'ları desteklenmez
 
 expand_var_still_repeating =
-    variable `{$ident}` is still repeating at this depth
+    `{$ident}` değişkeni bu derinlikte hala tekrarlanıyor
 
 expand_wrong_fragment_kind =
-    non-{$kind} macro in {$kind} position: {$name}
+    {$kind} pozisyonunda olmayan {$kind} makrosu: {$name}

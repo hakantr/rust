@@ -1,107 +1,107 @@
 middle_adjust_for_foreign_abi_error =
-    target architecture {$arch} does not support `extern {$abi}` ABI
+    hedef mimari {$arch}, `extern {$abi}` ABI'yi desteklemiyor
 
-middle_assert_async_resume_after_panic = `async fn` resumed after panicking
+middle_assert_async_resume_after_panic = `async fn`, panikledikten sonra devam etti
 
-middle_assert_async_resume_after_return = `async fn` resumed after completion
+middle_assert_async_resume_after_return = `async fn`, tamamlandıktan sonra devam etti
 
-middle_assert_coroutine_resume_after_panic = coroutine resumed after panicking
+middle_assert_coroutine_resume_after_panic = coroutine, panikledikten sonra devam etti
 
-middle_assert_coroutine_resume_after_return = coroutine resumed after completion
+middle_assert_coroutine_resume_after_return = coroutine, tamamlandıktan sonra devam etti
 
 middle_assert_divide_by_zero =
-    attempt to divide `{$val}` by zero
+    `{$val}` değerini sıfıra bölme girişimi
 
-middle_assert_gen_resume_after_panic = `gen` fn or block cannot be further iterated on after it panicked
+middle_assert_gen_resume_after_panic = `gen` fn veya blok, panikledikten sonra daha fazla yineleme yapılamaz
 
 middle_assert_misaligned_ptr_deref =
-    misaligned pointer dereference: address must be a multiple of {$required} but is {$found}
+    hizalanmamış işaretçi referansı: adres {$required}'ın katı olmalıdır, ancak {$found}
 
 middle_assert_op_overflow =
-    attempt to compute `{$left} {$op} {$right}`, which would overflow
+    `{$left} {$op} {$right}` hesaplama girişimi, taşma oluşturur
 
 middle_assert_overflow_neg =
-    attempt to negate `{$val}`, which would overflow
+    `{$val}` değerini ters çevirme girişimi, taşma oluşturur
 
 middle_assert_remainder_by_zero =
-    attempt to calculate the remainder of `{$val}` with a divisor of zero
+    `{$val}` değerinin sıfır ile kalanını hesaplama girişimi
 
 middle_assert_shl_overflow =
-    attempt to shift left by `{$val}`, which would overflow
+    `{$val}` kadar sola kaydırma girişimi, taşma oluşturur
 
 middle_assert_shr_overflow =
-    attempt to shift right by `{$val}`, which would overflow
+    `{$val}` kadar sağa kaydırma girişimi, taşma oluşturur
 
 middle_bounds_check =
-    index out of bounds: the length is {$len} but the index is {$index}
+    sınırların dışında indeks: uzunluk {$len}, ancak indeks {$index}
 
 middle_cannot_be_normalized =
-    unable to determine layout for `{$ty}` because `{$failure_ty}` cannot be normalized
+    `{$ty}` için düzen belirlenemedi çünkü `{$failure_ty}` normalleştirilemiyor
 
 middle_conflict_types =
-    this expression supplies two conflicting concrete types for the same opaque type
+    bu ifade, aynı opak tür için iki çelişen somut tür sağlar
 
 middle_consider_type_length_limit =
-    consider adding a `#![type_length_limit="{$type_length}"]` attribute to your crate
+    crate'inize `#![type_length_limit="{$type_length}"]` attribute'unu eklemeyi düşünün
 
 middle_const_eval_non_int =
-    constant evaluation of enum discriminant resulted in non-integer
+    enum ayrımcısının sabit değerlendirmesi tamsayı olmayan bir sonuç verdi
 
 middle_const_not_used_in_type_alias =
-    const parameter `{$ct}` is part of concrete type but not used in parameter list for the `impl Trait` type alias
+    const parametresi `{$ct}`, somut türün bir parçası ancak `impl Trait` tür alias'ı için parametre listesinde kullanılmıyor
 
 middle_cycle =
-    a cycle occurred during layout computation
+    düzen hesaplaması sırasında bir döngü oluştu
 
-middle_deprecated = use of deprecated {$kind} `{$path}`{$has_note ->
+middle_deprecated = kullanım dışı {$kind} `{$path}` kullanımı{$has_note ->
         [true] : {$note}
         *[other] {""}
     }
-middle_deprecated_in_future = use of {$kind} `{$path}` that will be deprecated in a future Rust version{$has_note ->
+middle_deprecated_in_future = gelecekteki bir Rust sürümünde kullanım dışı olacak {$kind} `{$path}` kullanımı{$has_note ->
         [true] : {$note}
         *[other] {""}
     }
-middle_deprecated_in_version = use of {$kind} `{$path}` that will be deprecated in future version {$version}{$has_note ->
+middle_deprecated_in_version = gelecekteki {$version} sürümünde kullanım dışı olacak {$kind} `{$path}` kullanımı{$has_note ->
         [true] : {$note}
         *[other] {""}
     }
-middle_deprecated_suggestion = replace the use of the deprecated {$kind}
+middle_deprecated_suggestion = kullanım dışı olan {$kind} kullanımını değiştirin
 
 middle_drop_check_overflow =
-    overflow while adding drop-check rules for {$ty}
-    .note = overflowed on {$overflow_ty}
+    {$ty} için drop-kontrol kuralları eklenirken taşma
+    .note = taşma {$overflow_ty} üzerinde gerçekleşti
 
-middle_erroneous_constant = erroneous constant encountered
+middle_erroneous_constant = hatalı sabit ile karşılaşıldı
 
 middle_layout_references_error =
-    the type has an unknown layout
+    türün bilinmeyen bir düzeni var
 
 middle_limit_invalid =
-    `limit` must be a non-negative integer
+    `limit` negatif olmayan bir tamsayı olmalıdır
     .label = {$error_str}
 
 middle_opaque_hidden_type_mismatch =
-    concrete type differs from previous defining opaque type use
-    .label = expected `{$self_ty}`, got `{$other_ty}`
+    somut tür, önceki tanımlayan opak tür kullanımından farklı
+    .label = beklenen `{$self_ty}`, elde edilen `{$other_ty}`
 
 middle_previous_use_here =
-    previous use here
+    önceki kullanım burada
 
 middle_recursion_limit_reached =
-    reached the recursion limit finding the struct tail for `{$ty}`
-    .help = consider increasing the recursion limit by adding a `#![recursion_limit = "{$suggested_limit}"]`
+    `{$ty}` için struct kuyruğu bulunurken yineleme sınırına ulaşıldı
+    .help = crate'inize `#![recursion_limit = "{$suggested_limit}"]` attribute'unu eklemeyi düşünün
 
-middle_requires_lang_item = requires `{$name}` lang_item
+middle_requires_lang_item = `{$name}` lang_item gerektirir
 
 middle_strict_coherence_needs_negative_coherence =
-    to use `strict_coherence` on this trait, the `with_negative_coherence` feature must be enabled
-    .label = due to this attribute
+    bu trait için `strict_coherence` kullanmak için `with_negative_coherence` özelliği etkinleştirilmelidir
+    .label = bu attribute nedeniyle
 
-middle_type_length_limit = reached the type-length limit while instantiating `{$shrunk}`
+middle_type_length_limit = `{$shrunk}` örneklenirken tür-uzunluk sınırına ulaşıldı
 
 middle_unknown_layout =
-    the type `{$ty}` has an unknown layout
+    `{$ty}` türünün bilinmeyen bir düzeni var
 
 middle_values_too_big =
-    values of the type `{$ty}` are too big for the target architecture
-middle_written_to_path = the full type name has been written to '{$path}'
+    `{$ty}` türündeki değerler hedef mimari için çok büyük
+middle_written_to_path = tam tür ismi '{$path}' içine yazıldı

@@ -1,274 +1,274 @@
-builtin_macros_alloc_error_must_be_fn = alloc_error_handler must be a function
-builtin_macros_alloc_must_statics = allocators must be statics
+builtin_macros_alloc_error_must_be_fn = `alloc_error_handler` bir fonksiyon olmalıdır
+builtin_macros_alloc_must_statics = allocator'lar `static` olmalıdır
 
 builtin_macros_asm_clobber_abi = clobber_abi
-builtin_macros_asm_clobber_no_reg = asm with `clobber_abi` must specify explicit registers for outputs
-builtin_macros_asm_clobber_outputs = generic outputs
+builtin_macros_asm_clobber_no_reg = `clobber_abi` ile asm, çıktılar için açık register'lar belirtmelidir
+builtin_macros_asm_clobber_outputs = genel çıktılar
 
-builtin_macros_asm_duplicate_arg = duplicate argument named `{$name}`
-    .label = previously here
-    .arg = duplicate argument
+builtin_macros_asm_duplicate_arg = `{$name}` adlı yinelenen argüman
+    .label = daha önce burada
+    .arg = yinelenen argüman
 
-builtin_macros_asm_expected_comma = expected token: `,`
-    .label = expected `,`
+builtin_macros_asm_expected_comma = beklenen token: `,`
+    .label = beklenen `,`
 
-builtin_macros_asm_expected_other = expected operand, {$is_inline_asm ->
-    [false] options
-    *[true] clobber_abi, options
-    }, or additional template string
+builtin_macros_asm_expected_other = beklenen operand, {$is_inline_asm ->
+    [false] seçenekler
+    *[true] clobber_abi, seçenekler
+    } veya ek şablon dizesi
 
-builtin_macros_asm_expected_string_literal = expected string literal
-    .label = not a string literal
+builtin_macros_asm_expected_string_literal = beklenen string literal
+    .label = string literal değil
 
-builtin_macros_asm_explicit_register_name = explicit register arguments cannot have names
+builtin_macros_asm_explicit_register_name = açıkça belirtilen register argümanlarının isimleri olamaz
 
-builtin_macros_asm_mayunwind = asm labels are not allowed with the `may_unwind` option
+builtin_macros_asm_mayunwind = asm etiketlerine `may_unwind` seçeneği ile izin verilmez
 
-builtin_macros_asm_modifier_invalid = asm template modifier must be a single character
+builtin_macros_asm_modifier_invalid = asm şablon modifikatörü tek bir karakter olmalıdır
 
-builtin_macros_asm_mutually_exclusive = the `{$opt1}` and `{$opt2}` options are mutually exclusive
+builtin_macros_asm_mutually_exclusive = `{$opt1}` ve `{$opt2}` seçenekleri birbirini dışlar
 
-builtin_macros_asm_no_matched_argument_name = there is no argument named `{$name}`
+builtin_macros_asm_no_matched_argument_name = `{$name}` adlı bir argüman yok
 
-builtin_macros_asm_noreturn = asm outputs are not allowed with the `noreturn` option
+builtin_macros_asm_noreturn = `noreturn` seçeneği ile asm çıktılara izin verilmez
 
-builtin_macros_asm_opt_already_provided = the `{$symbol}` option was already provided
-    .label = this option was already provided
-    .suggestion = remove this option
+builtin_macros_asm_opt_already_provided = `{$symbol}` seçeneği zaten sağlandı
+    .label = bu seçenek zaten sağlandı
+    .suggestion = bu seçeneği kaldırın
 
-builtin_macros_asm_pos_after = positional arguments cannot follow named arguments or explicit register arguments
-    .pos = positional argument
-    .named = named argument
-    .explicit = explicit register argument
+builtin_macros_asm_pos_after = konumsal argümanlar, isimli argümanlar veya açıkça belirtilen register argümanlarından sonra gelemez
+    .pos = konumsal argüman
+    .named = isimli argüman
+    .explicit = açık register argümanı
 
-builtin_macros_asm_pure_combine = the `pure` option must be combined with either `nomem` or `readonly`
+builtin_macros_asm_pure_combine = `pure` seçeneği `nomem` veya `readonly` ile birleştirilmelidir
 
-builtin_macros_asm_pure_no_output = asm with the `pure` option must have at least one output
+builtin_macros_asm_pure_no_output = `pure` seçeneği ile asm en az bir çıktı içermelidir
 
-builtin_macros_asm_requires_template = requires at least a template string argument
+builtin_macros_asm_requires_template = en az bir şablon dizesi argümanı gereklidir
 
-builtin_macros_asm_sym_no_path = expected a path for argument to `sym`
+builtin_macros_asm_sym_no_path = `sym` için bir yol (path) bekleniyordu
 
-builtin_macros_asm_underscore_input = _ cannot be used for input operands
+builtin_macros_asm_underscore_input = `_` giriş operandları için kullanılamaz
 
-builtin_macros_asm_unsupported_clobber_abi = `clobber_abi` cannot be used with `{$macro_name}!`
+builtin_macros_asm_unsupported_clobber_abi = `clobber_abi` `{$macro_name}!` ile kullanılamaz
 
-builtin_macros_asm_unsupported_operand = the `{$symbol}` operand cannot be used with `{$macro_name}!`
-    .label = the `{$symbol}` operand is not meaningful for global-scoped inline assembly, remove it
+builtin_macros_asm_unsupported_operand = `{$symbol}` operandı `{$macro_name}!` ile kullanılamaz
+    .label = `{$symbol}` operandı global kapsamlı satır içi asm için anlamlı değildir, kaldırın
 
-builtin_macros_asm_unsupported_option = the `{$symbol}` option cannot be used with `{$macro_name}!`
-    .label = the `{$symbol}` option is not meaningful for global-scoped inline assembly
-    .suggestion = remove this option
+builtin_macros_asm_unsupported_option = `{$symbol}` seçeneği `{$macro_name}!` ile kullanılamaz
+    .label = `{$symbol}` seçeneği global kapsamlı satır içi asm için anlamlı değildir
+    .suggestion = bu seçeneği kaldırın
 
-builtin_macros_assert_missing_comma = unexpected string literal
-    .suggestion = try adding a comma
+builtin_macros_assert_missing_comma = beklenmeyen string literal
+    .suggestion = bir virgül eklemeyi deneyin
 
-builtin_macros_assert_requires_boolean = macro requires a boolean expression as an argument
-    .label = boolean expression required
+builtin_macros_assert_requires_boolean = makro, argüman olarak bir boolean ifade gerektirir
+    .label = boolean ifade gerekli
 
-builtin_macros_assert_requires_expression = macro requires an expression as an argument
-    .suggestion = try removing semicolon
+builtin_macros_assert_requires_expression = makro, argüman olarak bir ifade gerektirir
+    .suggestion = noktalı virgülü kaldırmayı deneyin
 
-builtin_macros_bad_derive_target = `derive` may only be applied to `struct`s, `enum`s and `union`s
-    .label = not applicable here
-    .label2 = not a `struct`, `enum` or `union`
+builtin_macros_bad_derive_target = `derive` yalnızca `struct`, `enum` ve `union`lara uygulanabilir
+    .label = burada uygulanamaz
+    .label2 = bir `struct`, `enum` veya `union` değil
 
-builtin_macros_bench_sig = functions used as benches must have signature `fn(&mut Bencher) -> impl Termination`
+builtin_macros_bench_sig = bench'lerde kullanılan fonksiyonlar `fn(&mut Bencher) -> impl Termination` imzasına sahip olmalıdır
 
+builtin_macros_cannot_derive_union = bu trait union'lar için türetilemez
 
-builtin_macros_cannot_derive_union = this trait cannot be derived for unions
+builtin_macros_cfg_accessible_has_args = `cfg_accessible` yolu argüman kabul edemez
 
-builtin_macros_cfg_accessible_has_args = `cfg_accessible` path cannot accept arguments
+builtin_macros_cfg_accessible_indeterminate = yolun erişilebilir olup olmadığı belirlenemiyor
 
-builtin_macros_cfg_accessible_indeterminate = cannot determine whether the path is accessible or not
+builtin_macros_cfg_accessible_literal_path = `cfg_accessible` yolu bir literal olamaz
+builtin_macros_cfg_accessible_multiple_paths = birden fazla `cfg_accessible` yolu belirtildi
+builtin_macros_cfg_accessible_unspecified_path = `cfg_accessible` yolu belirtilmedi
 
-builtin_macros_cfg_accessible_literal_path = `cfg_accessible` path cannot be a literal
-builtin_macros_cfg_accessible_multiple_paths = multiple `cfg_accessible` paths are specified
-builtin_macros_cfg_accessible_unspecified_path = `cfg_accessible` path is not specified
-builtin_macros_concat_bytes_array = cannot concatenate doubly nested array
-    .note = byte strings are treated as arrays of bytes
-    .help = try flattening the array
+builtin_macros_concat_bytes_array = iç içe geçmiş diziler birleştirilemez
+    .note = bayt dizeleri baytların dizileri olarak kabul edilir
+    .help = diziyi düzleştirmeyi deneyin
 
-builtin_macros_concat_bytes_bad_repeat = repeat count is not a positive number
+builtin_macros_concat_bytes_bad_repeat = tekrar sayısı pozitif bir sayı değil
 
-builtin_macros_concat_bytes_invalid = cannot concatenate {$lit_kind} literals
-    .byte_char = try using a byte character
-    .byte_str = try using a byte string
-    .number_array = try wrapping the number in an array
+builtin_macros_concat_bytes_invalid = {$lit_kind} literalleri birleştirilemez
+    .byte_char = bir bayt karakteri kullanmayı deneyin
+    .byte_str = bir bayt dizesi kullanmayı deneyin
+    .number_array = sayıyı bir dizi içine sarmayı deneyin
 
-builtin_macros_concat_bytes_missing_literal = expected a byte literal
-    .note = only byte literals (like `b"foo"`, `b's'` and `[3, 4, 5]`) can be passed to `concat_bytes!()`
+builtin_macros_concat_bytes_missing_literal = bir bayt literal bekleniyordu
+    .note = yalnızca bayt literalleri (`b"foo"`, `b's'` ve `[3, 4, 5]` gibi) `concat_bytes!()`'a geçilebilir
 
-builtin_macros_concat_bytes_non_u8 = numeric literal is not a `u8`
+builtin_macros_concat_bytes_non_u8 = sayısal literal bir `u8` değil
 
-builtin_macros_concat_bytes_oob = numeric literal is out of bounds
+builtin_macros_concat_bytes_oob = sayısal literal sınırların dışında
 
-builtin_macros_concat_bytestr = cannot concatenate a byte string literal
-builtin_macros_concat_c_str_lit = cannot concatenate a C string literal
+builtin_macros_concat_bytestr = bir bayt dizesi literal birleştirilemez
+builtin_macros_concat_c_str_lit = bir C dizesi literal birleştirilemez
 
-builtin_macros_concat_idents_ident_args = `concat_idents!()` requires ident args
+builtin_macros_concat_idents_ident_args = `concat_idents!()` tanımlayıcı argümanlar gerektirir
 
-builtin_macros_concat_idents_missing_args = `concat_idents!()` takes 1 or more arguments
-builtin_macros_concat_idents_missing_comma = `concat_idents!()` expecting comma
-builtin_macros_concat_missing_literal = expected a literal
-    .note = only literals (like `"foo"`, `-42` and `3.14`) can be passed to `concat!()`
+builtin_macros_concat_idents_missing_args = `concat_idents!()` 1 veya daha fazla argüman alır
+builtin_macros_concat_idents_missing_comma = `concat_idents!()` virgül bekliyor
+builtin_macros_concat_missing_literal = bir literal bekleniyordu
+    .note = yalnızca literaller (`"foo"`, `-42` ve `3.14` gibi) `concat!()`'a geçilebilir
 
-builtin_macros_default_arg = `#[default]` attribute does not accept a value
-    .suggestion = try using `#[default]`
+builtin_macros_default_arg = `#[default]` özniteliği bir değer kabul etmez
+    .suggestion = `#[default]` kullanmayı deneyin
 
-builtin_macros_derive_macro_call = `derive` cannot be used on items with type macros
+builtin_macros_derive_macro_call = `derive` tür makroları içeren öğeler üzerinde kullanılamaz
 
-builtin_macros_derive_path_args_list = traits in `#[derive(...)]` don't accept arguments
-    .suggestion = remove the arguments
+builtin_macros_derive_path_args_list = `#[derive(...)]` içindeki trait'ler argüman kabul etmez
+    .suggestion = argümanları kaldırın
 
-builtin_macros_derive_path_args_value = traits in `#[derive(...)]` don't accept values
-    .suggestion = remove the value
+builtin_macros_derive_path_args_value = `#[derive(...)]` içindeki trait'ler değer kabul etmez
+    .suggestion = değeri kaldırın
 
-builtin_macros_env_not_defined = environment variable `{$var}` not defined at compile time
-    .cargo = Cargo sets build script variables at run time. Use `std::env::var({$var_expr})` instead
-    .custom = use `std::env::var({$var_expr})` to read the variable at run time
+builtin_macros_env_not_defined = `{$var}` ortam değişkeni derleme zamanında tanımlı değil
+    .cargo = Cargo derleme betiği değişkenlerini çalışma zamanında ayarlar. Bunun yerine `std::env::var({$var_expr})` kullanın
+    .custom = değişkeni çalışma zamanında okumak için `std::env::var({$var_expr})` kullanın
 
-builtin_macros_env_not_unicode = environment variable `{$var}` is not a valid Unicode string
+builtin_macros_env_not_unicode = `{$var}` ortam değişkeni geçerli bir Unicode dizesi değil
 
-builtin_macros_env_takes_args = `env!()` takes 1 or 2 arguments
+builtin_macros_env_takes_args = `env!()` 1 veya 2 argüman alır
 
-builtin_macros_expected_comma_in_list = expected token: `,`
+builtin_macros_expected_comma_in_list = beklenen token: `,`
 
-builtin_macros_expected_one_cfg_pattern = expected 1 cfg-pattern
+builtin_macros_expected_one_cfg_pattern = 1 cfg-pattern bekleniyordu
 
-builtin_macros_expected_register_class_or_explicit_register = expected register class or explicit register
+builtin_macros_expected_register_class_or_explicit_register = beklenen register sınıfı veya açıkça belirtilen register
 
-builtin_macros_export_macro_rules = cannot export macro_rules! macros from a `proc-macro` crate type currently
+builtin_macros_export_macro_rules = şu anda bir `proc-macro` crate türünden `macro_rules!` makroları dışa aktaramazsınız
 
-builtin_macros_format_duplicate_arg = duplicate argument named `{$ident}`
-    .label1 = previously here
-    .label2 = duplicate argument
+builtin_macros_format_duplicate_arg = `{$ident}` adlı yinelenen argüman
+    .label1 = daha önce burada
+    .label2 = yinelenen argüman
 
-builtin_macros_format_no_arg_named = there is no argument named `{$name}`
-    .note = did you intend to capture a variable `{$name}` from the surrounding scope?
-    .note2 = to avoid ambiguity, `format_args!` cannot capture variables when the format string is expanded from a macro
+builtin_macros_format_no_arg_named = `{$name}` adlı bir argüman yok
+    .note = çevreleyen kapsamdan `{$name}` adlı bir değişken yakalamak mı istediniz?
+    .note2 = belirsizliği önlemek için, format dizesi bir makrodan genişletildiğinde `format_args!` değişkenleri yakalayamaz
 
-builtin_macros_format_pos_mismatch = {$n} positional {$n ->
-    [one] argument
-    *[more] arguments
-    } in format string, but {$desc}
+builtin_macros_format_pos_mismatch = format dizesinde {$n} konumsal {$n ->
+    [one] argüman
+    *[more] argüman
+    }, ancak {$desc}
 
-builtin_macros_format_positional_after_named = positional arguments cannot follow named arguments
-    .label = positional arguments must be before named arguments
-    .named_args = named argument
+builtin_macros_format_positional_after_named = konumsal argümanlar, isimli argümanlardan sonra gelemez
+    .label = konumsal argümanlar isimli argümanlardan önce olmalıdır
+    .named_args = isimli argüman
 
-builtin_macros_format_redundant_args = redundant {$n ->
-    [one] argument
-    *[more] arguments
+builtin_macros_format_redundant_args = gereksiz {$n ->
+    [one] argüman
+    *[more] argüman
     }
     .help = {$n ->
-        [one] the formatting string already captures the binding directly, it doesn't need to be included in the argument list
-        *[more] the formatting strings already captures the bindings directly, they don't need to be included in the argument list
+        [one] biçimlendirme dizesi zaten bağlamayı doğrudan yakalıyor, argüman listesine eklenmesine gerek yok
+        *[more] biçimlendirme dizeleri zaten bağlamaları doğrudan yakalıyor, argüman listesine eklenmelerine gerek yok
     }
     .note = {$n ->
-        [one] the formatting specifier is referencing the binding already
-        *[more] the formatting specifiers are referencing the bindings already
+        [one] biçimlendirme belirticisi zaten bağlamaya referans veriyor
+        *[more] biçimlendirme belirticileri zaten bağlamalara referans veriyor
     }
-    .suggestion = this can be removed
+    .suggestion = bu kaldırılabilir
 
-builtin_macros_format_remove_raw_ident = remove the `r#`
+builtin_macros_format_remove_raw_ident = `r#`'yı kaldırın
 
-builtin_macros_format_requires_string = requires at least a format string argument
+builtin_macros_format_requires_string = en az bir format dizesi argümanı gereklidir
 
-builtin_macros_format_string_invalid = invalid format string: {$desc}
-    .label = {$label1} in format string
+builtin_macros_format_string_invalid = geçersiz format dizesi: {$desc}
+    .label = format dizesinde {$label1}
     .note = {$note}
     .second_label = {$label}
 
-builtin_macros_format_unknown_trait = unknown format trait `{$ty}`
-    .note = the only appropriate formatting traits are:
-                                            - ``, which uses the `Display` trait
-                                            - `?`, which uses the `Debug` trait
-                                            - `e`, which uses the `LowerExp` trait
-                                            - `E`, which uses the `UpperExp` trait
-                                            - `o`, which uses the `Octal` trait
-                                            - `p`, which uses the `Pointer` trait
-                                            - `b`, which uses the `Binary` trait
-                                            - `x`, which uses the `LowerHex` trait
-                                            - `X`, which uses the `UpperHex` trait
-    .suggestion = use the `{$trait_name}` trait
+builtin_macros_format_unknown_trait = bilinmeyen format trait'i `{$ty}`
+    .note = uygun formatlama trait'leri şunlardır:
+                                            - ``, `Display` trait'ini kullanır
+                                            - `?`, `Debug` trait'ini kullanır
+                                            - `e`, `LowerExp` trait'ini kullanır
+                                            - `E`, `UpperExp` trait'ini kullanır
+                                            - `o`, `Octal` trait'ini kullanır
+                                            - `p`, `Pointer` trait'ini kullanır
+                                            - `b`, `Binary` trait'ini kullanır
+                                            - `x`, `LowerHex` trait'ini kullanır
+                                            - `X`, `UpperHex` trait'ini kullanır
+    .suggestion = `{$trait_name}` trait'ini kullanın
 
 builtin_macros_format_unused_arg = {$named ->
-    [true] named argument
-    *[false] argument
-    } never used
+    [true] isimli argüman
+    *[false] argüman
+    } hiç kullanılmadı
 
-builtin_macros_format_unused_args = multiple unused formatting arguments
-    .label = multiple missing formatting specifiers
+builtin_macros_format_unused_args = birden fazla kullanılmayan biçimlendirme argümanı
+    .label = birden fazla eksik biçimlendirme belirticisi
 
-builtin_macros_format_use_positional = consider using a positional formatting argument instead
+builtin_macros_format_use_positional = bunun yerine konumsal bir biçimlendirme argümanı kullanmayı düşünün
 
-builtin_macros_invalid_crate_attribute = invalid crate attribute
+builtin_macros_invalid_crate_attribute = geçersiz crate özniteliği
 
-builtin_macros_multiple_default_attrs = multiple `#[default]` attributes
-    .note = only one `#[default]` attribute is needed
-    .label = `#[default]` used here
-    .label_again = `#[default]` used again here
-    .help = try removing {$only_one ->
-    [true] this
-    *[false] these
-    }
+builtin_macros_multiple_default_attrs = birden fazla `#[default]` özniteliği
+    .note = yalnızca bir `#[default]` özniteliğine ihtiyaç vardır
+    .label = `#[default]` burada kullanıldı
+    .label_again = `#[default]` tekrar burada kullanıldı
+    .help = {$only_one ->
+    [true] bunu
+    *[false] bunları
+    } kaldırmayı deneyin
 
-builtin_macros_multiple_defaults = multiple declared defaults
-    .label = first default
-    .additional = additional default
-    .note = only one variant can be default
-    .suggestion = make `{$ident}` default
+builtin_macros_multiple_defaults = birden fazla varsayılan bildirildi
+    .label = ilk varsayılan
+    .additional = ek varsayılan
+    .note = yalnızca bir varyant varsayılan olabilir
+    .suggestion = `{$ident}`'i varsayılan yapın
 
 builtin_macros_naked_functions_testing_attribute =
-    cannot use `#[naked]` with testing attributes
-    .label = function marked with testing attribute here
-    .naked_attribute = `#[naked]` is incompatible with testing attributes
+    `#[naked]` test öznitelikleriyle kullanılamaz
+    .label = burada test özniteliği ile işaretlenmiş fonksiyon
+    .naked_attribute = `#[naked]` test öznitelikleriyle uyumsuzdur
 
-builtin_macros_no_default_variant = no default declared
-    .help = make a unit variant default by placing `#[default]` above it
-    .suggestion = make `{$ident}` default
+builtin_macros_no_default_variant = varsayılan bildirilmedi
+    .help = `#[default]`'ı üstüne yerleştirerek bir birim varyantı varsayılan yapın
+    .suggestion = `{$ident}`'i varsayılan yapın
 
-builtin_macros_non_abi = at least one abi must be provided as an argument to `clobber_abi`
+builtin_macros_non_abi = `clobber_abi`'ye argüman olarak en az bir ABI sağlanmalıdır
 
-builtin_macros_non_exhaustive_default = default variant must be exhaustive
-    .label = declared `#[non_exhaustive]` here
-    .help = consider a manual implementation of `Default`
+builtin_macros_non_exhaustive_default = varsayılan varyant kapsamlı olmalıdır
+    .label = `#[non_exhaustive]` burada bildirildi
+    .help = manuel bir `Default` implementasyonu düşünün
 
-builtin_macros_non_generic_pointee = the `#[pointee]` attribute may only be used on generic parameters
+builtin_macros_non_generic_pointee = `#[pointee]` özniteliği yalnızca jenerik parametreler üzerinde kullanılabilir
 
-builtin_macros_non_unit_default = the `#[default]` attribute may only be used on unit enum variants
-    .help = consider a manual implementation of `Default`
+builtin_macros_non_unit_default = `#[default]` özniteliği yalnızca birim enum varyantlarında kullanılabilir
+    .help = manuel bir `Default` implementasyonu düşünün
 
-builtin_macros_only_one_argument = {$name} takes 1 argument
+builtin_macros_only_one_argument = {$name} 1 argüman alır
 
-builtin_macros_proc_macro = `proc-macro` crate types currently cannot export any items other than functions tagged with `#[proc_macro]`, `#[proc_macro_derive]`, or `#[proc_macro_attribute]`
+builtin_macros_proc_macro = `proc-macro` crate türleri şu anda `#[proc_macro]`, `#[proc_macro_derive]` veya `#[proc_macro_attribute]` ile etiketlenmiş fonksiyonlar dışında herhangi bir öğeyi dışa aktaramaz
 
-builtin_macros_proc_macro_attribute_only_be_used_on_bare_functions = the `#[{$path}]` attribute may only be used on bare functions
+builtin_macros_proc_macro_attribute_only_be_used_on_bare_functions = `#[{$path}]` özniteliği yalnızca çıplak fonksiyonlar üzerinde kullanılabilir
 
-builtin_macros_proc_macro_attribute_only_usable_with_crate_type = the `#[{$path}]` attribute is only usable with crates of the `proc-macro` crate type
+builtin_macros_proc_macro_attribute_only_usable_with_crate_type = `#[{$path}]` özniteliği yalnızca `proc-macro` crate türüne sahip crate'lerde kullanılabilir
 
 builtin_macros_requires_cfg_pattern =
-    macro requires a cfg-pattern as an argument
-    .label = cfg-pattern required
+    makro bir cfg-pattern argümanı gerektirir
+    .label = cfg-pattern gerekli
 
-builtin_macros_source_uitls_expected_item = expected item, found `{$token}`
+builtin_macros_source_uitls_expected_item = beklenen öğe, bulundu: `{$token}`
 
-builtin_macros_takes_no_arguments = {$name} takes no arguments
+builtin_macros_takes_no_arguments = {$name} argüman almaz
 
-builtin_macros_test_bad_fn = {$kind} functions cannot be used for tests
-    .label = `{$kind}` because of this
+builtin_macros_test_bad_fn = {$kind} fonksiyonları testler için kullanılamaz
+    .label = bu nedenle `{$kind}`
 
-builtin_macros_test_case_non_item = `#[test_case]` attribute is only allowed on items
+builtin_macros_test_case_non_item = `#[test_case]` özniteliğine yalnızca öğeler üzerinde izin verilir
 
-builtin_macros_test_runner_invalid = `test_runner` argument must be a path
-builtin_macros_test_runner_nargs = `#![test_runner(..)]` accepts exactly 1 argument
+builtin_macros_test_runner_invalid = `test_runner` argümanı bir yol (path) olmalıdır
+builtin_macros_test_runner_nargs = `#![test_runner(..)]` tam olarak 1 argüman kabul eder
 
-builtin_macros_tests_not_support = building tests with panic=abort is not supported without `-Zpanic_abort_tests`
+builtin_macros_tests_not_support = `panic=abort` ile test derlemek `-Zpanic_abort_tests` olmadan desteklenmez
 
-builtin_macros_trace_macros = trace_macros! accepts only `true` or `false`
+builtin_macros_trace_macros = trace_macros! yalnızca `true` veya `false` kabul eder
 
-builtin_macros_unexpected_lit = expected path to a trait, found literal
-    .label = not a trait
-    .str_lit = try using `#[derive({$sym})]`
-    .other = for example, write `#[derive(Debug)]` for `Debug`
+builtin_macros_unexpected_lit = bir trait'e giden yol bekleniyordu, literal bulundu
+    .label = bir trait değil
+    .str_lit = `#[derive({$sym})]` kullanmayı deneyin
+    .other = örneğin, `Debug` için `#[derive(Debug)]` yazın

@@ -1,420 +1,421 @@
-mir_build_adt_defined_here = `{$ty}` defined here
+çevir
+mir_build_adt_defined_here = `{$ty}` burada tanımlandı
 
-mir_build_already_borrowed = cannot borrow value as mutable because it is also borrowed as immutable
+mir_build_already_borrowed = değer, zaten değiştirilemez olarak ödünç alındığı için değiştirilebilir olarak ödünç alınamaz
 
-mir_build_already_mut_borrowed = cannot borrow value as immutable because it is also borrowed as mutable
+mir_build_already_mut_borrowed = değer, zaten değiştirilebilir olarak ödünç alındığı için değiştirilemez olarak ödünç alınamaz
 
 mir_build_bindings_with_variant_name =
-    pattern binding `{$name}` is named the same as one of the variants of the type `{$ty_path}`
-    .suggestion = to match on the variant, qualify the path
+    `{$name}` desen bağlaması, `{$ty_path}` türünün varyantlarından biriyle aynı ada sahiptir
+    .suggestion = varyant üzerinde eşleşme yapmak için yolu belirtin
 
-mir_build_borrow = value is borrowed by `{$name}` here
+mir_build_borrow = değer burada `{$name}` tarafından ödünç alındı
 
 mir_build_borrow_of_layout_constrained_field_requires_unsafe =
-    borrow of layout constrained field with interior mutability is unsafe and requires unsafe block
-    .note = references to fields of layout constrained fields lose the constraints. Coupled with interior mutability, the field can be changed to invalid values
-    .label = borrow of layout constrained field with interior mutability
+    içsel değiştirilebilirlik içeren düzen kısıtlı bir alanın ödünç alınması tehlikelidir ve güvenli olmayan bir blok gerektirir
+    .note = düzen kısıtlı alanların alanlarına yapılan referanslar kısıtlamaları kaybeder. İçsel değiştirilebilirlikle birleştiğinde, alan geçersiz değerlere değiştirilebilir
+    .label = içsel değiştirilebilirlik içeren düzen kısıtlı alanın ödünç alınması
 
 mir_build_borrow_of_layout_constrained_field_requires_unsafe_unsafe_op_in_unsafe_fn_allowed =
-    borrow of layout constrained field with interior mutability is unsafe and requires unsafe function or block
-    .note = references to fields of layout constrained fields lose the constraints. Coupled with interior mutability, the field can be changed to invalid values
-    .label = borrow of layout constrained field with interior mutability
+    içsel değiştirilebilirlik içeren düzen kısıtlı bir alanın ödünç alınması tehlikelidir ve güvenli olmayan bir fonksiyon veya blok gerektirir
+    .note = düzen kısıtlı alanların alanlarına yapılan referanslar kısıtlamaları kaybeder. İçsel değiştirilebilirlikle birleştiğinde, alan geçersiz değerlere değiştirilebilir
+    .label = içsel değiştirilebilirlik içeren düzen kısıtlı alanın ödünç alınması
 
-mir_build_borrow_of_moved_value = borrow of moved value
-    .label = value moved into `{$name}` here
-    .occurs_because_label = move occurs because `{$name}` has type `{$ty}`, which does not implement the `Copy` trait
-    .value_borrowed_label = value borrowed here after move
-    .suggestion = borrow this binding in the pattern to avoid moving the value
+mir_build_borrow_of_moved_value = taşınmış değerin ödünç alınması
+    .label = değer burada `{$name}` içerisine taşındı
+    .occurs_because_label = taşıma, `{$name}`'nin `Copy` özelliğini uygulamayan `{$ty}` türüne sahip olması nedeniyle gerçekleşir
+    .value_borrowed_label = taşınmadan sonra burada ödünç alındı
+    .suggestion = değeri taşımamak için desendeki bu bağlamayı ödünç alın
 
 mir_build_call_to_deprecated_safe_fn_requires_unsafe =
-    call to deprecated safe function `{$function}` is unsafe and requires unsafe block
-    .note = consult the function's documentation for information on how to avoid undefined behavior
-    .label = call to unsafe function
-    .suggestion = you can wrap the call in an `unsafe` block if you can guarantee {$guarantee}
+    `{$function}` adlı eskimiş güvenli fonksiyonun çağrılması tehlikelidir ve güvenli olmayan bir blok gerektirir
+    .note = tanımsız davranışı önlemek için fonksiyonun belgelerine başvurun
+    .label = güvenli olmayan fonksiyonun çağrılması
+    .suggestion = çağrıyı bir `unsafe` blok içerisinde sarabilirsiniz eğer {$guarantee} garantisini verebiliyorsanız
 
 mir_build_call_to_fn_with_requires_unsafe =
-    call to function `{$function}` with `#[target_feature]` is unsafe and requires unsafe block
-    .help = in order for the call to be safe, the context requires the following additional target {$missing_target_features_count ->
-        [1] feature
-        *[count] features
-        }: {$missing_target_features}
-    .note = the {$build_target_features} target {$build_target_features_count ->
-        [1] feature
-        *[count] features
-        } being enabled in the build configuration does not remove the requirement to list {$build_target_features_count ->
-        [1] it
-        *[count] them
-        } in `#[target_feature]`
-    .label = call to function with `#[target_feature]`
+    `#[target_feature]` ile çağrılan `{$function}` fonksiyonu güvenli değildir ve bir `unsafe` blok gerektirir.
+    .help = Çağrının güvenli olabilmesi için, bağlamın şu ek hedef {$missing_target_features_count ->
+        [1] özelliği
+        *[count] özellikleri
+        } gerektirdiğini belirtmeniz gerekiyor: {$missing_target_features}.
+    .note = Yapılandırma sırasında etkinleştirilen {$build_target_features} hedef {$build_target_features_count ->
+        [1] özelliği
+        *[count] özellikleri
+        } burada listelenmesini ortadan kaldırmaz. `#[target_feature]` içinde ayrıca listelenmeleri gereklidir: {$build_target_features_count ->
+        [1] özelliği
+        *[count] özellikleri
+        }.
+    .label = `#[target_feature]` ile çağrılan fonksiyon
 
 mir_build_call_to_fn_with_requires_unsafe_unsafe_op_in_unsafe_fn_allowed =
-    call to function `{$function}` with `#[target_feature]` is unsafe and requires unsafe function or block
-    .help = in order for the call to be safe, the context requires the following additional target {$missing_target_features_count ->
-        [1] feature
-        *[count] features
-        }: {$missing_target_features}
-    .note = the {$build_target_features} target {$build_target_features_count ->
-        [1] feature
-        *[count] features
-        } being enabled in the build configuration does not remove the requirement to list {$build_target_features_count ->
-        [1] it
-        *[count] them
-        } in `#[target_feature]`
-    .label = call to function with `#[target_feature]`
+    `#[target_feature]` ile işaretlenmiş `{$function}` fonksiyonuna yapılan çağrı güvensizdir ve güvenli bir fonksiyon veya blok gerektirir.
+    .help = Bu çağrının güvenli olabilmesi için, bağlamda ek olarak aşağıdaki hedef {$missing_target_features_count -> 
+        [1] özellik
+        *[count] özellikler
+        }: {$missing_target_features} gereklidir.
+    .note = {$build_target_features} hedefindeki {$build_target_features_count -> 
+        [1] özellik
+        *[count] özellikler
+        }, yapılandırmada etkinleştirilmiş olsa da, `#[target_feature]` içerisinde {$build_target_features_count -> 
+        [1] olarak
+        *[count] olarak
+        } listelenme gereksinimini kaldırmaz.
+    .label = `#[target_feature]` ile işaretlenmiş fonksiyona yapılan çağrı
 
 mir_build_call_to_unsafe_fn_requires_unsafe =
-    call to unsafe function `{$function}` is unsafe and requires unsafe block
-    .note = consult the function's documentation for information on how to avoid undefined behavior
-    .label = call to unsafe function
+    güvenli olmayan fonksiyon `{$function}` çağrısı tehlikelidir ve güvenli olmayan bir blok gerektirir
+    .note = tanımsız davranışı önlemek için fonksiyonun belgelerine başvurun
+    .label = güvenli olmayan fonksiyonun çağrılması
 
 mir_build_call_to_unsafe_fn_requires_unsafe_nameless =
-    call to unsafe function is unsafe and requires unsafe block
-    .note = consult the function's documentation for information on how to avoid undefined behavior
-    .label = call to unsafe function
+    güvenli olmayan fonksiyonun çağrılması tehlikelidir ve güvenli olmayan bir blok gerektirir
+    .note = tanımsız davranışı önlemek için fonksiyonun belgelerine başvurun
+    .label = güvenli olmayan fonksiyonun çağrılması
 
 mir_build_call_to_unsafe_fn_requires_unsafe_nameless_unsafe_op_in_unsafe_fn_allowed =
-    call to unsafe function is unsafe and requires unsafe function or block
-    .note = consult the function's documentation for information on how to avoid undefined behavior
-    .label = call to unsafe function
+    güvenli olmayan fonksiyonun çağrılması tehlikelidir ve güvenli olmayan bir fonksiyon veya blok gerektirir
+    .note = tanımsız davranışı önlemek için fonksiyonun belgelerine başvurun
+    .label = güvenli olmayan fonksiyonun çağrılması
 
 mir_build_call_to_unsafe_fn_requires_unsafe_unsafe_op_in_unsafe_fn_allowed =
-    call to unsafe function `{$function}` is unsafe and requires unsafe function or block
-    .note = consult the function's documentation for information on how to avoid undefined behavior
-    .label = call to unsafe function
+    güvenli olmayan fonksiyon `{$function}` çağrısı tehlikelidir ve güvenli olmayan bir fonksiyon veya blok gerektirir
+    .note = tanımsız davranışı önlemek için fonksiyonun belgelerine başvurun
+    .label = güvenli olmayan fonksiyonun çağrılması
 
-mir_build_confused = missing patterns are not covered because `{$variable}` is interpreted as a constant pattern, not a new variable
+mir_build_confused = eksik desenler `{$variable}` bir sabit desen olarak yorumlandığı için kapsanmadı, yeni bir değişken değil
 
-mir_build_const_param_in_pattern = const parameters cannot be referenced in patterns
+mir_build_const_param_in_pattern = sabit parametreler desenlerde referans verilemez
 
 mir_build_const_pattern_depends_on_generic_parameter =
-    constant pattern depends on a generic parameter
+    sabit desen, bir genel parametreye bağlı
 
-mir_build_could_not_eval_const_pattern = could not evaluate constant pattern
+mir_build_could_not_eval_const_pattern = sabit desen değerlendirilemedi
 
 mir_build_deref_raw_pointer_requires_unsafe =
-    dereference of raw pointer is unsafe and requires unsafe block
-    .note = raw pointers may be null, dangling or unaligned; they can violate aliasing rules and cause data races: all of these are undefined behavior
-    .label = dereference of raw pointer
+    ham işaretçinin dereferans edilmesi tehlikelidir ve güvenli olmayan bir blok gerektirir
+    .note = ham işaretçiler null, geçersiz veya hizasız olabilir; aliasing kurallarını ihlal edebilir ve veri yarışlarına neden olabilir: bunların hepsi tanımsız davranıştır
+    .label = ham işaretçinin dereferansı
 
 mir_build_deref_raw_pointer_requires_unsafe_unsafe_op_in_unsafe_fn_allowed =
-    dereference of raw pointer is unsafe and requires unsafe function or block
-    .note = raw pointers may be null, dangling or unaligned; they can violate aliasing rules and cause data races: all of these are undefined behavior
-    .label = dereference of raw pointer
+    ham işaretçinin dereferans edilmesi tehlikelidir ve güvenli olmayan bir fonksiyon veya blok gerektirir
+    .note = ham işaretçiler null, geçersiz veya hizasız olabilir; aliasing kurallarını ihlal edebilir ve veri yarışlarına neden olabilir: bunların hepsi tanımsız davranıştır
+    .label = ham işaretçinin dereferansı
 
-mir_build_exceeds_mcdc_condition_limit = number of conditions in decision ({$num_conditions}) exceeds limit ({$max_conditions}), so MC/DC analysis will not count this expression
+mir_build_exceeds_mcdc_condition_limit = karardaki koşul sayısı ({$num_conditions}), limit ({$max_conditions}) aşıyor, bu nedenle MC/DC analizi bu ifadeyi saymayacak
 
 mir_build_extern_static_requires_unsafe =
-    use of extern static is unsafe and requires unsafe block
-    .note = extern statics are not controlled by the Rust type system: invalid data, aliasing violations or data races will cause undefined behavior
-    .label = use of extern static
+    extern statik kullanım tehlikelidir ve güvenli olmayan bir blok gerektirir
+    .note = extern statikler Rust tür sistemi tarafından kontrol edilmez: geçersiz veri, aliasing ihlalleri veya veri yarışları tanımsız davranışa neden olur
+    .label = extern statik kullanımı
 
 mir_build_extern_static_requires_unsafe_unsafe_op_in_unsafe_fn_allowed =
-    use of extern static is unsafe and requires unsafe function or block
-    .note = extern statics are not controlled by the Rust type system: invalid data, aliasing violations or data races will cause undefined behavior
-    .label = use of extern static
+    extern statik kullanım tehlikelidir ve güvenli olmayan bir fonksiyon veya blok gerektirir
+    .note = extern statikler Rust tür sistemi tarafından kontrol edilmez: geçersiz veri, aliasing ihlalleri veya veri yarışları tanımsız davranışa neden olur
+    .label = extern statik kullanımı
 
-mir_build_inform_irrefutable = `let` bindings require an "irrefutable pattern", like a `struct` or an `enum` with only one variant
+mir_build_inform_irrefutable = `let` bağlamaları, "inkar edilemez bir desen" gerektirir, örneğin yalnızca bir varyanta sahip bir `struct` veya `enum`
 
 mir_build_initializing_type_with_requires_unsafe =
-    initializing type with `rustc_layout_scalar_valid_range` attr is unsafe and requires unsafe block
-    .note = initializing a layout restricted type's field with a value outside the valid range is undefined behavior
-    .label = initializing type with `rustc_layout_scalar_valid_range` attr
+    `rustc_layout_scalar_valid_range` özelliğine sahip türün başlatılması tehlikelidir ve güvenli olmayan bir blok gerektirir
+    .note = düzen kısıtlı bir türün alanını geçerli aralığın dışında bir değerle başlatmak tanımsız davranıştır
+    .label = `rustc_layout_scalar_valid_range` özelliğine sahip türün başlatılması
 
 mir_build_initializing_type_with_requires_unsafe_unsafe_op_in_unsafe_fn_allowed =
-    initializing type with `rustc_layout_scalar_valid_range` attr is unsafe and requires unsafe function or block
-    .note = initializing a layout restricted type's field with a value outside the valid range is undefined behavior
-    .label = initializing type with `rustc_layout_scalar_valid_range` attr
+    `rustc_layout_scalar_valid_range` özelliğine sahip türün başlatılması tehlikelidir ve güvenli olmayan bir fonksiyon veya blok gerektirir
+    .note = düzen kısıtlı bir türün alanını geçerli aralığın dışında bir değerle başlatmak tanımsız davranıştır
+    .label = `rustc_layout_scalar_valid_range` özelliğine sahip tür
 
 mir_build_inline_assembly_requires_unsafe =
-    use of inline assembly is unsafe and requires unsafe block
-    .note = inline assembly is entirely unchecked and can cause undefined behavior
-    .label = use of inline assembly
+    satır içi assembly kullanımı güvenli değildir ve güvenli olmayan blok (unsafe block) gerektirir
+    .note = satır içi assembly tamamen kontrol edilmez ve tanımsız davranışa yol açabilir
+    .label = satır içi assembly kullanımı
 
 mir_build_inline_assembly_requires_unsafe_unsafe_op_in_unsafe_fn_allowed =
-    use of inline assembly is unsafe and requires unsafe function or block
-    .note = inline assembly is entirely unchecked and can cause undefined behavior
-    .label = use of inline assembly
+    satır içi assembly kullanımı güvenli değildir ve güvenli olmayan fonksiyon veya blok (unsafe function or block) gerektirir
+    .note = satır içi assembly tamamen kontrol edilmez ve tanımsız davranışa yol açabilir
+    .label = satır içi assembly kullanımı
 
-mir_build_interpreted_as_const = introduce a variable instead
+mir_build_interpreted_as_const = bunun yerine bir değişken tanımlayın
 
-mir_build_invalid_pattern = `{$non_sm_ty}` cannot be used in patterns
+mir_build_invalid_pattern = `{$non_sm_ty}` kalıplarda kullanılamaz
 
-mir_build_irrefutable_let_patterns_if_let = irrefutable `if let` {$count ->
-        [one] pattern
-        *[other] patterns
+mir_build_irrefutable_let_patterns_if_let = kesin eşleşen `if let` {$count ->
+        [one] kalıp
+        *[other] kalıplar
     }
     .note = {$count ->
-        [one] this pattern
-        *[other] these patterns
-    } will always match, so the `if let` is useless
-    .help = consider replacing the `if let` with a `let`
+        [one] bu kalıp
+        *[other] bu kalıplar
+    } her zaman eşleşeceği için, `if let` gereksiz
+    .help = `if let` ifadesini `let` ile değiştirmeyi düşünün
 
-mir_build_irrefutable_let_patterns_if_let_guard = irrefutable `if let` guard {$count ->
-        [one] pattern
-        *[other] patterns
+mir_build_irrefutable_let_patterns_if_let_guard = kesin eşleşen `if let` koruyucu {$count ->
+        [one] kalıp
+        *[other] kalıplar
     }
     .note = {$count ->
-        [one] this pattern
-        *[other] these patterns
-    } will always match, so the guard is useless
-    .help = consider removing the guard and adding a `let` inside the match arm
+        [one] bu kalıp
+        *[other] bu kalıplar
+    } her zaman eşleşeceği için koruyucu gereksiz
+    .help = koruyucuyu kaldırmayı ve eşleşme kolu içinde bir `let` eklemeyi düşünün
 
-mir_build_irrefutable_let_patterns_let_else = irrefutable `let...else` {$count ->
-        [one] pattern
-        *[other] patterns
+mir_build_irrefutable_let_patterns_let_else = kesin eşleşen `let...else` {$count ->
+        [one] kalıp
+        *[other] kalıplar
     }
     .note = {$count ->
-        [one] this pattern
-        *[other] these patterns
-    } will always match, so the `else` clause is useless
-    .help = consider removing the `else` clause
+        [one] bu kalıp
+        *[other] bu kalıplar
+    } her zaman eşleşeceği için `else` bloğu gereksiz
+    .help = `else` bloğunu kaldırmayı düşünün
 
-mir_build_irrefutable_let_patterns_while_let = irrefutable `while let` {$count ->
-        [one] pattern
-        *[other] patterns
+mir_build_irrefutable_let_patterns_while_let = kesin eşleşen `while let` {$count ->
+        [one] kalıp
+        *[other] kalıplar
     }
     .note = {$count ->
-        [one] this pattern
-        *[other] these patterns
-    } will always match, so the loop will never exit
-    .help = consider instead using a `loop {"{"} ... {"}"}` with a `let` inside it
+        [one] bu kalıp
+        *[other] bu kalıplar
+    } her zaman eşleşeceği için döngü asla sona ermeyecek
+    .help = bunun yerine içinde `let` bulunan bir `loop {"{"} ... {"}"}` kullanmayı düşünün
 
-mir_build_leading_irrefutable_let_patterns = leading irrefutable {$count ->
-        [one] pattern
-        *[other] patterns
-    } in let chain
+mir_build_leading_irrefutable_let_patterns = let zincirinde önde gelen kesin eşleşen {$count ->
+        [one] kalıp
+        *[other] kalıplar
+    }
     .note = {$count ->
-        [one] this pattern
-        *[other] these patterns
-    } will always match
-    .help = consider moving {$count ->
-        [one] it
-        *[other] them
-    } outside of the construct
+        [one] bu kalıp
+        *[other] bu kalıplar
+    } her zaman eşleşecektir
+    .help = {$count ->
+        [one] bunu
+        *[other] bunları
+    } yapının dışına taşımayı düşünün
 
 mir_build_literal_in_range_out_of_bounds =
-    literal out of range for `{$ty}`
-    .label = this value does not fit into the type `{$ty}` whose range is `{$min}..={$max}`
+    `{$ty}` türü için aralık dışı sabit
+    .label = bu değer `{$ty}` türünün aralığına (`{$min}..={$max}`) sığmıyor
 
 mir_build_lower_range_bound_must_be_less_than_or_equal_to_upper =
-    lower range bound must be less than or equal to upper
-    .label = lower bound larger than upper bound
-    .teach_note = When matching against a range, the compiler verifies that the range is non-empty. Range patterns include both end-points, so this is equivalent to requiring the start of the range to be less than or equal to the end of the range.
+    alt aralık sınırı üst sınırdan küçük veya eşit olmalıdır
+    .label = alt sınır üst sınırdan büyük
+    .teach_note = Bir aralığa karşı eşleşme yaparken, derleyici aralığın boş olmadığını doğrular. Aralık kalıpları her iki uç noktayı da içerdiği için bu, aralığın başlangıcının sonundan küçük veya eşit olmasını gerektirir.
 
-mir_build_lower_range_bound_must_be_less_than_upper = lower range bound must be less than upper
+mir_build_lower_range_bound_must_be_less_than_upper = alt aralık sınırı üst sınırdan küçük olmalıdır
 
-mir_build_more_information = for more information, visit https://doc.rust-lang.org/book/ch18-02-refutability.html
+mir_build_more_information = daha fazla bilgi için https://doc.rust-lang.org/book/ch18-02-refutability.html adresini ziyaret edin
 
-mir_build_moved = value is moved into `{$name}` here
+mir_build_moved = değer `{$name}`'e taşındı
 
-mir_build_moved_while_borrowed = cannot move out of value because it is borrowed
+mir_build_moved_while_borrowed = değer ödünç alındığı için taşınamaz
 
-mir_build_multiple_mut_borrows = cannot borrow value as mutable more than once at a time
+mir_build_multiple_mut_borrows = değeri aynı anda birden fazla kez değiştirilebilir (mutable) olarak ödünç alamazsınız
 
-mir_build_mutable_borrow = value is mutably borrowed by `{$name}` here
+mir_build_mutable_borrow = değer `{$name}` tarafından değiştirilebilir (mutable) olarak ödünç alındı
 
 mir_build_mutable_static_requires_unsafe =
-    use of mutable static is unsafe and requires unsafe block
-    .note = mutable statics can be mutated by multiple threads: aliasing violations or data races will cause undefined behavior
-    .label = use of mutable static
+    değiştirilebilir (mutable) statik kullanımı güvenli değildir ve güvenli olmayan blok (unsafe block) gerektirir
+    .note = değiştirilebilir statikler birden fazla iş parçacığı tarafından değiştirilebilir: adresleme ihlalleri veya veri yarışları tanımsız davranışa yol açar
+    .label = değiştirilebilir statik kullanımı
 
 mir_build_mutable_static_requires_unsafe_unsafe_op_in_unsafe_fn_allowed =
-    use of mutable static is unsafe and requires unsafe function or block
-    .note = mutable statics can be mutated by multiple threads: aliasing violations or data races will cause undefined behavior
-    .label = use of mutable static
+    değiştirilebilir (mutable) statik kullanımı güvenli değildir ve güvenli olmayan fonksiyon veya blok (unsafe function or block) gerektirir
+    .note = değiştirilebilir statikler birden fazla iş parçacığı tarafından değiştirilebilir: adresleme ihlalleri veya veri yarışları tanımsız davranışa yol açar
+    .label = değiştirilebilir statik kullanımı
 
 mir_build_mutation_of_layout_constrained_field_requires_unsafe =
-    mutation of layout constrained field is unsafe and requires unsafe block
-    .note = mutating layout constrained fields cannot statically be checked for valid values
-    .label = mutation of layout constrained field
+    düzen sınırlı alanın değiştirilmesi güvenli değildir ve güvenli olmayan blok (unsafe block) gerektirir
+    .note = düzen sınırlı alanların değiştirilmesi, geçerli değerler için statik olarak kontrol edilemez
+    .label = düzen sınırlı alanın değiştirilmesi
 
 mir_build_mutation_of_layout_constrained_field_requires_unsafe_unsafe_op_in_unsafe_fn_allowed =
-    mutation of layout constrained field is unsafe and requires unsafe function or block
-    .note = mutating layout constrained fields cannot statically be checked for valid values
-    .label = mutation of layout constrained field
+    düzen sınırlı alanın değiştirilmesi güvenli değildir ve güvenli olmayan fonksiyon veya blok (unsafe function or block) gerektirir
+    .note = düzen sınırlı alanların değiştirilmesi, geçerli değerler için statik olarak kontrol edilemez
+    .label = düzen sınırlı alanın değiştirilmesi
 
-mir_build_nan_pattern = cannot use NaN in patterns
-    .note = NaNs compare inequal to everything, even themselves, so this pattern would never match
-    .help = try using the `is_nan` method instead
+mir_build_nan_pattern = kalıplarda NaN kullanılamaz
+    .note = NaN'ler kendileri de dahil olmak üzere hiçbir şeyle eşleşmez, bu yüzden bu kalıp asla eşleşmeyecektir
+    .help = bunun yerine `is_nan` metodunu kullanmayı deneyin
 
-mir_build_non_const_path = runtime values cannot be referenced in patterns
+mir_build_non_const_path = kalıplarda çalışma zamanı (runtime) değerleri referans gösterilemez
 
 mir_build_non_empty_never_pattern =
-    mismatched types
-    .label = a never pattern must be used on an uninhabited type
-    .note = the matched value is of type `{$ty}`
+    uyumsuz türler
+    .label = bir hiç (never) kalıbı yalnızca dolu olmayan bir tür üzerinde kullanılmalıdır
+    .note = eşleşen değer `{$ty}` türündedir
 
 mir_build_non_exhaustive_match_all_arms_guarded =
-    match arms with guards don't count towards exhaustivity
+    koruyucu (guard) kullanılan match kolları kapsamlılık (exhaustivity) açısından sayılmaz
 
-mir_build_non_exhaustive_patterns_type_not_empty = non-exhaustive patterns: type `{$ty}` is non-empty
-    .def_note = `{$peeled_ty}` defined here
-    .type_note = the matched value is of type `{$ty}`
-    .non_exhaustive_type_note = the matched value is of type `{$ty}`, which is marked as non-exhaustive
-    .reference_note = references are always considered inhabited
-    .suggestion = ensure that all possible cases are being handled by adding a match arm with a wildcard pattern as shown
-    .help = ensure that all possible cases are being handled by adding a match arm with a wildcard pattern
+mir_build_non_exhaustive_patterns_type_not_empty = kapsamlı olmayan kalıplar: `{$ty}` türü boş değil
+    .def_note = `{$peeled_ty}` burada tanımlandı
+    .type_note = eşleşen değer `{$ty}` türündedir
+    .non_exhaustive_type_note = eşleşen değer `{$ty}` türündedir ve bu tür kapsamlı değil olarak işaretlenmiştir
+    .reference_note = referanslar her zaman dolu (inhabited) olarak kabul edilir
+    .suggestion = tüm olası durumların ele alındığından emin olmak için örnek bir joker kalıp ekleyin
+    .help = tüm olası durumların ele alındığından emin olmak için örnek bir joker kalıp ekleyin
 
 mir_build_non_partial_eq_match =
-    to use a constant of type `{$non_peq_ty}` in a pattern, the type must implement `PartialEq`
+    bir kalıpta `{$non_peq_ty}` türünden bir sabit kullanmak için, bu türün `PartialEq` uygulaması olmalıdır
 
-mir_build_pattern_not_covered = refutable pattern in {$origin}
-    .pattern_ty = the matched value is of type `{$pattern_ty}`
+mir_build_pattern_not_covered = {$origin} içinde çürütülebilir kalıp
+    .pattern_ty = eşleşen değer `{$pattern_ty}` türündedir
 
-mir_build_pointer_pattern = function pointers and raw pointers not derived from integers in patterns behave unpredictably and should not be relied upon. See https://github.com/rust-lang/rust/issues/70861 for details.
+mir_build_pointer_pattern = fonksiyon işaretçileri ve tam sayılardan türetilmemiş ham işaretçiler kalıplarda öngörülemeyen şekilde davranır ve güvenilir olmamalıdır. Ayrıntılar için bkz: https://github.com/rust-lang/rust/issues/70861.
 
-mir_build_privately_uninhabited = pattern `{$witness_1}` is currently uninhabited, but this variant contains private fields which may become inhabited in the future
+mir_build_privately_uninhabited = `{$witness_1}` kalıbı şu anda dolu değil, ancak bu varyant gelecekte dolu hale gelebilecek özel alanlar içeriyor
 
-mir_build_rust_2024_incompatible_pat = the semantics of this pattern will change in edition 2024
+mir_build_rust_2024_incompatible_pat = bu kalıbın anlamı 2024 sürümünde değişecektir
 
-mir_build_rustc_box_attribute_error = `#[rustc_box]` attribute used incorrectly
-    .attributes = no other attributes may be applied
-    .not_box = `#[rustc_box]` may only be applied to a `Box::new()` call
-    .missing_box = `#[rustc_box]` requires the `owned_box` lang item
+mir_build_rustc_box_attribute_error = `#[rustc_box]` özniteliği yanlış kullanıldı
+    .attributes = başka öznitelikler uygulanamaz
+    .not_box = `#[rustc_box]` yalnızca bir `Box::new()` çağrısına uygulanabilir
+    .missing_box = `#[rustc_box]` `owned_box` dil öğesini gerektirir
 
-mir_build_static_in_pattern = statics cannot be referenced in patterns
+mir_build_static_in_pattern = statikler kalıplarda referans gösterilemez
 
-mir_build_suggest_attempted_int_lit = alternatively, you could prepend the pattern with an underscore to define a new named variable; identifiers cannot begin with digits
+mir_build_suggest_attempted_int_lit = alternatif olarak, kalıbın başına bir alt çizgi ekleyerek yeni bir isimlendirilmiş değişken tanımlayabilirsiniz; tanımlayıcılar rakamlarla başlayamaz
 
 
-mir_build_suggest_if_let = you might want to use `if let` to ignore the {$count ->
-        [one] variant that isn't
-        *[other] variants that aren't
-    } matched
+mir_build_suggest_if_let = eşleşmeyen {$count ->
+        [one] varyantı
+        *[other] varyantları
+    } göz ardı etmek için `if let` kullanmak isteyebilirsiniz
 
-mir_build_suggest_let_else = you might want to use `let else` to handle the {$count ->
-        [one] variant that isn't
-        *[other] variants that aren't
-    } matched
+mir_build_suggest_let_else = eşleşmeyen {$count ->
+        [one] varyantı
+        *[other] varyantları
+    } ele almak için `let else` kullanmak isteyebilirsiniz
 
-mir_build_trailing_irrefutable_let_patterns = trailing irrefutable {$count ->
-        [one] pattern
-        *[other] patterns
-    } in let chain
+mir_build_trailing_irrefutable_let_patterns = let zincirinde son irrefutable {$count ->
+        [one] kalıp
+        *[other] kalıplar
+    }
     .note = {$count ->
-        [one] this pattern
-        *[other] these patterns
-    } will always match
-    .help = consider moving {$count ->
-        [one] it
-        *[other] them
-    } into the body
+        [one] bu kalıp
+        *[other] bu kalıplar
+    } her zaman eşleşir
+    .help = {$count ->
+        [one] bunu
+        *[other] bunları
+    } yapının içine taşımayı düşünün
 
 mir_build_type_not_structural =
-     to use a constant of type `{$non_sm_ty}` in a pattern, `{$non_sm_ty}` must be annotated with `#[derive(PartialEq)]`
+    `{$non_sm_ty}` türünden bir sabiti kalıpta kullanmak için, `{$non_sm_ty}` `#[derive(PartialEq)]` ile işaretlenmiş olmalıdır
 
-mir_build_type_not_structural_more_info = see https://doc.rust-lang.org/stable/std/marker/trait.StructuralPartialEq.html for details
+mir_build_type_not_structural_more_info = ayrıntılar için bkz: https://doc.rust-lang.org/stable/std/marker/trait.StructuralPartialEq.html
 
-mir_build_type_not_structural_tip = the traits must be derived, manual `impl`s are not sufficient
+mir_build_type_not_structural_tip = traitler türetilmelidir, manuel `impl`ler yeterli değildir
 
-mir_build_unconditional_recursion = function cannot return without recursing
-    .label = cannot return without recursing
-    .help = a `loop` may express intention better if this is on purpose
+mir_build_unconditional_recursion = fonksiyon dönmeden önce kendi kendine çağrılıyor
+    .label = dönmeden önce kendi kendine çağrılıyor
+    .help = bu kasten yapıldıysa, bir `loop` bu niyeti daha iyi ifade edebilir
 
-mir_build_unconditional_recursion_call_site_label = recursive call site
+mir_build_unconditional_recursion_call_site_label = özyinelemeli çağrı noktası
 
 mir_build_union_field_requires_unsafe =
-    access to union field is unsafe and requires unsafe block
-    .note = the field may not be properly initialized: using uninitialized data will cause undefined behavior
-    .label = access to union field
+    union alanına erişim güvenli değildir ve güvenli olmayan blok (unsafe block) gerektirir
+    .note = alan uygun şekilde başlatılmamış olabilir: başlatılmamış verilerin kullanılması tanımsız davranışa yol açar
+    .label = union alanına erişim
 
 mir_build_union_field_requires_unsafe_unsafe_op_in_unsafe_fn_allowed =
-    access to union field is unsafe and requires unsafe function or block
-    .note = the field may not be properly initialized: using uninitialized data will cause undefined behavior
-    .label = access to union field
+    union alanına erişim güvenli değildir ve güvenli olmayan fonksiyon veya blok (unsafe function or block) gerektirir
+    .note = alan uygun şekilde başlatılmamış olabilir: başlatılmamış verilerin kullanılması tanımsız davranışa yol açar
+    .label = union alanına erişim
 
-mir_build_union_pattern = cannot use unions in constant patterns
+mir_build_union_pattern = unionlar sabit kalıplarda kullanılamaz
 
-mir_build_unreachable_making_this_unreachable = collectively making this unreachable
+mir_build_unreachable_making_this_unreachable = bu, topluca ulaşılamaz hale getiriliyor
 
-mir_build_unreachable_making_this_unreachable_n_more = ...and {$covered_by_many_n_more_count} other patterns collectively make this unreachable
+mir_build_unreachable_making_this_unreachable_n_more = ...ve {$covered_by_many_n_more_count} diğer kalıplar topluca bunu ulaşılamaz hale getiriyor
 
-mir_build_unreachable_matches_same_values = matches some of the same values
+mir_build_unreachable_matches_same_values = aynı değerlerin bazılarını eşleştiriyor
 
-mir_build_unreachable_pattern = unreachable pattern
-    .label = no value can reach this
-    .unreachable_matches_no_values = matches no values because `{$matches_no_values_ty}` is uninhabited
-    .unreachable_uninhabited_note = to learn more about uninhabited types, see https://doc.rust-lang.org/nomicon/exotic-sizes.html#empty-types
-    .unreachable_covered_by_catchall = matches any value
-    .unreachable_covered_by_one = matches all the relevant values
-    .unreachable_covered_by_many = multiple earlier patterns match some of the same values
-    .suggestion = remove the match arm
+mir_build_unreachable_pattern = ulaşılamaz kalıp
+    .label = bu değere ulaşan yok
+    .unreachable_matches_no_values = hiçbir değeri eşleştirmez çünkü `{$matches_no_values_ty}` dolu değildir
+    .unreachable_uninhabited_note = dolu olmayan türler hakkında daha fazla bilgi edinmek için bkz: https://doc.rust-lang.org/nomicon/exotic-sizes.html#empty-types
+    .unreachable_covered_by_catchall = herhangi bir değeri eşleştirir
+    .unreachable_covered_by_one = ilgili tüm değerleri eşleştirir
+    .unreachable_covered_by_many = birden fazla önceki kalıp aynı değerlerin bazılarını eşleştirir
+    .suggestion = match kolunu kaldırın
 
-mir_build_unsafe_fn_safe_body = an unsafe function restricts its caller, but its body is safe by default
-mir_build_unsafe_not_inherited = items do not inherit unsafety from separate enclosing items
+mir_build_unsafe_fn_safe_body = bir güvenli olmayan fonksiyon çağıranı kısıtlar, ancak gövdesi varsayılan olarak güvenlidir
+mir_build_unsafe_not_inherited = öğeler, ayrı olarak kapsayıcı öğelerden güvenli olmayan durumu miras almaz
 
 mir_build_unsafe_op_in_unsafe_fn_borrow_of_layout_constrained_field_requires_unsafe =
-    borrow of layout constrained field with interior mutability is unsafe and requires unsafe block
-    .note = references to fields of layout constrained fields lose the constraints. Coupled with interior mutability, the field can be changed to invalid values
-    .label = borrow of layout constrained field with interior mutability
+    içsel değişkenliğe sahip düzen sınırlı alanın ödünç alınması güvenli değildir ve güvenli olmayan blok (unsafe block) gerektirir
+    .note = düzen sınırlı alanların alanlarına referanslar, kısıtlamaları kaybeder. İçsel değişkenlik ile birleştiğinde, alan geçersiz değerlere dönüştürülebilir
+    .label = içsel değişkenliğe sahip düzen sınırlı alanın ödünç alınması
 
 mir_build_unsafe_op_in_unsafe_fn_call_to_fn_with_requires_unsafe =
-    call to function `{$function}` with `#[target_feature]` is unsafe and requires unsafe block
-    .help = in order for the call to be safe, the context requires the following additional target {$missing_target_features_count ->
-        [1] feature
-        *[count] features
-        }: {$missing_target_features}
-    .note = the {$build_target_features} target {$build_target_features_count ->
-        [1] feature
-        *[count] features
-        } being enabled in the build configuration does not remove the requirement to list {$build_target_features_count ->
-        [1] it
-        *[count] them
-        } in `#[target_feature]`
-    .label = call to function with `#[target_feature]`
+    `#[target_feature]` ile işaretlenmiş `{$function}` fonksiyonuna yapılan çağrı güvensizdir ve güvenli bir blok gerektirir.
+    .help = Bu çağrının güvenli olabilmesi için, bağlamda ek olarak aşağıdaki hedef {$missing_target_features_count -> 
+        [1] özellik
+        *[count] özellikler
+        }: {$missing_target_features} gereklidir.
+    .note = {$build_target_features} hedefindeki {$build_target_features_count -> 
+        [1] özellik
+        *[count] özellikler
+        } yapılandırmada etkinleştirilmiş olsa da, `#[target_feature]` içerisinde {$build_target_features_count -> 
+        [1] olarak
+        *[count] olarak
+        } listelenme gereksinimini ortadan kaldırmaz.
+    .label = `#[target_feature]` ile işaretlenmiş fonksiyona yapılan çağrı
 
 mir_build_unsafe_op_in_unsafe_fn_call_to_unsafe_fn_requires_unsafe =
-    call to unsafe function `{$function}` is unsafe and requires unsafe block
-    .note = consult the function's documentation for information on how to avoid undefined behavior
-    .label = call to unsafe function
+    `{$function}` isimli güvenli olmayan fonksiyonun çağrılması güvenli değildir ve güvenli olmayan bir blok (unsafe block) gerektirir
+    .note = tanımsız davranışı nasıl önleyeceğinizi öğrenmek için fonksiyonun dökümantasyonuna başvurun
+    .label = güvenli olmayan fonksiyonun çağrılması
 
 mir_build_unsafe_op_in_unsafe_fn_call_to_unsafe_fn_requires_unsafe_nameless =
-    call to unsafe function is unsafe and requires unsafe block
-    .note = consult the function's documentation for information on how to avoid undefined behavior
-    .label = call to unsafe function
+    güvenli olmayan fonksiyonun çağrılması güvenli değildir ve güvenli olmayan bir blok (unsafe block) gerektirir
+    .note = tanımsız davranışı nasıl önleyeceğinizi öğrenmek için fonksiyonun dökümantasyonuna başvurun
+    .label = güvenli olmayan fonksiyonun çağrılması
 
 mir_build_unsafe_op_in_unsafe_fn_deref_raw_pointer_requires_unsafe =
-    dereference of raw pointer is unsafe and requires unsafe block
-    .note = raw pointers may be null, dangling or unaligned; they can violate aliasing rules and cause data races: all of these are undefined behavior
-    .label = dereference of raw pointer
+    ham işaretçinin dereferansı güvenli değildir ve güvenli olmayan bir blok (unsafe block) gerektirir
+    .note = ham işaretçiler null, dangle veya hizasız olabilir; aliasing kurallarını ihlal edebilir ve veri yarışlarına (data races) yol açabilir: bunların hepsi tanımsız davranıştır
+    .label = ham işaretçinin dereferansı
 
 mir_build_unsafe_op_in_unsafe_fn_extern_static_requires_unsafe =
-    use of extern static is unsafe and requires unsafe block
-    .note = extern statics are not controlled by the Rust type system: invalid data, aliasing violations or data races will cause undefined behavior
-    .label = use of extern static
+    dış (extern) statik kullanım güvenli değildir ve güvenli olmayan bir blok (unsafe block) gerektirir
+    .note = dış statikler Rust tür sistemi tarafından kontrol edilmez: geçersiz veri, aliasing ihlalleri veya veri yarışları tanımsız davranışa neden olabilir
+    .label = dış statik kullanımı
 
 mir_build_unsafe_op_in_unsafe_fn_initializing_type_with_requires_unsafe =
-    initializing type with `rustc_layout_scalar_valid_range` attr is unsafe and requires unsafe block
-    .note = initializing a layout restricted type's field with a value outside the valid range is undefined behavior
-    .label = initializing type with `rustc_layout_scalar_valid_range` attr
+    `rustc_layout_scalar_valid_range` özniteliği ile tipin başlatılması güvenli değildir ve güvenli olmayan bir blok (unsafe block) gerektirir
+    .note = düzen kısıtlamalı bir tipin alanını geçerli aralık dışında bir değerle başlatmak tanımsız davranıştır
+    .label = `rustc_layout_scalar_valid_range` özniteliği ile tipin başlatılması
 
 mir_build_unsafe_op_in_unsafe_fn_inline_assembly_requires_unsafe =
-    use of inline assembly is unsafe and requires unsafe block
-    .note = inline assembly is entirely unchecked and can cause undefined behavior
-    .label = use of inline assembly
+    satır içi montaj kullanımı güvenli değildir ve güvenli olmayan bir blok (unsafe block) gerektirir
+    .note = satır içi montaj tamamen denetimsizdir ve tanımsız davranışa yol açabilir
+    .label = satır içi montaj kullanımı
 
 mir_build_unsafe_op_in_unsafe_fn_mutable_static_requires_unsafe =
-    use of mutable static is unsafe and requires unsafe block
-    .note = mutable statics can be mutated by multiple threads: aliasing violations or data races will cause undefined behavior
-    .label = use of mutable static
+    değiştirilebilir statik kullanım güvenli değildir ve güvenli olmayan bir blok (unsafe block) gerektirir
+    .note = değiştirilebilir statikler birden fazla iş parçacığı tarafından değiştirilebilir: aliasing ihlalleri veya veri yarışları tanımsız davranışa yol açar
+    .label = değiştirilebilir statik kullanımı
 
 mir_build_unsafe_op_in_unsafe_fn_mutation_of_layout_constrained_field_requires_unsafe =
-    mutation of layout constrained field is unsafe and requires unsafe block
-    .note = mutating layout constrained fields cannot statically be checked for valid values
-    .label = mutation of layout constrained field
+    düzen sınırlı alanın mutasyonu güvenli değildir ve güvenli olmayan bir blok (unsafe block) gerektirir
+    .note = düzen sınırlı alanların mutasyonları geçerli değerler için statik olarak kontrol edilemez
+    .label = düzen sınırlı alanın mutasyonu
 
 mir_build_unsafe_op_in_unsafe_fn_union_field_requires_unsafe =
-    access to union field is unsafe and requires unsafe block
-    .note = the field may not be properly initialized: using uninitialized data will cause undefined behavior
-    .label = access to union field
+    union alanına erişim güvenli değildir ve güvenli olmayan bir blok (unsafe block) gerektirir
+    .note = alan uygun şekilde başlatılmamış olabilir: başlatılmamış verilerin kullanımı tanımsız davranışa yol açar
+    .label = union alanına erişim
 
-mir_build_unsized_pattern = cannot use unsized non-slice type `{$non_sm_ty}` in constant patterns
+mir_build_unsized_pattern = boyutu belirlenmemiş `{$non_sm_ty}` türü sabit kalıplarda kullanılamaz
 
-mir_build_unused_unsafe = unnecessary `unsafe` block
-    .label = unnecessary `unsafe` block
+mir_build_unused_unsafe = gereksiz `unsafe` blok
+    .label = gereksiz `unsafe` blok
 
-mir_build_unused_unsafe_enclosing_block_label = because it's nested under this `unsafe` block
+mir_build_unused_unsafe_enclosing_block_label = çünkü bu `unsafe` blok altında iç içe geçmiş
 
-mir_build_variant_defined_here = not covered
+mir_build_variant_defined_here = kapsanmamış
 
-mir_build_wrap_suggestion = consider wrapping the function body in an unsafe block
+mir_build_wrap_suggestion = fonksiyon gövdesini güvenli olmayan bir blok (unsafe block) içine almayı düşünün
