@@ -1,4 +1,3 @@
-çevir
 attr_cfg_predicate_identifier =
     `cfg` predicate key must be an identifier
 
