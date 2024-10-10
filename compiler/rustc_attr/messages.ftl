@@ -1,121 +1,121 @@
 attr_cfg_predicate_identifier =
-    `cfg` predicate key must be an identifier
+    `cfg` koşul anahtarı bir tanımlayıcı olmalıdır
 
 attr_deprecated_item_suggestion =
-    suggestions on deprecated items are unstable
-    .help = add `#![feature(deprecated_suggestion)]` to the crate root
-    .note = see #94785 for more details
+    eski öğelerle ilgili öneriler kararsızdır
+    .help = crate köküne `#![feature(deprecated_suggestion)]` ekleyin
+    .note = daha fazla bilgi için #94785'e bakın
 
 attr_expected_one_cfg_pattern =
-    expected 1 cfg-pattern
+    1 adet cfg-pattern bekleniyordu
 
 attr_expected_single_version_literal =
-    expected single version literal
+    tek bir sürüm dizesi bekleniyordu
 
 attr_expected_version_literal =
-    expected a version literal
+    bir sürüm dizesi bekleniyordu
 
 attr_expects_feature_list =
-    `{$name}` expects a list of feature names
+    `{$name}` bir özellik adları listesi bekliyor
 
 attr_expects_features =
-    `{$name}` expects feature names
+    `{$name}` özellik adları bekliyor
 
 attr_incorrect_meta_item =
-    incorrect meta item
+    yanlış meta öğe
 
 attr_incorrect_repr_format_align_one_arg =
-    incorrect `repr(align)` attribute format: `align` takes exactly one argument in parentheses
+    yanlış `repr(align)` öznitelik formatı: `align` tam olarak bir argüman alır (parantez içinde)
 
 attr_incorrect_repr_format_expect_literal_integer =
-    incorrect `repr(align)` attribute format: `align` expects a literal integer as argument
+    yanlış `repr(align)` öznitelik formatı: `align` bir tam sayı (literal) bekler
 
 attr_incorrect_repr_format_generic =
-    incorrect `repr({$repr_arg})` attribute format
-    .suggestion = use parentheses instead
+    yanlış `repr({$repr_arg})` öznitelik formatı
+    .suggestion = bunun yerine parantez kullanın
 
 attr_incorrect_repr_format_packed_expect_integer =
-    incorrect `repr(packed)` attribute format: `packed` expects a literal integer as argument
+    yanlış `repr(packed)` öznitelik formatı: `packed` bir tam sayı (literal) bekler
 
 attr_incorrect_repr_format_packed_one_or_zero_arg =
-    incorrect `repr(packed)` attribute format: `packed` takes exactly one parenthesized argument, or no parentheses at all
+    yanlış `repr(packed)` öznitelik formatı: `packed` tam olarak bir parantezli argüman alır veya hiç parantez almaz
 
 attr_invalid_issue_string =
-    `issue` must be a non-zero numeric string or "none"
-    .must_not_be_zero = `issue` must not be "0", use "none" instead
-    .empty = cannot parse integer from empty string
-    .invalid_digit = invalid digit found in string
-    .pos_overflow = number too large to fit in target type
-    .neg_overflow = number too small to fit in target type
+    `issue` sıfırdan büyük bir sayı ya da "none" olmalıdır
+    .must_not_be_zero = `issue` "0" olamaz, bunun yerine "none" kullanın
+    .empty = boş dizeden sayı ayrıştırılamadı
+    .invalid_digit = dizide geçersiz bir rakam bulundu
+    .pos_overflow = sayı hedef tipine sığamayacak kadar büyük
+    .neg_overflow = sayı hedef tipine sığamayacak kadar küçük
 
 attr_invalid_predicate =
-    invalid predicate `{$predicate}`
+    geçersiz koşul `{$predicate}`
 
 attr_invalid_repr_align_need_arg =
-    invalid `repr(align)` attribute: `align` needs an argument
-    .suggestion = supply an argument here
+    geçersiz `repr(align)` özniteliği: `align` bir argüman gerektiriyor
+    .suggestion = burada bir argüman sağlayın
 
 attr_invalid_repr_generic =
-    invalid `repr({$repr_arg})` attribute: {$error_part}
+    geçersiz `repr({$repr_arg})` özniteliği: {$error_part}
 
 attr_invalid_repr_hint_no_paren =
-    invalid representation hint: `{$name}` does not take a parenthesized argument list
+    geçersiz temsil ipucu: `{$name}` parantezli bir argüman listesi almaz
 
 attr_invalid_repr_hint_no_value =
-    invalid representation hint: `{$name}` does not take a value
+    geçersiz temsil ipucu: `{$name}` bir değer almaz
 
 attr_invalid_since =
-    'since' must be a Rust version number, such as "1.31.0"
+    'since' bir Rust sürüm numarası olmalıdır, örneğin "1.31.0"
 
 attr_missing_feature =
-    missing 'feature'
+    'feature' eksik
 
 attr_missing_issue =
-    missing 'issue'
+    'issue' eksik
 
 attr_missing_note =
-    missing 'note'
+    'note' eksik
 
 attr_missing_since =
-    missing 'since'
+    'since' eksik
 
 attr_multiple_item =
-    multiple '{$item}' items
+    birden fazla '{$item}' öğesi
 
 attr_multiple_stability_levels =
-    multiple stability levels
+    birden fazla kararlılık seviyesi
 
 attr_non_ident_feature =
-    'feature' is not an identifier
+    'feature' bir tanımlayıcı değil
 
 attr_rustc_allowed_unstable_pairing =
-    `rustc_allowed_through_unstable_modules` attribute must be paired with a `stable` attribute
+    `rustc_allowed_through_unstable_modules` özniteliği bir `stable` özniteliği ile eşleştirilmelidir
 
 attr_rustc_promotable_pairing =
-    `rustc_promotable` attribute must be paired with either a `rustc_const_unstable` or a `rustc_const_stable` attribute
+    `rustc_promotable` özniteliği ya `rustc_const_unstable` ya da `rustc_const_stable` özniteliği ile eşleştirilmelidir
 
 attr_soft_no_args =
-    `soft` should not have any arguments
+    `soft` herhangi bir argüman almamalıdır
 
 attr_unknown_meta_item =
-    unknown meta item '{$item}'
-    .label = expected one of {$expected}
+    bilinmeyen meta öğe '{$item}'
+    .label = beklenenler: {$expected}
 
 attr_unknown_version_literal =
-    unknown version literal format, assuming it refers to a future version
+    bilinmeyen sürüm dizesi formatı, gelecekteki bir sürüme atıfta bulunduğu varsayılıyor
 
 attr_unstable_cfg_target_compact =
-    compact `cfg(target(..))` is experimental and subject to change
+    kompakt `cfg(target(..))` deneysel ve değişime tabidir
 
 attr_unsupported_literal_cfg_boolean =
-    literal in `cfg` predicate value must be a boolean
+    `cfg` koşul değerinde kullanılan literal bir boolean olmalıdır
 attr_unsupported_literal_cfg_string =
-    literal in `cfg` predicate value must be a string
+    `cfg` koşul değerinde kullanılan literal bir dize olmalıdır
 attr_unsupported_literal_deprecated_kv_pair =
-    item in `deprecated` must be a key/value pair
+    `deprecated` içinde bulunan öğe bir anahtar/değer çifti olmalıdır
 attr_unsupported_literal_deprecated_string =
-    literal in `deprecated` value must be a string
+    `deprecated` değerinde kullanılan literal bir dize olmalıdır
 attr_unsupported_literal_generic =
-    unsupported literal
+    desteklenmeyen literal
 attr_unsupported_literal_suggestion =
-    consider removing the prefix
+    öneki kaldırmayı düşünün
