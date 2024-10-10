@@ -1,87 +1,87 @@
 -passes_previously_accepted =
-    this was previously accepted by the compiler but is being phased out; it will become a hard error in a future release!
+    bu daha önce derleyici tarafından kabul ediliyordu ancak aşamalı olarak kaldırılıyor; gelecekteki bir sürümde zorunlu bir hata olacak!
 
 -passes_see_issue =
-    see issue #{$issue} <https://github.com/rust-lang/rust/issues/{$issue}> for more information
+    daha fazla bilgi için #{$issue} <https://github.com/rust-lang/rust/issues/{$issue}> numaralı soruya bakın
 
 passes_abi_invalid_attribute =
-    `#[rustc_abi]` can only be applied to function items, type aliases, and associated functions
+    `#[rustc_abi]` yalnızca fonksiyon öğelerine, tür takma adlarına ve ilişkili fonksiyonlara uygulanabilir
 passes_abi_ne =
-    ABIs are not compatible
-    left ABI = {$left}
-    right ABI = {$right}
+    ABIs uyumlu değil
+    sol ABI = {$left}
+    sağ ABI = {$right}
 passes_abi_of =
     fn_abi_of({$fn_name}) = {$fn_abi}
 
 passes_allow_incoherent_impl =
-    `rustc_allow_incoherent_impl` attribute should be applied to impl items
-    .label = the only currently supported targets are inherent methods
+    `rustc_allow_incoherent_impl` özniteliği, yalnızca uygulama öğelerine uygulanmalıdır
+    .label = şu anda yalnızca desteklenen hedefler, yerel yöntemlerdir
 
 passes_allow_internal_unstable =
-    attribute should be applied to a macro
-    .label = not a macro
+    öznitelik bir makroya uygulanmalıdır
+    .label = makro değil
 
 passes_attr_application_enum =
-    attribute should be applied to an enum
-    .label = not an enum
+    öznitelik bir `enum`a uygulanmalıdır
+    .label = bir `enum` değil
 
 passes_attr_application_struct =
-    attribute should be applied to a struct
-    .label = not a struct
+    öznitelik bir `struct`a uygulanmalıdır
+    .label = bir `struct` değil
 
 passes_attr_application_struct_enum_function_method_union =
-    attribute should be applied to a struct, enum, function, associated function, or union
-    .label = not a struct, enum, function, associated function, or union
+    öznitelik bir `struct`, `enum`, fonksiyon, ilişkili fonksiyon veya `union`a uygulanmalıdır
+    .label = bir `struct`, `enum`, fonksiyon, ilişkili fonksiyon veya `union` değil
 
 passes_attr_application_struct_enum_union =
-    attribute should be applied to a struct, enum, or union
-    .label = not a struct, enum, or union
+    öznitelik bir `struct`, `enum` veya `union`a uygulanmalıdır
+    .label = bir `struct`, `enum` veya `union` değil
 
 passes_attr_application_struct_union =
-    attribute should be applied to a struct or union
-    .label = not a struct or union
+    öznitelik bir `struct` veya `union`a uygulanmalıdır
+    .label = bir `struct` veya `union` değil
 
 passes_attr_crate_level =
-    this attribute can only be applied at the crate level
-    .suggestion = to apply to the crate, use an inner attribute
-    .note = read <https://doc.rust-lang.org/nightly/rustdoc/the-doc-attribute.html#at-the-crate-level> for more information
+    bu öznitelik yalnızca crate seviyesinde uygulanabilir
+    .suggestion = crate'e uygulamak için içsel bir öznitelik kullanın
+    .note = daha fazla bilgi için <https://doc.rust-lang.org/nightly/rustdoc/the-doc-attribute.html#at-the-crate-level> adresine bakın
 
 passes_attr_only_in_functions =
-    `{$attr}` attribute can only be used on functions
+    `{$attr}` özniteliği yalnızca fonksiyonlar üzerinde kullanılabilir
 
 passes_both_ffi_const_and_pure =
-    `#[ffi_const]` function cannot be `#[ffi_pure]`
+    `#[ffi_const]` fonksiyonu `#[ffi_pure]` olamaz
 
 passes_break_inside_closure =
-    `{$name}` inside of a closure
-    .label = cannot `{$name}` inside of a closure
-    .closure_label = enclosing closure
+    kapanış içinde `{$name}`
+    .label = kapanış içinde `{$name}` kullanılamaz
+    .closure_label = iç içe geçmiş kapanış
 
 passes_break_inside_coroutine =
-    `{$name}` inside `{$kind}` {$source}
-    .label = cannot `{$name}` inside `{$kind}` {$source}
-    .coroutine_label = enclosing `{$kind}` {$source}
+    `{$name}`, `{$kind}` içinde {$source}
+    .label = `{$name}`, `{$kind}` içinde {$source} kullanılamaz
+    .coroutine_label = iç içe geçmiş `{$kind}` {$source}
 
 passes_break_non_loop =
-    `break` with value from a `{$kind}` loop
-    .label = can only break with a value inside `loop` or breakable block
-    .label2 = you can't `break` with a value in a `{$kind}` loop
-    .suggestion = use `break` on its own without a value inside this `{$kind}` loop
-    .break_expr_suggestion = alternatively, you might have meant to use the available loop label
+    `{$kind}` döngüsünden bir `break` değeri
+    .label = yalnızca `loop` veya kırılabilir bir blok içinde bir değerle `break` yapılabilir
+    .label2 = `{$kind}` döngüsünde bir değerle `break` yapılamaz
+    .suggestion = bu `{$kind}` döngüsünde bir değer olmadan `break` kullanın
+    .break_expr_suggestion = alternatif olarak, mevcut döngü etiketini kullanmak istemiş olabilirsiniz
 
 passes_cannot_stabilize_deprecated =
-    an API can't be stabilized after it is deprecated
-    .label = invalid version
-    .item = the stability attribute annotates this item
+    bir API, kullanımdan kaldırıldıktan sonra stabilize edilemez
+    .label = geçersiz sürüm
+    .item = kararlılık özniteliği bu öğeyi işaret ediyor
 
 passes_change_fields_to_be_of_unit_type =
-    consider changing the { $num ->
-      [one] field
-     *[other] fields
-    } to be of unit type to suppress this warning while preserving the field numbering, or remove the { $num ->
-      [one] field
-     *[other] fields
-    }
+    { $num ->
+      [one] alanı
+     *[other] alanları
+    } birim türünde olacak şekilde değiştirerek bu uyarıyı baskılayın veya { $num ->
+      [one] alanı
+     *[other] alanları
+    } kaldırın
 
 passes_cold =
     {passes_should_be_applied_to_fn}
@@ -89,604 +89,604 @@ passes_cold =
     .label = {passes_should_be_applied_to_fn.label}
 
 passes_collapse_debuginfo =
-    `collapse_debuginfo` attribute should be applied to macro definitions
-    .label = not a macro definition
+    `collapse_debuginfo` özniteliği makro tanımlarına uygulanmalıdır
+    .label = makro tanımı değil
 
-passes_confusables = attribute should be applied to an inherent method
-    .label = not an inherent method
+passes_confusables = öznitelik yerel bir metoda uygulanmalıdır
+    .label = yerel bir metod değil
 
 passes_continue_labeled_block =
-    `continue` pointing to a labeled block
-    .label = labeled blocks cannot be `continue`'d
-    .block_label = labeled block the `continue` points to
+    etiketlenmiş bir bloğa işaret eden `continue`
+    .label = etiketlenmiş bloklara `continue` yapılamaz
+    .block_label = `continue`un işaret ettiği etiketlenmiş blok
 
 passes_coroutine_on_non_closure =
-    attribute should be applied to closures
-    .label = not a closure
+    öznitelik kapanışlara uygulanmalıdır
+    .label = kapanış değil
 
 passes_coverage_not_fn_or_closure =
-    attribute should be applied to a function definition or closure
-    .label = not a function or closure
+    öznitelik bir fonksiyon tanımına veya kapanışa uygulanmalıdır
+    .label = fonksiyon veya kapanış değil
 
 passes_dead_codes =
     { $multiple ->
-      *[true] multiple {$descr}s are
+      *[true] birden fazla {$descr} 
        [false] { $num ->
-         [one] {$descr} {$name_list} is
-        *[other] {$descr}s {$name_list} are
+         [one] {$descr} {$name_list} 
+        *[other] {$descr}s {$name_list}
        }
-    } never {$participle}
+    } hiçbir zaman {$participle} değildir
 
 passes_debug_visualizer_invalid =
-    invalid argument
-    .note_1 = expected: `natvis_file = "..."`
-    .note_2 = OR
-    .note_3 = expected: `gdb_script_file = "..."`
+    geçersiz argüman
+    .note_1 = beklenen: `natvis_file = "..."`
+    .note_2 = VEYA
+    .note_3 = beklenen: `gdb_script_file = "..."`
 
 passes_debug_visualizer_placement =
-    attribute should be applied to a module
+    öznitelik bir modüle uygulanmalıdır
 
 passes_debug_visualizer_unreadable =
-    couldn't read {$file}: {$error}
+    `{$file}` okunamadı: {$error}
 
 passes_deprecated =
-    attribute is ignored here
+    öznitelik burada göz ardı edildi
 
 passes_deprecated_annotation_has_no_effect =
-    this `#[deprecated]` annotation has no effect
-    .suggestion = remove the unnecessary deprecation attribute
+    bu `#[deprecated]` özniteliğinin hiçbir etkisi yok
+    .suggestion = gereksiz kullanım dışı bırakma özniteliğini kaldırın
 
 passes_deprecated_attribute =
-    deprecated attribute must be paired with either stable or unstable attribute
+    kullanımdan kaldırılan öznitelik, ya kararlı ya da kararsız bir öznitelikle eşleştirilmelidir
 
 passes_diagnostic_diagnostic_on_unimplemented_only_for_traits =
-    `#[diagnostic::on_unimplemented]` can only be applied to trait definitions
+    `#[diagnostic::on_unimplemented]` yalnızca trait tanımlarına uygulanabilir
 
 passes_diagnostic_item_first_defined =
-    the diagnostic item is first defined here
+    tanılama öğesi ilk olarak burada tanımlanmıştır
 
 passes_doc_alias_bad_char =
-    {$char_} character isn't allowed in {$attr_str}
+    {$char_} karakteri {$attr_str} içinde izin verilmez
 
 passes_doc_alias_bad_location =
-    {$attr_str} isn't allowed on {$location}
+    {$attr_str}, {$location} üzerinde izin verilmez
 
-passes_doc_alias_duplicated = doc alias is duplicated
-    .label = first defined here
+passes_doc_alias_duplicated = doc aliası yinelenmiş
+    .label = ilk olarak burada tanımlandı
 
 passes_doc_alias_empty =
-    {$attr_str} attribute cannot have empty value
+    {$attr_str} özniteliği boş olamaz
 
 passes_doc_alias_malformed =
-    doc alias attribute expects a string `#[doc(alias = "a")]` or a list of strings `#[doc(alias("a", "b"))]`
+    doc alias özniteliği bir dize bekler `#[doc(alias = "a")]` veya dize listesi `#[doc(alias("a", "b"))]`
 
 passes_doc_alias_not_an_alias =
-    {$attr_str} is the same as the item's name
+    {$attr_str}, öğenin adı ile aynıdır
 
 passes_doc_alias_not_string_literal =
-    `#[doc(alias("a"))]` expects string literals
+    `#[doc(alias("a"))]` dize sabitleri bekler
 
 passes_doc_alias_start_end =
-    {$attr_str} cannot start or end with ' '
+    {$attr_str} boşluk ile başlayamaz veya bitiremez
 
 passes_doc_attr_not_crate_level =
-    `#![doc({$attr_name} = "...")]` isn't allowed as a crate-level attribute
+    `#![doc({$attr_name} = "...")]` crate seviyesinde bir öznitelik olarak kullanılamaz
 
 passes_doc_cfg_hide_takes_list =
-    `#[doc(cfg_hide(...))]` takes a list of attributes
+    `#[doc(cfg_hide(...))]` bir öznitelik listesi alır
 
 passes_doc_expect_str =
-    doc {$attr_name} attribute expects a string: #[doc({$attr_name} = "a")]
+    doc {$attr_name} özniteliği bir dize bekler: #[doc({$attr_name} = "a")]
 
 passes_doc_fake_variadic_not_valid =
-    `#[doc(fake_variadic)]` must be used on the first of a set of tuple or fn pointer trait impls with varying arity
+    `#[doc(fake_variadic)]`, değişken sayıda parametre içeren tuple veya fn pointer trait uygulamalarının ilki üzerinde kullanılmalıdır
 
 passes_doc_inline_conflict =
-    conflicting doc inlining attributes
-    .help = remove one of the conflicting attributes
+    çelişen doc inline öznitelikleri
+    .help = çelişen özniteliklerden birini kaldırın
 
 passes_doc_inline_conflict_first =
-    this attribute...
+    bu öznitelik...
 
 passes_doc_inline_conflict_second =
-    {"."}..conflicts with this attribute
+    {"."}..bu öznitelik ile çelişiyor
 
 passes_doc_inline_only_use =
-    this attribute can only be applied to a `use` item
-    .label = only applicable on `use` items
-    .not_a_use_item_label = not a `use` item
-    .note = read <https://doc.rust-lang.org/nightly/rustdoc/the-doc-attribute.html#inline-and-no_inline> for more information
+    bu öznitelik yalnızca bir `use` öğesine uygulanabilir
+    .label = yalnızca `use` öğelerinde geçerlidir
+    .not_a_use_item_label = bir `use` öğesi değil
+    .note = daha fazla bilgi için <https://doc.rust-lang.org/nightly/rustdoc/the-doc-attribute.html#inline-and-no_inline> adresine bakın
 
 passes_doc_invalid =
-    invalid `doc` attribute
+    geçersiz `doc` özniteliği
 
 passes_doc_keyword_empty_mod =
-    `#[doc(keyword = "...")]` should be used on empty modules
+    `#[doc(keyword = "...")]` boş modüller üzerinde kullanılmalıdır
 
 passes_doc_keyword_invalid_ident =
-    `{$doc_keyword}` is not a valid identifier
+    `{$doc_keyword}` geçerli bir tanımlayıcı değil
 
 passes_doc_keyword_not_mod =
-    `#[doc(keyword = "...")]` should be used on modules
+    `#[doc(keyword = "...")]` modüller üzerinde kullanılmalıdır
 
 passes_doc_keyword_only_impl =
-    `#[doc(keyword = "...")]` should be used on impl blocks
+    `#[doc(keyword = "...")]` yalnızca impl bloklarında kullanılmalıdır
 
 passes_doc_masked_not_extern_crate_self =
-    this attribute cannot be applied to an `extern crate self` item
-    .label = not applicable on `extern crate self` items
-    .extern_crate_self_label = `extern crate self` defined here
+    bu öznitelik `extern crate self` öğesine uygulanamaz
+    .label = `extern crate self` öğelerinde geçerli değil
+    .extern_crate_self_label = `extern crate self` burada tanımlandı
 
 passes_doc_masked_only_extern_crate =
-    this attribute can only be applied to an `extern crate` item
-    .label = only applicable on `extern crate` items
-    .not_an_extern_crate_label = not an `extern crate` item
-    .note = read <https://doc.rust-lang.org/unstable-book/language-features/doc-masked.html> for more information
+    bu öznitelik yalnızca bir `extern crate` öğesine uygulanabilir
+    .label = yalnızca `extern crate` öğelerinde geçerlidir
+    .not_an_extern_crate_label = bir `extern crate` öğesi değil
+    .note = daha fazla bilgi için <https://doc.rust-lang.org/unstable-book/language-features/doc-masked.html> adresine bakın
 
 passes_doc_rust_logo =
-    the `#[doc(rust_logo)]` attribute is used for Rust branding
+    `#[doc(rust_logo)]` özniteliği Rust markalaması için kullanılır
 
-passes_doc_test_literal = `#![doc(test(...)]` does not take a literal
+passes_doc_test_literal = `#![doc(test(...)]` bir sabit değer almaz
 
 passes_doc_test_takes_list =
-    `#[doc(test(...)]` takes a list of attributes
+    `#[doc(test(...)]` bir öznitelik listesi alır
 
 passes_doc_test_unknown =
-    unknown `doc(test)` attribute `{$path}`
+    bilinmeyen `doc(test)` özniteliği `{$path}`
 
 passes_doc_test_unknown_any =
-    unknown `doc` attribute `{$path}`
+    bilinmeyen `doc` özniteliği `{$path}`
 
 passes_doc_test_unknown_include =
-    unknown `doc` attribute `{$path}`
-    .suggestion = use `doc = include_str!` instead
+    bilinmeyen `doc` özniteliği `{$path}`
+    .suggestion = bunun yerine `doc = include_str!` kullanın
 
 passes_doc_test_unknown_spotlight =
-    unknown `doc` attribute `{$path}`
-    .note = `doc(spotlight)` was renamed to `doc(notable_trait)`
-    .suggestion = use `notable_trait` instead
-    .no_op_note = `doc(spotlight)` is now a no-op
+    bilinmeyen `doc` özniteliği `{$path}`
+    .note = `doc(spotlight)` artık `doc(notable_trait)` olarak değiştirildi
+    .suggestion = bunun yerine `notable_trait` kullanın
+    .no_op_note = `doc(spotlight)` artık bir no-op olarak işlev görmektedir
 
 passes_duplicate_diagnostic_item_in_crate =
-    duplicate diagnostic item in crate `{$crate_name}`: `{$name}`
-    .note = the diagnostic item is first defined in crate `{$orig_crate_name}`
+    crate `{$crate_name}` içinde yineleyen tanılama öğesi: `{$name}`
+    .note = tanılama öğesi ilk olarak crate `{$orig_crate_name}` içinde tanımlanmıştır
 
 passes_duplicate_feature_err =
-    the feature `{$feature}` has already been declared
+    `{$feature}` özelliği zaten ilan edilmiş
 
 passes_duplicate_lang_item =
-    found duplicate lang item `{$lang_item_name}`
-    .first_defined_span = the lang item is first defined here
-    .first_defined_crate_depends = the lang item is first defined in crate `{$orig_crate_name}` (which `{$orig_dependency_of}` depends on)
-    .first_defined_crate = the lang item is first defined in crate `{$orig_crate_name}`
-    .first_definition_local = first definition in the local crate (`{$orig_crate_name}`)
-    .second_definition_local = second definition in the local crate (`{$crate_name}`)
-    .first_definition_path = first definition in `{$orig_crate_name}` loaded from {$orig_path}
-    .second_definition_path = second definition in `{$crate_name}` loaded from {$path}
+    yinelenmiş lang öğesi bulundu `{$lang_item_name}`
+    .first_defined_span = lang öğesi ilk olarak burada tanımlandı
+    .first_defined_crate_depends = lang öğesi ilk olarak crate `{$orig_crate_name}` içinde tanımlandı (bu crate, `{$orig_dependency_of}` crate'ine bağlı)
+    .first_defined_crate = lang öğesi ilk olarak crate `{$orig_crate_name}` içinde tanımlandı
+    .first_definition_local = yerel crate'deki ilk tanım (`{$orig_crate_name}`)
+    .second_definition_local = yerel crate'deki ikinci tanım (`{$crate_name}`)
+    .first_definition_path = `{$orig_crate_name}` içindeki ilk tanım {$orig_path} konumundan yüklendi
+    .second_definition_path = `{$crate_name}` içindeki ikinci tanım {$path} konumundan yüklendi
 
 passes_duplicate_lang_item_crate =
-    duplicate lang item in crate `{$crate_name}`: `{$lang_item_name}`
-    .first_defined_span = the lang item is first defined here
-    .first_defined_crate_depends = the lang item is first defined in crate `{$orig_crate_name}` (which `{$orig_dependency_of}` depends on)
-    .first_defined_crate = the lang item is first defined in crate `{$orig_crate_name}`
-    .first_definition_local = first definition in the local crate (`{$orig_crate_name}`)
-    .second_definition_local = second definition in the local crate (`{$crate_name}`)
-    .first_definition_path = first definition in `{$orig_crate_name}` loaded from {$orig_path}
-    .second_definition_path = second definition in `{$crate_name}` loaded from {$path}
+    crate `{$crate_name}` içinde yinelenmiş lang öğesi: `{$lang_item_name}`
+    .first_defined_span = lang öğesi ilk olarak burada tanımlandı
+    .first_defined_crate_depends = lang öğesi ilk olarak crate `{$orig_crate_name}` içinde tanımlandı (bu crate, `{$orig_dependency_of}` crate'ine bağlı)
+    .first_defined_crate = lang öğesi ilk olarak crate `{$orig_crate_name}` içinde tanımlandı
+    .first_definition_local = yerel crate'deki ilk tanım (`{$orig_crate_name}`)
+    .second_definition_local = yerel crate'deki ikinci tanım (`{$crate_name}`)
+    .first_definition_path = `{$orig_crate_name}` içindeki ilk tanım {$orig_path} konumundan yüklendi
+    .second_definition_path = `{$crate_name}` içindeki ikinci tanım {$path} konumundan yüklendi
 
 passes_duplicate_lang_item_crate_depends =
-    duplicate lang item in crate `{$crate_name}` (which `{$dependency_of}` depends on): `{$lang_item_name}`
-    .first_defined_span = the lang item is first defined here
-    .first_defined_crate_depends = the lang item is first defined in crate `{$orig_crate_name}` (which `{$orig_dependency_of}` depends on)
-    .first_defined_crate = the lang item is first defined in crate `{$orig_crate_name}`
-    .first_definition_local = first definition in the local crate (`{$orig_crate_name}`)
-    .second_definition_local = second definition in the local crate (`{$crate_name}`)
-    .first_definition_path = first definition in `{$orig_crate_name}` loaded from {$orig_path}
-    .second_definition_path = second definition in `{$crate_name}` loaded from {$path}
+    crate `{$crate_name}` içinde yinelenmiş lang öğesi (bu crate, `{$dependency_of}` crate'ine bağlı): `{$lang_item_name}`
+    .first_defined_span = lang öğesi ilk olarak burada tanımlandı
+    .first_defined_crate_depends = lang öğesi ilk olarak crate `{$orig_crate_name}` içinde tanımlandı (bu crate, `{$orig_dependency_of}` crate'ine bağlı)
+    .first_defined_crate = lang öğesi ilk olarak crate `{$orig_crate_name}` içinde tanımlandı
+    .first_definition_local = yerel crate'deki ilk tanım (`{$orig_crate_name}`)
+    .second_definition_local = yerel crate'deki ikinci tanım (`{$crate_name}`)
+    .first_definition_path = `{$orig_crate_name}` içindeki ilk tanım {$orig_path} konumundan yüklendi
+    .second_definition_path = `{$crate_name}` içindeki ikinci tanım {$path} konumundan yüklendi
 
 passes_empty_confusables =
-    expected at least one confusable name
+    en az bir karışabilir ad bekleniyor
 
 passes_export_name =
-    attribute should be applied to a free function, impl method or static
-    .label = not a free function, impl method or static
+    öznitelik bağımsız bir işlev, impl metodu veya statik üzerine uygulanmalıdır
+    .label = bağımsız bir işlev, impl metodu veya statik değil
 
 passes_extern_main =
-    the `main` function cannot be declared in an `extern` block
+    `main` işlevi bir `extern` blokta tanımlanamaz
 
 passes_feature_previously_declared =
-    feature `{$feature}` is declared {$declared}, but was previously declared {$prev_declared}
+    `{$feature}` özelliği {$declared} olarak ilan edildi, ancak önceden {$prev_declared} olarak ilan edilmişti
 
 passes_feature_stable_twice =
-    feature `{$feature}` is declared stable since {$since}, but was previously declared stable since {$prev_since}
+    `{$feature}` özelliği {$since} itibarıyla kararlı olarak ilan edildi, ancak önceden {$prev_since} itibarıyla kararlı olarak ilan edilmişti
 
 passes_ffi_const_invalid_target =
-    `#[ffi_const]` may only be used on foreign functions
+    `#[ffi_const]` yalnızca yabancı işlevler üzerinde kullanılabilir
 
 passes_ffi_pure_invalid_target =
-    `#[ffi_pure]` may only be used on foreign functions
+    `#[ffi_pure]` yalnızca yabancı işlevler üzerinde kullanılabilir
 
 passes_has_incoherent_inherent_impl =
-    `rustc_has_incoherent_inherent_impls` attribute should be applied to types or traits
-    .label = only adts, extern types and traits are supported
+    `rustc_has_incoherent_inherent_impls` özniteliği türler veya trait'ler üzerine uygulanmalıdır
+    .label = yalnızca adts, extern türleri ve trait'ler desteklenir
 
 passes_ignored_attr =
-    `#[{$sym}]` is ignored on struct fields and match arms
+    `#[{$sym}]` struct alanları ve match kollarında göz ardı edilir
     .warn = {-passes_previously_accepted}
     .note = {-passes_see_issue(issue: "80564")}
 
 passes_ignored_attr_with_macro =
-    `#[{$sym}]` is ignored on struct fields, match arms and macro defs
+    `#[{$sym}]` struct alanları, match kolları ve macro tanımları üzerinde göz ardı edilir
     .warn = {-passes_previously_accepted}
     .note = {-passes_see_issue(issue: "80564")}
 
 passes_ignored_derived_impls =
-    `{$name}` has {$trait_list_len ->
-      [one] a derived impl
-     *[other] derived impls
-    } for the {$trait_list_len ->
-      [one] trait {$trait_list}, but this is
-     *[other] traits {$trait_list}, but these are
-    } intentionally ignored during dead code analysis
+    `{$name}` şu trait listesine {$trait_list_len ->
+      [one] bir türetilmiş uygulamaya sahiptir
+     *[other] türetilmiş uygulamalara sahiptir
+    } fakat bu {$trait_list_len ->
+      [one] trait {$trait_list}, ancak bu
+     *[other] trait'ler {$trait_list}, ancak bunlar
+    } ölü kod analizinde kasıtlı olarak göz ardı edilir
 
 passes_implied_feature_not_exist =
-    feature `{$implied_by}` implying `{$feature}` does not exist
+    `{$implied_by}` özelliği `{$feature}` özelliğini ima ediyor, ancak bu özellik mevcut değil
 
 passes_incorrect_do_not_recommend_location =
-    `#[diagnostic::do_not_recommend]` can only be placed on trait implementations
+    `#[diagnostic::do_not_recommend]` yalnızca trait uygulamalarına yerleştirilebilir
 
-passes_incorrect_meta_item = expected a quoted string literal
-passes_incorrect_meta_item_suggestion = consider surrounding this with quotes
+passes_incorrect_meta_item = beklenen: tırnak içinde bir dize sabiti
+passes_incorrect_meta_item_suggestion = bunu tırnak içine almayı düşünün
 
 passes_incorrect_target =
-    `{$name}` lang item must be applied to a {$kind} with {$at_least ->
-        [true] at least {$num}
-        *[false] {$num}
-    } generic {$num ->
-        [one] argument
-        *[other] arguments
-    }
-    .label = this {$kind} has {$actual_num} generic {$actual_num ->
-        [one] argument
-        *[other] arguments
-    }
+    `{$name}` dil öğesi, {$at_least ->
+        [true] en az {$num}
+        *[false] tam olarak {$num}
+    } genel {$num ->
+        [one] argüman
+        *[other] argüman
+    } içeren bir {$kind} üzerinde uygulanmalıdır
+    .label = bu {$kind} {$actual_num} genel {$actual_num ->
+        [one] argüman
+        *[other] argüman
+    } içeriyor
 
-passes_ineffective_unstable_impl = an `#[unstable]` annotation here has no effect
-    .note = see issue #55436 <https://github.com/rust-lang/rust/issues/55436> for more information
+passes_ineffective_unstable_impl = buradaki `#[unstable]` özniteliğinin bir etkisi yok
+    .note = daha fazla bilgi için bkz: issue #55436 <https://github.com/rust-lang/rust/issues/55436>
 
 passes_inline_ignored_constants =
-    `#[inline]` is ignored on constants
+    `#[inline]` sabitler üzerinde göz ardı edilir
     .warn = {-passes_previously_accepted}
     .note = {-passes_see_issue(issue: "65833")}
 
 passes_inline_ignored_function_prototype =
-    `#[inline]` is ignored on function prototypes
+    `#[inline]` işlev prototiplerinde göz ardı edilir
 
 passes_inline_not_fn_or_closure =
-    attribute should be applied to function or closure
-    .label = not a function or closure
+    öznitelik bir işlev veya closure üzerine uygulanmalıdır
+    .label = bir işlev veya closure değil
 
 passes_inner_crate_level_attr =
-    crate-level attribute should be in the root module
+    crate seviyesi öznitelik kök modülde olmalıdır
 
 passes_invalid_attr_at_crate_level =
-    `{$name}` attribute cannot be used at crate level
-    .suggestion = perhaps you meant to use an outer attribute
+    `{$name}` özniteliği crate seviyesinde kullanılamaz
+    .suggestion = belki bir dış öznitelik kullanmak istediniz
 
 passes_invalid_attr_at_crate_level_item =
-    the inner attribute doesn't annotate this {$kind}
+    iç öznitelik bu {$kind} öğesini açıklamıyor
 
-passes_invalid_macro_export_arguments = `{$name}` isn't a valid `#[macro_export]` argument
+passes_invalid_macro_export_arguments = `{$name}` geçerli bir `#[macro_export]` argümanı değil
 
-passes_invalid_macro_export_arguments_too_many_items = `#[macro_export]` can only take 1 or 0 arguments
+passes_invalid_macro_export_arguments_too_many_items = `#[macro_export]` yalnızca 1 veya 0 argüman alabilir
 
 passes_lang_item_fn = {$name ->
     [panic_impl] `#[panic_handler]`
-    *[other] `{$name}` lang item
-} function
+    *[other] `{$name}` lang öğesi
+} işlevi
 
 passes_lang_item_fn_with_target_feature =
-    {passes_lang_item_fn} is not allowed to have `#[target_feature]`
-    .label = {passes_lang_item_fn} is not allowed to have `#[target_feature]`
+    {passes_lang_item_fn} `#[target_feature]` özniteliğine sahip olamaz
+    .label = {passes_lang_item_fn} `#[target_feature]` özniteliğine sahip olamaz
 
 passes_lang_item_fn_with_track_caller =
-    {passes_lang_item_fn} is not allowed to have `#[track_caller]`
-    .label = {passes_lang_item_fn} is not allowed to have `#[track_caller]`
+    {passes_lang_item_fn} `#[track_caller]` özniteliğine sahip olamaz
+    .label = {passes_lang_item_fn} `#[track_caller]` özniteliğine sahip olamaz
 
 passes_lang_item_on_incorrect_target =
-    `{$name}` lang item must be applied to a {$expected_target}
-    .label = attribute should be applied to a {$expected_target}, not a {$actual_target}
+    `{$name}` lang öğesi {$expected_target} üzerine uygulanmalıdır
+    .label = öznitelik bir {$expected_target} üzerine uygulanmalıdır, {$actual_target} değil
 
 passes_layout_abi =
     abi: {$abi}
 passes_layout_align =
-    align: {$align}
+    hizalama: {$align}
 passes_layout_homogeneous_aggregate =
-    homogeneous_aggregate: {$homogeneous_aggregate}
+    homojen_aggregate: {$homogeneous_aggregate}
 passes_layout_invalid_attribute =
-    `#[rustc_layout]` can only be applied to `struct`/`enum`/`union` declarations and type aliases
+    `#[rustc_layout]` yalnızca `struct`/`enum`/`union` bildirileri ve tür takma adları üzerine uygulanabilir
 passes_layout_of =
     layout_of({$normalized_ty}) = {$ty_layout}
 passes_layout_size =
-    size: {$size}
+    boyut: {$size}
 
 passes_link =
-    attribute should be applied to an `extern` block with non-Rust ABI
+    öznitelik, Rust olmayan bir ABI ile `extern` blok üzerinde uygulanmalıdır
     .warn = {-passes_previously_accepted}
-    .label = not an `extern` block
+    .label = bir `extern` blok değil
 
 passes_link_name =
-    attribute should be applied to a foreign function or static
+    öznitelik, yabancı bir işlev veya statik üzerine uygulanmalıdır
     .warn = {-passes_previously_accepted}
-    .label = not a foreign function or static
-    .help = try `#[link(name = "{$value}")]` instead
+    .label = yabancı bir işlev veya statik değil
+    .help = bunun yerine `#[link(name = "{$value}")]` kullanmayı deneyin
 
 passes_link_ordinal =
-    attribute should be applied to a foreign function or static
-    .label = not a foreign function or static
+    öznitelik, yabancı bir işlev veya statik üzerine uygulanmalıdır
+    .label = yabancı bir işlev veya statik değil
 
 passes_link_section =
-    attribute should be applied to a function or static
+    öznitelik, bir işlev veya statik üzerine uygulanmalıdır
     .warn = {-passes_previously_accepted}
-    .label = not a function or static
+    .label = bir işlev veya statik değil
 
 passes_linkage =
-    attribute should be applied to a function or static
-    .label = not a function definition or static
+    öznitelik, bir işlev veya statik üzerine uygulanmalıdır
+    .label = bir işlev tanımı veya statik değil
 
 passes_macro_export =
-    `#[macro_export]` only has an effect on macro definitions
+    `#[macro_export]` yalnızca makro tanımları üzerinde etkili olur
 
 passes_macro_export_on_decl_macro =
-    `#[macro_export]` has no effect on declarative macro definitions
-    .note = declarative macros follow the same exporting rules as regular items
+    `#[macro_export]` deklaratif makro tanımları üzerinde etkili değildir
+    .note = deklaratif makrolar, normal öğelerle aynı dışa aktarma kurallarını izler
 
 passes_macro_use =
-    `#[{$name}]` only has an effect on `extern crate` and modules
+    `#[{$name}]` yalnızca `extern crate` ve modüller üzerinde etkilidir
 
 passes_may_dangle =
-    `#[may_dangle]` must be applied to a lifetime or type generic parameter in `Drop` impl
+    `#[may_dangle]` özniteliği, `Drop` impl içindeki bir ömür veya tür genel parametresi üzerine uygulanmalıdır
 
-passes_maybe_string_interpolation = you might have meant to use string interpolation in this string literal
+passes_maybe_string_interpolation = bu dize sabitinde belki de dize interpolasyonu kullanmak istediniz
 passes_missing_const_err =
-    attributes `#[rustc_const_unstable]` and `#[rustc_const_stable]` require the function or method to be `const`
-    .help = make the function or method const
-    .label = attribute specified here
+    `#[rustc_const_unstable]` ve `#[rustc_const_stable]` öznitelikleri işlevin veya metodun `const` olmasını gerektirir
+    .help = işlevi veya metodu `const` yapın
+    .label = öznitelik burada belirtilmiş
 
 passes_missing_const_stab_attr =
-    {$descr} has missing const stability attribute
+    {$descr} eksik bir const kararlılık özniteliğine sahip
 
 passes_missing_lang_item =
-    lang item required, but not found: `{$name}`
-    .note = this can occur when a binary crate with `#![no_std]` is compiled for a target where `{$name}` is defined in the standard library
-    .help = you may be able to compile for a target that doesn't need `{$name}`, specify a target with `--target` or in `.cargo/config`
+    lang öğesi gerekli, ancak bulunamadı: `{$name}`
+    .note = bu durum, `#![no_std]` içeren bir binary crate'in, `{$name}` öğesinin standart kütüphanede tanımlı olduğu bir hedefe derlenmesi sırasında ortaya çıkabilir
+    .help = `{$name}` öğesine ihtiyaç duymayan bir hedefe derleme yapabilir, `--target` veya `.cargo/config` ile bir hedef belirtebilirsiniz
 
 passes_missing_panic_handler =
-    `#[panic_handler]` function required, but not found
+    `#[panic_handler]` işlevi gerekli, ancak bulunamadı
 
 passes_missing_stability_attr =
-    {$descr} has missing stability attribute
+    {$descr} eksik bir kararlılık özniteliğine sahip
 
 passes_multiple_rustc_main =
-    multiple functions with a `#[rustc_main]` attribute
-    .first = first `#[rustc_main]` function
-    .additional = additional `#[rustc_main]` function
+    `#[rustc_main]` özniteliğine sahip birden fazla işlev bulundu
+    .first = ilk `#[rustc_main]` işlevi
+    .additional = ek `#[rustc_main]` işlevi
 
 passes_multiple_start_functions =
-    multiple `start` functions
-    .label = multiple `start` functions
-    .previous = previous `#[start]` function here
+    birden fazla `start` işlevi
+    .label = birden fazla `start` işlevi
+    .previous = önceki `#[start]` işlevi burada
 
 passes_must_not_suspend =
-    `must_not_suspend` attribute should be applied to a struct, enum, union, or trait
-    .label = is not a struct, enum, union, or trait
+    `must_not_suspend` özniteliği bir struct, enum, union veya trait üzerine uygulanmalıdır
+    .label = bir struct, enum, union veya trait değil
 
 passes_must_use_no_effect =
-    `#[must_use]` has no effect when applied to {$article} {$target}
+    `#[must_use]` {$article} {$target} üzerine uygulandığında etkili değildir
 
 passes_naked_asm_outside_naked_fn =
-    the `naked_asm!` macro can only be used in functions marked with `#[naked]`
+    `naked_asm!` makrosu yalnızca `#[naked]` ile işaretlenmiş işlevlerde kullanılabilir
 
 passes_naked_functions_asm_block =
-    naked functions must contain a single `naked_asm!` invocation
-    .label_multiple_asm = multiple `naked_asm!` invocations are not allowed in naked functions
-    .label_non_asm = not allowed in naked functions
+    çıplak işlevler yalnızca tek bir `naked_asm!` çağrısı içerebilir
+    .label_multiple_asm = çıplak işlevlerde birden fazla `naked_asm!` çağrısına izin verilmez
+    .label_non_asm = çıplak işlevlerde izin verilmeyen
 
 passes_naked_functions_incompatible_attribute =
-    attribute incompatible with `#[naked]`
-    .label = the `{$attr}` attribute is incompatible with `#[naked]`
-    .naked_attribute = function marked with `#[naked]` here
+    `#[naked]` ile uyumsuz öznitelik
+    .label = `{$attr}` özniteliği `#[naked]` ile uyumsuzdur
+    .naked_attribute = işlev `#[naked]` ile işaretlenmiş
 
 passes_naked_functions_must_naked_asm =
-    the `asm!` macro is not allowed in naked functions
-    .label = consider using the `naked_asm!` macro instead
+    `asm!` makrosu çıplak işlevlerde kullanılamaz
+    .label = bunun yerine `naked_asm!` makrosunu kullanmayı düşünün
 
 passes_no_link =
-    attribute should be applied to an `extern crate` item
-    .label = not an `extern crate` item
+    öznitelik bir `extern crate` öğesi üzerine uygulanmalıdır
+    .label = bir `extern crate` öğesi değil
 
 passes_no_main_function =
-    `main` function not found in crate `{$crate_name}`
-    .here_is_main = here is a function named `main`
-    .one_or_more_possible_main = you have one or more functions named `main` not defined at the crate level
-    .consider_moving_main = consider moving the `main` function definitions
-    .main_must_be_defined_at_crate = the main function must be defined at the crate level{$has_filename ->
-        [true] {" "}(in `{$filename}`)
+    crate `{$crate_name}` içinde `main` işlevi bulunamadı
+    .here_is_main = burada `main` adında bir işlev var
+    .one_or_more_possible_main = crate seviyesinde tanımlanmamış bir veya daha fazla `main` işlevine sahipsiniz
+    .consider_moving_main = `main` işlevi tanımlarını taşımayı düşünün
+    .main_must_be_defined_at_crate = main işlevi crate seviyesinde tanımlanmalıdır {$has_filename ->
+        [true] {" "}( `{$filename}` içinde)
         *[false] {""}
     }
-    .consider_adding_main_to_file = consider adding a `main` function to `{$filename}`
-    .consider_adding_main_at_crate = consider adding a `main` function at the crate level
-    .teach_note = If you don't know the basics of Rust, you can go look to the Rust Book to get started: https://doc.rust-lang.org/book/
-    .non_function_main = non-function item at `crate::main` is found
+    .consider_adding_main_to_file = `{$filename}` dosyasına bir `main` işlevi eklemeyi düşünün
+    .consider_adding_main_at_crate = crate seviyesinde bir `main` işlevi eklemeyi düşünün
+    .teach_note = Rust'un temellerini bilmiyorsanız, başlamak için Rust Kitabı'na bakabilirsiniz: https://doc.rust-lang.org/book/
+    .non_function_main = `crate::main` konumunda işlev olmayan bir öğe bulundu
 
 passes_no_mangle =
-    attribute should be applied to a free function, impl method or static
+    öznitelik bağımsız bir işlev, impl metodu veya statik üzerine uygulanmalıdır
     .warn = {-passes_previously_accepted}
-    .label = not a free function, impl method or static
+    .label = bağımsız bir işlev, impl metodu veya statik değil
 
 passes_no_mangle_foreign =
-    `#[no_mangle]` has no effect on a foreign {$foreign_item_kind}
+    `#[no_mangle]` yabancı bir {$foreign_item_kind} üzerinde etkili değildir
     .warn = {-passes_previously_accepted}
-    .label = foreign {$foreign_item_kind}
-    .note = symbol names in extern blocks are not mangled
-    .suggestion = remove this attribute
+    .label = yabancı {$foreign_item_kind}
+    .note = extern bloklarındaki sembol adları karıştırılmaz
+    .suggestion = bu özniteliği kaldırmayı düşünün
 
 passes_no_patterns =
-    patterns not allowed in naked function parameters
+    çıplak işlev parametrelerinde desenlere izin verilmez
 
 passes_non_exported_macro_invalid_attrs =
-    attribute should be applied to function or closure
-    .label = not a function or closure
+    öznitelik bir işlev veya kapanış üzerine uygulanmalıdır
+    .label = bir işlev veya kapanış değil
 
 passes_object_lifetime_err =
     {$repr}
 
 passes_only_has_effect_on =
-    `#[{$attr_name}]` only has an effect on {$target_name ->
-        [function] functions
-        [module] modules
-        [implementation_block] implementation blocks
-        *[unspecified] (unspecified--this is a compiler bug)
-    }
+    `#[{$attr_name}]` yalnızca {$target_name -> 
+        [function] işlevler
+        [module] modüller
+        [implementation_block] uygulama blokları
+        *[unspecified] (belirtilmemiş--bu bir derleyici hatasıdır)
+    } üzerinde etkilidir
 
 passes_optimize_not_fn_or_closure =
-    attribute should be applied to function or closure
-    .label = not a function or closure
+    öznitelik bir işlev veya kapanış üzerine uygulanmalıdır
+    .label = bir işlev veya kapanış değil
 
 passes_outer_crate_level_attr =
-    crate-level attribute should be an inner attribute: add an exclamation mark: `#![foo]`
+    crate seviyesindeki öznitelik iç öznitelik olmalıdır: bir ünlem işareti ekleyin: `#![foo]`
 
 passes_outside_loop =
-    `{$name}` outside of a loop{$is_break ->
-        [true] {" or labeled block"}
+    döngü dışındaki `{$name}` {$is_break ->
+        [true] {" veya etiketlenmiş blok"}
         *[false] {""}
     }
-    .label = cannot `{$name}` outside of a loop{$is_break ->
-        [true] {" or labeled block"}
+    .label = bir döngü dışında `{$name}` kullanılamaz {$is_break ->
+        [true] {" veya etiketlenmiş blok"}
         *[false] {""}
     }
 
-passes_outside_loop_suggestion = consider labeling this block to be able to break within it
+passes_outside_loop_suggestion = bu bloğu etiketlemeyi ve içinde kesinti yapmayı düşünün
 
 passes_panic_unwind_without_std =
-    unwinding panics are not supported without std
-    .note = since the core library is usually precompiled with panic="unwind", rebuilding your crate with panic="abort" may not be enough to fix the problem
-    .help = using nightly cargo, use -Zbuild-std with panic="abort" to avoid unwinding
+    std olmadan çözülen paniklere destek yok
+    .note = çekirdek kütüphane genellikle panic="unwind" ile önceden derlendiğinden, crate'inizi panic="abort" ile yeniden derlemek sorunu çözmek için yeterli olmayabilir
+    .help = nightly cargo kullanarak, sarmalamayı önlemek için -Zbuild-std ile panic="abort" kullanın
 
 passes_params_not_allowed =
-    referencing function parameters is not allowed in naked functions
-    .help = follow the calling convention in asm block to use parameters
+    çıplak işlevlerde işlev parametrelerine başvurulmasına izin verilmez
+    .help = parametreleri kullanmak için çağrı biçimini asm blokta takip edin
 
 passes_parent_info =
-    {$num ->
+    {$num -> 
       [one] {$descr}
      *[other] {$descr}s
-    } in this {$parent_descr}
+    } bu {$parent_descr} içinde
 
 passes_pass_by_value =
-    `pass_by_value` attribute should be applied to a struct, enum or type alias
-    .label = is not a struct, enum or type alias
+    `pass_by_value` özniteliği bir struct, enum veya tür takma adı üzerine uygulanmalıdır
+    .label = bir struct, enum veya tür takma adı değil
 
-passes_proc_macro_bad_sig = {$kind} has incorrect signature
+passes_proc_macro_bad_sig = {$kind} yanlış imzaya sahip
 
 passes_remove_fields =
-    consider removing { $num ->
-      [one] this
-     *[other] these
+    { $num -> 
+      [one] bu
+     *[other] bu
     } { $num ->
-      [one] field
-     *[other] fields
-    }
+      [one] alanı
+     *[other] alanları
+    } kaldırmayı düşünün
 
 passes_repr_align_function =
-    `repr(align)` attributes on functions are unstable
+    işlevlerde `repr(align)` öznitelikleri kararsız
 
 passes_repr_conflicting =
-    conflicting representation hints
+    çelişen temsil ipuçları
 
 passes_repr_ident =
-    meta item in `repr` must be an identifier
+    `repr` içindeki meta öğe bir tanımlayıcı olmalıdır
 
 passes_rustc_allow_const_fn_unstable =
-    attribute should be applied to `const fn`
-    .label = not a `const fn`
+    öznitelik `const fn` üzerine uygulanmalıdır
+    .label = bir `const fn` değil
 
 passes_rustc_dirty_clean =
-    attribute requires -Z query-dep-graph to be enabled
+    öznitelik -Z query-dep-graph etkinleştirilmesini gerektirir
 
 passes_rustc_layout_scalar_valid_range_arg =
-    expected exactly one integer literal argument
+    tam olarak bir tamsayı sabiti argümanı bekleniyor
 
 passes_rustc_layout_scalar_valid_range_not_struct =
-    attribute should be applied to a struct
-    .label = not a struct
+    öznitelik bir struct üzerine uygulanmalıdır
+    .label = bir struct değil
 
 passes_rustc_legacy_const_generics_index =
-    #[rustc_legacy_const_generics] must have one index for each generic parameter
-    .label = generic parameters
+    #[rustc_legacy_const_generics] her genel parametre için bir indeks içermelidir
+    .label = genel parametreler
 
 passes_rustc_legacy_const_generics_index_exceed =
-    index exceeds number of arguments
-    .label = there {$arg_count ->
-        [one] is
-        *[other] are
-    } only {$arg_count} {$arg_count ->
-        [one] argument
-        *[other] arguments
-    }
+    indeks, argüman sayısını aşıyor
+    .label = burada yalnızca {$arg_count} {$arg_count ->
+        [one] argüman var
+        *[other] argüman var
+    }, ancak toplamda {$actual_num} {$actual_num ->
+        [one] argüman
+        *[other] argümanlar
+    } var
 
 passes_rustc_legacy_const_generics_index_negative =
-    arguments should be non-negative integers
+    argümanlar negatif olmayan tamsayılar olmalıdır
 
 passes_rustc_legacy_const_generics_only =
-    #[rustc_legacy_const_generics] functions must only have const generics
-    .label = non-const generic parameter
+    #[rustc_legacy_const_generics] işlevleri yalnızca const generics içermelidir
+    .label = const olmayan genel parametre
 
 passes_rustc_lint_opt_deny_field_access =
-    `#[rustc_lint_opt_deny_field_access]` should be applied to a field
-    .label = not a field
+    `#[rustc_lint_opt_deny_field_access]` bir alan üzerine uygulanmalıdır
+    .label = bir alan değil
 
 passes_rustc_lint_opt_ty =
-    `#[rustc_lint_opt_ty]` should be applied to a struct
-    .label = not a struct
+    `#[rustc_lint_opt_ty]` bir struct üzerine uygulanmalıdır
+    .label = bir struct değil
 
 passes_rustc_pub_transparent =
-    attribute should be applied to `#[repr(transparent)]` types
-    .label = not a `#[repr(transparent)]` type
+    öznitelik `#[repr(transparent)]` türleri üzerine uygulanmalıdır
+    .label = bir `#[repr(transparent)]` türü değil
 
 passes_rustc_safe_intrinsic =
-    attribute should be applied to intrinsic functions
-    .label = not an intrinsic function
+    öznitelik iç işlevlere uygulanmalıdır
+    .label = bir iç işlev değil
 
 passes_rustc_std_internal_symbol =
-    attribute should be applied to functions or statics
-    .label = not a function or static
+    öznitelik işlevler veya statikler üzerine uygulanmalıdır
+    .label = bir işlev veya statik değil
 
 passes_should_be_applied_to_fn =
-    attribute should be applied to a function definition
+    öznitelik bir işlev tanımına uygulanmalıdır
     .label = {$on_crate ->
-        [true] cannot be applied to crates
-        *[false] not a function definition
+        [true] crate'lere uygulanamaz
+        *[false] bir işlev tanımı değil
     }
 
 passes_should_be_applied_to_static =
-    attribute should be applied to a static
-    .label = not a static
+    öznitelik bir statik üzerine uygulanmalıdır
+    .label = bir statik değil
 
 passes_should_be_applied_to_struct_enum =
-    attribute should be applied to a struct or enum
-    .label = not a struct or enum
+    öznitelik bir struct veya enum üzerine uygulanmalıdır
+    .label = bir struct veya enum değil
 
 passes_should_be_applied_to_trait =
-    attribute should be applied to a trait
-    .label = not a trait
+    öznitelik bir trait üzerine uygulanmalıdır
+    .label = bir trait değil
 
-passes_skipping_const_checks = skipping const checks
+passes_skipping_const_checks = const kontrolleri atlanıyor
 
 passes_stability_promotable =
-    attribute cannot be applied to an expression
+    öznitelik bir ifadeye uygulanamaz
 
-passes_string_interpolation_only_works = string interpolation only works in `format!` invocations
+passes_string_interpolation_only_works = dize interpolasyonu yalnızca `format!` çağrılarında çalışır
 
 passes_target_feature_on_statement =
     {passes_should_be_applied_to_fn}
@@ -694,117 +694,117 @@ passes_target_feature_on_statement =
     .label = {passes_should_be_applied_to_fn.label}
 
 passes_trait_impl_const_stable =
-    trait implementations cannot be const stable yet
-    .note = see issue #67792 <https://github.com/rust-lang/rust/issues/67792> for more information
+    trait uygulamaları henüz const olarak kararlı hale getirilemez
+    .note = daha fazla bilgi için bkz. issue #67792 <https://github.com/rust-lang/rust/issues/67792>
 
 passes_transparent_incompatible =
-    transparent {$target} cannot have other repr hints
+    şeffaf {$target} başka temsil ipuçlarına sahip olamaz
 
 passes_undefined_naked_function_abi =
-    Rust ABI is unsupported in naked functions
+    Rust ABI çıplak işlevlerde desteklenmiyor
 
 passes_unknown_external_lang_item =
-    unknown external lang item: `{$lang_item}`
+    bilinmeyen dış lang öğesi: `{$lang_item}`
 
 passes_unknown_feature =
-    unknown feature `{$feature}`
+    bilinmeyen özellik `{$feature}`
 
 passes_unknown_lang_item =
-    definition of an unknown lang item: `{$name}`
-    .label = definition of unknown lang item `{$name}`
+    bilinmeyen bir lang öğesinin tanımı: `{$name}`
+    .label = bilinmeyen lang öğesi `{$name}` tanımı
 
 passes_unlabeled_cf_in_while_condition =
-    `break` or `continue` with no label in the condition of a `while` loop
-    .label = unlabeled `{$cf_type}` in the condition of a `while` loop
+    `while` döngüsünün koşulunda etiketsiz `break` veya `continue`
+    .label = `while` döngüsünün koşulunda etiketsiz `{$cf_type}`
 
 passes_unlabeled_in_labeled_block =
-    unlabeled `{$cf_type}` inside of a labeled block
-    .label = `{$cf_type}` statements that would diverge to or through a labeled block need to bear a label
+    etiketlenmiş bir blok içinde etiketsiz `{$cf_type}`
+    .label = etiketlenmiş bir bloktan kaçış yapacak `{$cf_type}` ifadeleri bir etiket taşımalıdır
 
-passes_unnecessary_partial_stable_feature = the feature `{$feature}` has been partially stabilized since {$since} and is succeeded by the feature `{$implies}`
-    .suggestion = if you are using features which are still unstable, change to using `{$implies}`
-    .suggestion_remove = if you are using features which are now stable, remove this line
+passes_unnecessary_partial_stable_feature = `{$feature}` özelliği {$since} tarihinden itibaren kısmen kararlı hale getirilmiştir ve yerini `{$implies}` özelliği almıştır
+    .suggestion = halen kararsız özellikler kullanıyorsanız `{$implies}` kullanmaya geçin
+    .suggestion_remove = artık kararlı hale gelmiş özellikler kullanıyorsanız bu satırı kaldırın
 
-passes_unnecessary_stable_feature = the feature `{$feature}` has been stable since {$since} and no longer requires an attribute to enable
+passes_unnecessary_stable_feature = `{$feature}` özelliği {$since} tarihinden itibaren kararlı hale gelmiştir ve etkinleştirmek için bir öznitelik gerektirmemektedir
 
-passes_unreachable_due_to_uninhabited = unreachable {$descr}
-    .label = unreachable {$descr}
-    .label_orig = any code following this expression is unreachable
-    .note = this expression has type `{$ty}`, which is uninhabited
+passes_unreachable_due_to_uninhabited = ulaşılamaz {$descr}
+    .label = ulaşılamaz {$descr}
+    .label_orig = bu ifadeden sonraki kod ulaşılamaz
+    .note = bu ifadenin türü `{$ty}`, bu tür erişilemez
 
 passes_unrecognized_field =
-    unrecognized field name `{$name}`
+    tanınmayan alan adı `{$name}`
 
 passes_unrecognized_repr_hint =
-    unrecognized representation hint
-    .help = valid reprs are `Rust` (default), `C`, `align`, `packed`, `transparent`, `simd`, `i8`, `u8`, `i16`, `u16`, `i32`, `u32`, `i64`, `u64`, `i128`, `u128`, `isize`, `usize`
+    tanınmayan temsil ipucu
+    .help = geçerli temsil ipuçları: `Rust` (varsayılan), `C`, `align`, `packed`, `transparent`, `simd`, `i8`, `u8`, `i16`, `u16`, `i32`, `u32`, `i64`, `u64`, `i128`, `u128`, `isize`, `usize`
 
 passes_unused =
-    unused attribute
-    .suggestion = remove this attribute
+    kullanılmayan öznitelik
+    .suggestion = bu özniteliği kaldırın
 
-passes_unused_assign = value assigned to `{$name}` is never read
-    .help = maybe it is overwritten before being read?
+passes_unused_assign = `{$name}`'e atanan değer asla okunmuyor
+    .help = belki okunmadan önce üzerine yazılmıştır?
 
-passes_unused_assign_passed = value passed to `{$name}` is never read
-    .help = maybe it is overwritten before being read?
+passes_unused_assign_passed = `{$name}`'e atanan değer asla okunmuyor
+    .help = belki okunmadan önce üzerine yazılmıştır?
 
-passes_unused_capture_maybe_capture_ref = value captured by `{$name}` is never read
-    .help = did you mean to capture by reference instead?
+passes_unused_capture_maybe_capture_ref = `{$name}` tarafından yakalanan değer asla okunmuyor
+    .help = bunun yerine referans olarak mı yakalamak istediniz?
 
 passes_unused_default_method_body_const_note =
-    `default_method_body_is_const` has been replaced with `#[const_trait]` on traits
+    `default_method_body_is_const` yerine `#[const_trait]` kullanılması gerekiyor
 
 passes_unused_duplicate =
-    unused attribute
-    .suggestion = remove this attribute
-    .note = attribute also specified here
+    kullanılmayan öznitelik
+    .suggestion = bu özniteliği kaldırın
+    .note = öznitelik burada da belirtilmiş
     .warn = {-passes_previously_accepted}
 
 passes_unused_empty_lints_note =
-    attribute `{$name}` with an empty list has no effect
+    `{$name}` boş liste ile birlikte kullanıldığında bir etkisi olmaz
 
 passes_unused_multiple =
-    multiple `{$name}` attributes
-    .suggestion = remove this attribute
-    .note = attribute also specified here
+    birden fazla `{$name}` özniteliği
+    .suggestion = bu özniteliği kaldırın
+    .note = öznitelik burada da belirtilmiş
 
 passes_unused_no_lints_note =
-    attribute `{$name}` without any lints has no effect
+    `{$name}` özniteliği herhangi bir lint belirtmeden etkili olmaz
 
-passes_unused_var_assigned_only = variable `{$name}` is assigned to, but never used
-    .note = consider using `_{$name}` instead
+passes_unused_var_assigned_only = `{$name}` değişkenine değer atanıyor, ancak asla kullanılmıyor
+    .note = bunun yerine `_{$name}` kullanmayı düşünebilirsiniz
 
-passes_unused_var_maybe_capture_ref = unused variable: `{$name}`
-    .help = did you mean to capture by reference instead?
+passes_unused_var_maybe_capture_ref = kullanılmayan değişken: `{$name}`
+    .help = bunun yerine referans olarak mı yakalamak istediniz?
 
-passes_unused_var_remove_field = unused variable: `{$name}`
-passes_unused_var_remove_field_suggestion = try removing the field
+passes_unused_var_remove_field = kullanılmayan değişken: `{$name}`
+passes_unused_var_remove_field_suggestion = alanı kaldırmayı deneyin
 
-passes_unused_variable_args_in_macro = `{$name}` is captured in macro and introduced a unused variable
+passes_unused_variable_args_in_macro =`{$name}` makroda yakalanmış ve kullanılmayan bir değişken oluşturmuş
 
-passes_unused_variable_try_ignore = unused variable: `{$name}`
-    .suggestion = try ignoring the field
+passes_unused_variable_try_ignore = kullanılmayan değişken: `{$name}`
+    .suggestion = alanı göz ardı etmeyi deneyin
 
-passes_unused_variable_try_prefix = unused variable: `{$name}`
-    .label = unused variable
-    .suggestion = if this is intentional, prefix it with an underscore
+passes_unused_variable_try_prefix = kullanılmayan değişken: `{$name}`
+    .label = kullanılmayan değişken
+    .suggestion = eğer bu kasıtlıysa, önüne bir alt çizgi (_) ekleyin
 
 
 passes_used_compiler_linker =
-    `used(compiler)` and `used(linker)` can't be used together
+    `used(compiler)` ve `used(linker)` birlikte kullanılamaz
 
 passes_used_static =
-    attribute must be applied to a `static` variable
-    .label = but this is a {$target}
+    öznitelik bir `static` değişkene uygulanmalıdır
+    .label = ancak bu bir {$target}
 
 passes_useless_assignment =
-    useless assignment of {$is_field_assign ->
-        [true] field
-        *[false] variable
-    } of type `{$ty}` to itself
+    {$is_field_assign -> 
+        [true] alan
+        *[false] değişken
+    } türündeki bir değerin kendisine ataması gereksiz
 
 passes_useless_stability =
-    this stability annotation is useless
-    .label = useless stability annotation
-    .item = the stability attribute annotates this item
+    bu kararlılık anotasyonu gereksiz
+    .label = gereksiz kararlılık anotasyonu
+    .item = kararlılık özniteliği bu öğeyi anot eder

@@ -1,4 +1,3 @@
-çevir
 trait_selection_actual_impl_expl_but_actually_implemented_for_ty = ...but `{$trait_path}` is actually implemented for the type `{$ty}`{$has_lifetime ->
     [true] , for some specific lifetime `'{$lifetime}`
     *[false] {""}
