@@ -1,4 +1,3 @@
-çevir
 mir_build_adt_defined_here = `{$ty}` burada tanımlandı
 
 mir_build_already_borrowed = değer, zaten değiştirilemez olarak ödünç alındığı için değiştirilebilir olarak ödünç alınamaz
